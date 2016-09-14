@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+.hovertri {
+	fill:url(#imagepattern);
+}
+svg #trigroup:hover polygon {
+    fill-opacity: 0.3;
+}
+svg #trigroup .hovertri:hover {
+	fill-opacity: 1;
+}
+svg * {
+	transition: all 1s;
+	-webkit-transition: all 1s; 
+}
+</style>
+</head>
+<body>
+<div id="svg">
+
+<svg height="433" width="1020">
+	<defs>
+		<pattern id="imagepattern" x="0" y="0" height="1" width="1">
+<image width="500" height="500" xlink:href="http://www.fnordware.com/superpng/pnggrad16rgb.png" />
+		</pattern>
+	</defs>
+	<g id="trigroup">
+		<a href="index.html"><polygon class="hovertri" points="500,0 250,433 0,0" /></a>
+		<a href="index.html"><polygon class="hovertri" points="510,0 260,433 760,433" /></a>
+		<a href="index.html"><polygon class="hovertri" points="520,0 770,433 1020,0" /></a>
+	</g>
+</svg>
+
+</div>
+</body>
+</html>
