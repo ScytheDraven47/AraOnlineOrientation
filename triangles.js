@@ -49,8 +49,7 @@ function calcTriangle( centerCoOrd, base, rotation ) {
     var v0 = centerCoOrd.split(",");
     var x0 = parseInt(v0[0]), y0 = parseInt(v0[1]);
 
-    var height = Math.sqrt(3) * (base/2);console.log(height);
-    // var height = Math.sqrt( (base/2)^2 + (base)^2 );console.log(height);
+    var height = Math.sqrt(3) * (base/2);
     var x1 = x0, y1;
     if ( rotation == "up" ) {
         y1 = y0 + ( height/2 );
@@ -75,6 +74,5 @@ function calcTriangle( centerCoOrd, base, rotation ) {
     }
     vertices.push([x3,y3]);
 
-    console.log( vertices );
     return vertices;
 }
