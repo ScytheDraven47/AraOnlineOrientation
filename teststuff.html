@@ -5,130 +5,62 @@
 	</head>
 	
 	<body>
-	<!--
-		<svg class="circ1" width="100" height="100">
-			<circle cx="50" cy="50" r="40"/>
-		</svg>
-		<h1>Basic Circle</h1>
-		<br/>
-		
-		<svg class="rect1" width="400" height="110">
-			<rect width="300" height="100"/>
-		</svg>
-		<h1>Basic Rectangle</h1>
-		<br/>
-		
-		<svg class="rect2" width="400" height="180">
-			<rect x="50" y="20" width="150" height="150"/>
-		</svg>
-		<h1>Rectangle 2 - opaque parts</h1>
-		<br/>
-		
-		<svg class="rect3" width="400" height="180">
-			<rect x="50" y="20" width="150" height="150"/>
-		</svg>
-		<h1>Rectangle 3 - general opacity</h1>
-		<br/>
-		
-		<svg class="rect4" width="400" height="180">
-			<rect x="50" y="20" rx="20" ry="20" width="150" height="150"/>
-		</svg>
-		<h1>Rectangle 4 - rounded</h1>
-		<br/>
-		
-		<svg class="elips1" width="500" height="140">
-			<ellipse cx="200" cy="80" rx="100" ry="50"/>
-		</svg>
-		<h1>Basic Ellipse</h1>
-		<br/>
-		
-		<svg class="elips2" width="500" height="150">
-		  <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple" />
-		  <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime" />
-		  <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow" />
-		</svg>
-		<h1>Ellipse 2 - layered</h1>
-		<br/>
-		
-		<svg class="elips3" width="500" height="100">
-		  <ellipse cx="240" cy="50" rx="220" ry="30" style="fill:yellow" />
-		  <ellipse cx="220" cy="50" rx="190" ry="20" style="fill:white" />
-		</svg>
-		<h1>Ellipse 3 - hollow (illusory)</h1>
-		<br/>
-		
-		<svg class="line" width="500" height="210">
-		  <line x1="0" y1="0" x2="200" y2="200"/>
-		</svg>
-		<h1>Basic Line</h1>
-		<br/>
-		
-		<svg class="poly1" height="210" width="500">
-		<polygon points="200,10 250,190 160,210"/>
-		</svg>
-		<h1>Polygon 1 - triangle</h1>
-		<br/>
-		
-		<svg class="poly2" height="250" width="500">
-		  <polygon points="220,10 300,210 170,250 123,234"/>
-		</svg>
-		<h1>Polygon 2 - 4 sides</h1>
-		<br/>
-		
-		<svg class="poly3" height="210" width="500">
-		  <polygon points="100,10 40,198 190,78 10,78 160,198"/>
-		</svg>
-		<h1>Polygon 3 - star</h1>
-		<br/>
-		
-		<svg class="poly4" height="210" width="500">
-		  <polygon points="100,10 40,198 190,78 10,78 160,198"/>
-		</svg>
-		<h1>Polygon 4 - evenodd</h1>
-		<br/>
-		
-		<svg class="pline1" height="200" width="500">
-		  <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"/>
-		</svg>
-		<h1>Basic Polyline</h1>
-		<br/>
-		
-		<svg class="pline2" height="180" width="500">
-		  <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"/>
-		</svg>
-		<h1>Polyline 2 - fill</h1>
-		<br/>
-	-->
 		<svg class="cool-thing" width="500" height="300">
-			<polygon class="cool-thing-rect" points="10,10 490,10 490,70 270,290 10,290" />
+			<polygon class="cool-thing-rect" points="10,10 490,10 490,70 270,290 10,290"></polygon>
 			<text fill="#000" font-size="25" font-family="Verdana" y="1.2em">
 				<tspan dy="1.2em" x="20">This is some example text.</tspan>
 				<tspan dy="1.2em" x="20">Lorem ipsum blah blah latin crap.</tspan>
 			</text>
 			<defs>
-				<clipPath id="circleView">
-					<polygon class="cool-thing-triangle" points="490,90 490,290 290,290" />    
+				<clipPath id="triangleView">
+					<polygon class="cool-thing-triangle" points="490,90 490,290 290,290"></polygon>
 				</clipPath>
 			</defs>
-			<image width="200" height="100" x="340" y="170" xlink:href="pac-man.jpg" clip-path="url(#circleView)" />
-			
+			<image width="200" height="100" x="340" y="170" xlink:href="pac-man.jpg" clip-path="url(#triangleView)"></image>
 		</svg>
 		<h1>Cool Thing</h1>
 		<br/>
 		
 		<svg class="other-thing" width="370" height="210">
-			<pattern id="image" width="1" height="1">
-				<image x="20" y="40" width="60" height="50" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png"/>
+			<pattern id="other-thing-image" width="1" height="1">
+				<image x="20" y="40" width="60" height="50" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png"></image>
 			</pattern>
-			<a href="#"><polygon class="primary" points="200,10 300,10 250,96.602" /></a>
-			<a href="#"><polygon class="secondary" points="260,102.602 310,16 360,102.602" /></a>
-			<a href="#"><polygon class="primary" points="260,112.602 310,199.205 360,112.602" /></a>
-			<a href="#"><polygon class="secondary" points="250,116.602 300,203.205 200,203.205" /></a>
-			<a href="#"><polygon class="primary" points="140,112.602 190,199.205 240,112.602" /></a>
-			<a href="#"><polygon class="tertiary" points="140,102.602 190,16 240,102.602" /></a>
+			<g class="fadeView">
+				<a xlink:href="#"><polygon class="primary" points="200,10 300,10 250,96.602"></polygon></a>
+				<a xlink:href="#"><polygon class="secondary" points="260,102.602 310,16 360,102.602"></polygon></a>
+				<a xlink:href="#"><polygon class="primary" points="260,112.602 310,199.205 360,112.602"></polygon></a>
+				<a xlink:href="#"><polygon class="secondary" points="250,116.602 300,203.205 200,203.205"></polygon></a>
+				<a xlink:href="#"><polygon class="primary" points="140,112.602 190,199.205 240,112.602"></polygon></a>
+				<a xlink:href="#"><polygon class="tertiary" points="140,102.602 190,16 240,102.602"></polygon></a>
+			</g>
 		</svg>
 		<h1>Other Thing</h1>
 		<br/>
-		
+
+		<svg id="js-thing" class="js-thing fade" width="400" height="300">
+			<pattern id="js-thing-image" width="1" height="1">
+				<image x="0" y="0" width="100" height="100" xlink:href="pac-man.jpg"></image>
+			</pattern>
+		</svg>
+		<svg id="js-thing2" width="500" height="500"></svg>
 	</body>
+	<script src="triangles.js"></script>
+	<script>
+		createPolygon( "js-thing", "140,127", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing", "200,123", 100, "up", "js-thing-primary" );
+		createPolygon( "js-thing", "260,127", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing", "140,223", 100, "up", "js-thing-secondary" );
+		createPolygon( "js-thing", "200,227", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing", "260,223", 100, "up", "js-thing-secondary" );
+
+		createPolygon( "js-thing2", "250,200", 100, "down" );
+		createPolygon( "js-thing2", "250,300", 100, "up", "js-thing-secondary" );
+		createPolygon( "js-thing2", "310,300", 100, "down", "js-thing-secondary" );
+		createPolygon( "js-thing2", "190,300", 100, "down", "js-thing-secondary" );
+		createPolygon( "js-thing2", "250,400", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing2", "190,400", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing2", "310,400", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing2", "130,400", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing2", "370,400", 100, "down", "js-thing-alt" );
+	</script>
 </html>
