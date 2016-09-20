@@ -5,6 +5,7 @@
 	</head>
 	
 	<body>
+		<div class="parralax"></div>
 		<svg class="cool-thing" width="500" height="300">
 			<polygon class="cool-thing-rect" points="10,10 490,10 490,70 270,290 10,290"></polygon>
 			<text fill="#000" font-size="25" font-family="Verdana" y="1.2em">
@@ -20,47 +21,44 @@
 		</svg>
 		<h1>Cool Thing</h1>
 		<br/>
-		
-		<svg class="other-thing" width="370" height="210">
-			<pattern id="other-thing-image" width="1" height="1">
-				<image x="20" y="40" width="60" height="50" xlink:href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png"></image>
-			</pattern>
-			<g class="fadeView">
-				<a xlink:href="#"><polygon class="primary" points="200,10 300,10 250,96.602"></polygon></a>
-				<a xlink:href="#"><polygon class="secondary" points="260,102.602 310,16 360,102.602"></polygon></a>
-				<a xlink:href="#"><polygon class="primary" points="260,112.602 310,199.205 360,112.602"></polygon></a>
-				<a xlink:href="#"><polygon class="secondary" points="250,116.602 300,203.205 200,203.205"></polygon></a>
-				<a xlink:href="#"><polygon class="primary" points="140,112.602 190,199.205 240,112.602"></polygon></a>
-				<a xlink:href="#"><polygon class="tertiary" points="140,102.602 190,16 240,102.602"></polygon></a>
-			</g>
-		</svg>
-		<h1>Other Thing</h1>
-		<br/>
 
-		<svg id="js-thing" class="js-thing fadeView" width="400" height="300">
+		<div class="parralax"></div>
+		<svg id="js-thing" class="js-thing fadeView" width="240" height="204">
 			<pattern id="js-thing-image" width="1" height="1">
 				<image x="0" y="0" width="100" height="100" xlink:href="pac-man.jpg"></image>
 			</pattern>
+			<a xlink:href="#" id="js-thing-a1"></a>
+			<a xlink:href="#" id="js-thing-a2"></a>
+			<a xlink:href="#" id="js-thing-a3"></a>
+			<a xlink:href="#" id="js-thing-a4"></a>
+			<a xlink:href="#" id="js-thing-a5"></a>
+			<a xlink:href="#" id="js-thing-a6"></a>
 		</svg>
-		<svg id="js-thing2" class="fadeView" width="500" height="500"></svg>
+		<br/>
+
+		<div class="parralax"></div>
+		<svg id="js-thing2" class="fadeView" width="500" height="300">
+		</svg>
+
+		<div class="parralax"></div>
 	</body>
 	<script src="triangles.js"></script>
 	<script>
-		createPolygon( "js-thing", "140,127", 100, "down", "js-thing-alt" );
-		createPolygon( "js-thing", "200,123", 100, "up", "js-thing-primary" );
-		createPolygon( "js-thing", "260,127", 100, "down", "js-thing-alt" );
-		createPolygon( "js-thing", "140,223", 100, "up", "js-thing-secondary" );
-		createPolygon( "js-thing", "200,227", 100, "down", "js-thing-alt" );
-		createPolygon( "js-thing", "260,223", 100, "up", "js-thing-secondary" );
+		createPolygon( "js-thing-a1", "60,54", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing-a2", "120,50", 100, "down", "js-thing-primary" );
+		createPolygon( "js-thing-a3", "180,54", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing-a4", "60,150", 100, "down", "js-thing-secondary" );
+		createPolygon( "js-thing-a5", "120,154", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing-a6", "180,150", 100, "down", "js-thing-secondary" );
 
-		createPolygon( "js-thing2", "250,200", 100, "down" );
-		createPolygon( "js-thing2", "250,300", 100, "up", "js-thing-secondary" );
-		createPolygon( "js-thing2", "310,300", 100, "down", "js-thing-secondary" );
-		createPolygon( "js-thing2", "190,300", 100, "down", "js-thing-secondary" );
-		createPolygon( "js-thing2", "250,400", 100, "down", "js-thing-alt" );
-		createPolygon( "js-thing2", "190,400", 100, "up", "js-thing-alt" );
-		createPolygon( "js-thing2", "310,400", 100, "up", "js-thing-alt" );
-		createPolygon( "js-thing2", "130,400", 100, "down", "js-thing-alt" );
-		createPolygon( "js-thing2", "370,400", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing2", "180,50", 100, "up" );
+		createPolygon( "js-thing2", "180,150", 100, "down", "js-thing-secondary" );
+		createPolygon( "js-thing2", "240,150", 100, "up", "js-thing-secondary" );
+		createPolygon( "js-thing2", "120,150", 100, "up", "js-thing-secondary" );
+		createPolygon( "js-thing2", "180,250", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing2", "120,250", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing2", "240,250", 100, "down", "js-thing-alt" );
+		createPolygon( "js-thing2", "60,250", 100, "up", "js-thing-alt" );
+		createPolygon( "js-thing2", "300,250", 100, "up", "js-thing-alt" );
 	</script>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey - test</title>
+        <style type="text/css">
+            body, html {
+                height: 100%;
+            }
+
+            .parallax {
+                /*min-height: 500px;*/
+                height: 100%;
+                /* <color> * image * repeat * attachment * position */
+                background: url("pac-man.jpg") no-repeat fixed center;
+                background-size: cover;
+            }
+
+            svg.text-area polygon.cool-thing-rect {
+                fill:none;
+                stroke:rgb(10,205,205);
+                stroke-width:4;
+            }
+
+            svg.text-area polygon.cool-thing-triangle {
+                fill:none;
+                stroke:rgb(10,205,205);
+                stroke-width:4;
+            }
+
+            polygon.js-thing-gender, polygon.js-thing-ethnic {
+                fill:rgb(10,225,205);
+                stroke:none;
+                stroke-width:4;
+            }
+
+            /* HOVERS ***********************************************/
+            .fadeView:hover > * {
+                opacity: 0.5;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .fadeView:hover > *:hover {
+                opacity: 1.0;
+                -webkit-transition: all 0.2s ease-in-out;
+                -moz-transition: all 0.2s ease-in-out;
+                -o-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parallax"></div>
+        <svg class="text-area" width="800" height="200">
+            <polygon class="cool-thing-rect" points="10,10 290,10 290,70 170,190 10,190"></polygon>
+            <text fill="#000" font-size="25" font-family="Verdana" y="1.2em">
+                <tspan dy="1.2em" x="20">What is your gender?</tspan>
+            </text>
+            <defs>
+                <clipPath id="triangleView">
+                    <polygon class="cool-thing-triangle" points="290,90 290,190 190,190"></polygon>
+                </clipPath>
+            </defs>
+            <image width="100" height="50" x="220" y="130" xlink:href="pac-man.jpg" clip-path="url(#triangleView)"></image>
+            <g class="fadeView">
+                <a xlink:href="#">
+                    <g id="js-thing-male"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="4.8em" x="360">MALE</tspan></text>
+                </a>
+                <a xlink:href="#">
+                    <g id="js-thing-female"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="1.2em" x="510">FEMALE</tspan></text>
+                </a>
+                <a xlink:href="#">
+                    <g id="js-thing-other"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="4.8em" x="660">OTHER</tspan></text>
+                </a>
+            </g>
+        </svg>
+        <div class="parallax"></div>
+        <svg class="text-area" width="800" height="200">
+            <polygon class="cool-thing-rect" points="10,10 290,10 290,70 170,190 10,190"></polygon>
+            <text fill="#000" font-size="25" font-family="Verdana" y="1.2em">
+                <tspan dy="1.2em" x="20">What is your ethnic</tspan>
+                <tspan dy="1.2em" x="30">standing at Ara?</tspan>
+            </text>
+            <defs>
+                <clipPath id="triangleView">
+                    <polygon class="cool-thing-triangle" points="290,90 290,190 190,190"></polygon>
+                </clipPath>
+            </defs>
+            <image width="100" height="50" x="220" y="130" xlink:href="pac-man.jpg" clip-path="url(#triangleView)"></image>
+            <g class="fadeView">
+                <a xlink:href="#">
+                    <g id="js-thing-intnl"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="4.8em" x="360">INTERNATIONAL</tspan></text>
+                </a>
+                <a xlink:href="#">
+                    <g id="js-thing-mripsf"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="1.2em" x="510">MAORI/PASIFIKA</tspan></text>
+                </a>
+                <a xlink:href="#">
+                    <g id="js-thing-pakeha"></g>
+                    <text font-size="25" font-family="Verdana" y="1.2em"><tspan dy="4.8em" x="660">PAKEHA</tspan></text>
+                </a>
+            </g>
+        </svg>
+        <div class="parallax"></div>
+    </body>
+    <script src="triangles.js"></script>
+    <script>
+        createPolygon( "js-thing-male", "400,100", 200, "up", "js-thing-gender");
+        createPolygon( "js-thing-female", "550,100", 200, "down", "js-thing-gender");
+        createPolygon( "js-thing-other", "700,100", 200, "up", "js-thing-gender");
+        createPolygon( "js-thing-intnl", "400,100", 200, "up", "js-thing-ethnic");
+        createPolygon( "js-thing-mripsf", "550,100", 200, "down", "js-thing-ethnic");
+        createPolygon( "js-thing-pakeha", "700,100", 200, "up", "js-thing-ethnic");
+    </script>
+</html>

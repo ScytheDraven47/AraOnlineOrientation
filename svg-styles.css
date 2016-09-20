@@ -1,7 +1,25 @@
+body, html {
+	height: 100%;
+}
+
 h1 {
 	display: inline;
 }
 
+/* Parralax test **************************************/
+.parralax {
+	/*min-height: 500px;*/
+	height: 100%;
+	/* <color> * image * repeat * attachment * position */
+	background: url("pac-man.jpg") no-repeat fixed center;
+	background-size: cover;
+}
+
+svg {
+	margin-left: 20%;
+}
+
+/* Text Area ******************************************/
 svg.cool-thing polygon.cool-thing-rect {
 	fill:none;
 	stroke:rgb(10,205,205);
@@ -14,25 +32,7 @@ svg.cool-thing polygon.cool-thing-triangle {
 	stroke-width:4;
 }
 
-svg.other-thing polygon.primary {
-	fill:rgb(10,205,205);
-	stroke:none;
-	stroke-width:4;
-}
-
-svg.other-thing polygon.secondary {
-	/* fill:rgb(10,225,205); */
-	fill:url(#other-thing-image);
-	stroke:rgb(10,225,205);
-	stroke-width:4;
-}
-
-svg.other-thing polygon.tertiary {
-	fill:rgb(10,185,205);
-	stroke:none;
-	stroke-width:4;
-}
-
+/* JS classes *****************************************/
 .js-thing-primary, #js-thing2 {
 	/* fill:rgb(10,225,205); */
 	fill:url(#js-thing-image);
@@ -52,6 +52,7 @@ svg.other-thing polygon.tertiary {
 	stroke-width:4;
 }
 
+/* HOVERS ***********************************************/
 .fadeView:hover > * {
 	opacity: 0.5;
 	-webkit-transition: all 0.2s ease-in-out;
