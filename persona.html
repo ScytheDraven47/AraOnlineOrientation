@@ -1,0 +1,344 @@
+<html>
+
+<head>
+
+<style>
+body {
+	padding: 0;
+	margin: 0;
+}
+.parent {
+	width: 700%;
+}
+.question {
+    height: 100%;
+    width: calc(100% / 7);
+	float:left;
+}
+fieldset {
+	width: 100%;
+	padding: 0;
+	margin: auto;
+	border: none;
+}
+fieldset button {
+	padding: 0;
+	border: 2px solid black;
+	width: 100%;
+}
+button img {
+	width: 100%;
+}
+.wrap3 {
+	width: 20%;
+	float: left;
+	margin-left: calc(calc(40% - 6em) / 4);
+}
+.wrap2 {
+	width: 25%;
+	float: left;
+	margin-left: calc(calc(50% - 6em) / 3);
+}
+.wrap3 button, .wrap2 button, .wrap3 label, .wrap2 label {
+	display: block;
+}
+.wrap3 label, .wrap2 label {
+	text-align: center;
+	margin: 1em;
+}
+.questiontext {
+	text-align: center;
+	margin-top: 20%;
+}
+.navbutton {
+	width: 3em;
+	height: 3em;
+	margin-top: calc(10% - 1.5em);
+	border: none;
+	background-color: Transparent;
+	outline:none;
+}
+.prevbutton {
+	float: left;
+	margin-left: 1em;
+}
+#q1 .prevbutton {
+	visibility: hidden;
+}
+.nextbutton {
+	float: right;
+	margin-right: 1em;
+}
+#q7 .nextbutton {
+	visibility: hidden;
+}
+
+.navdots {
+	position: fixed;
+	top: 95%;
+	left: calc(50% - 10.5em);
+}
+.navdots ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+	width: 21em;
+}
+.navdots li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 1em;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+}
+.navdots li button {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	background-color: blue;
+	transition: background 0.5s;
+}
+.navdots li button:hover, .navdots li button:focus {
+	background-color: purple;
+}
+
+.tooltiptext {
+	visibility: hidden;
+}
+.navdots li button:hover .tooltiptext {
+	visibility: visible;
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('.question button').bind('click',function(event){
+		var $anchor = $(this);
+		
+		$('html, body').stop().animate({
+			scrollLeft: $($anchor.attr('href')).offset().left
+		}, 1000);
+		
+
+		event.preventDefault();
+	});
+});
+
+$(function() {
+	$('.navdots button').bind('click',function(event){
+		var $anchor = $(this);
+		
+		$('html, body').stop().animate({
+			scrollLeft: $($anchor.attr('href')).offset().left
+		}, 1000);
+		
+
+		event.preventDefault();
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="parent">
+
+<form action="">
+
+	<div class="question" id="q1">
+		<h1 class="questiontext">Studying Status:</h1>
+		<fieldset>
+		
+		<button type="button" class="prevbutton navbutton" href="#q1"><img src="arrowleft.png"></button>
+		
+		<div class="wrap3">
+		<button type="button" id="interested" name="status" value="interested"><img src="placeholder.png"></button>
+		<label for="interested">Interested</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="new" name="status" value="new"><img src="placeholder.png"></button>
+		<label for="new">New</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="returning" name="status" value="returning"><img src="placeholder.png"></button>
+		<label for="returning">Returning</label>
+		</div>
+		
+		<button type="button" class="nextbutton navbutton" href="#q2"><img src="arrowright.png"></button>
+		
+		</fieldset>
+		
+	</div>
+
+	<div class="question" id="q2">
+		<h1 class="questiontext">Age:</h1>
+		<fieldset>
+		
+		<button type="button" class="prevbutton navbutton" href="#q1"><img src="arrowleft.png"></button>
+		
+		<div class="wrap3">
+		<button type="button" id="youth" name="age" value="youth"><img src="placeholder.png"></button>
+		<label for="youth">Under 18</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="mid" name="age" value="mid"><img src="placeholder.png"></button>
+		<label for="mid">18 - 24</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="older" name="age" value="older"><img src="placeholder.png"></button>
+		<label for="older">Over 24</label>
+		</div>
+		
+		<button type="button" class="nextbutton navbutton" href="#q3"><img src="arrowright.png"></button>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q3">
+		<h1 class="questiontext">Gender:</h1>
+		<fieldset>
+		
+		<button type="button" class="prevbutton navbutton" href="#q2"><img src="arrowleft.png"></button>
+		
+		<div class="wrap3">
+		<button type="button" id="male" name="gender" value="male"><img src="placeholder.png"></button>
+		<label for="male">Male</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="female" name="gender" value="female"><img src="placeholder.png"></button>
+		<label for="female">Female</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="other" name="gender" value="other"><img src="placeholder.png"></button>
+		<label for="other">Other</label>
+		</div>
+		
+		<button type="button" class="nextbutton navbutton" href="#q4"><img src="arrowright.png"></button>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q4">
+		<h1 class="questiontext">Ethnicity:</h1>
+		<fieldset>
+		
+		<button type="button" class="prevbutton navbutton" href="#q3"><img src="arrowleft.png"></button>
+		
+		<div class="wrap3">
+		<button type="button" id="nzeuropean" name="ethnicity" value="nzeuropean"><img src="placeholder.png"></button>
+		<label for="nzeuropean">NZ European</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img src="placeholder.png"></button>
+		<label for="maoripasifika">Maori/Pasifika</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="international" name="ethnicity" value="international"><img src="placeholder.png"></button>
+		<label for="international">International</label>
+		</div>
+		
+		<button type="button" class="nextbutton navbutton" href="#q5"><img src="arrowright.png"></button>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q5">
+	
+	<button type="button" class="prevbutton navbutton" href="#q4"><img src="arrowleft.png"></button>
+		Area of Study:<br>
+		<input type="checkbox" name="studyarea" value="architecture">Architecture
+		<input type="checkbox" name="studyarea" value="artdesign">Art and Design
+		<input type="checkbox" name="studyarea" value="broadcasting">Broadcasting
+		<input type="checkbox" name="studyarea" value="business">Business
+		<input type="checkbox" name="studyarea" value="computing">Computing
+		<input type="checkbox" name="studyarea" value="engineering">Engineering<br>
+		<input type="checkbox" name="studyarea" value="english">English
+		<input type="checkbox" name="studyarea" value="foodhospitality">Food and Hospitality
+		<input type="checkbox" name="studyarea" value="hairbeauty">Hair and Beauty
+		<input type="checkbox" name="studyarea" value="healthscience">Health Science
+		<input type="checkbox" name="studyarea" value="humanities">Humanities
+		<input type="checkbox" name="studyarea" value="music">Music<br>
+		<input type="checkbox" name="studyarea" value="industries">Primary Industries (Agriculture, Horticulture, Transport)
+		<input type="checkbox" name="studyarea" value="sustainability">Sustainability
+		<input type="checkbox" name="studyarea" value="maori">Te Puna Wanaka
+		<input type="checkbox" name="studyarea" value="trades">Trades
+		
+		<button type="button" class="nextbutton navbutton" href="#q6"><img src="arrowright.png"></button>
+	</div>
+
+	<div class="question" id="q6">
+		<h1 class="questiontext">Learning or Health Condition:</h1>
+		<fieldset>
+		
+		<button type="button" class="prevbutton navbutton" href="#q5"><img src="arrowleft.png"></button>
+		
+		<div class="wrap2">
+		<button type="button" id="yes" name="condition" value="yes"><img src="placeholder.png"></button>
+		<label for="yes">Yes</label>
+		</div>
+		
+		<div class="wrap2">
+		<button type="button" id="no" name="condition" value="no"><img src="placeholder.png"></button>
+		<label for="no">No</label>
+		</div>
+		
+		<button type="button" class="nextbutton navbutton" href="#q7"><img src="arrowright.png"></button>
+		
+		</fieldset>
+	</div>
+	
+	<div class="question" id="q7">
+	
+	<button type="button" class="prevbutton navbutton" href="#q6"><img src="arrowleft.png"></button>
+		Campus:<br>
+		<button type="button" name="campus" value="madras">Madras Street</button>
+		<button type="button" name="campus" value="woolston">Woolston</button>
+		<button type="button" name="campus" value="timaru">Timaru</button>
+		<button type="button" name="campus" value="oamaru">Oamaru</button>
+		<button type="button" name="campus" value="ashburton">Ashburton</button>
+		<button type="button" name="campus" value="distance">Distance</button><br>
+		<input type="submit" value="Submit">
+		
+		<button type="button" class="nextbutton navbutton" href="#q7"><img src="arrowright.png"></button>
+	</div>
+
+</form>
+
+<div class="navdots">
+	<ul>
+		<li><button type="button" href="#q1"><span class="tooltiptext">Studying Status</span></button></li>
+		<li><button type="button" href="#q2"></button></li>
+		<li><button type="button" href="#q3"></button></li>
+		<li><button type="button" href="#q4"></button></li>
+		<li><button type="button" href="#q5"></button></li>
+		<li><button type="button" href="#q6"></button></li>
+		<li><button type="button" href="#q7"></button></li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+
+</html>
