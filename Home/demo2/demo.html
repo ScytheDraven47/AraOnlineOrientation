@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">
+<link rel="shortcut icon" href="favicon.ico">
+<title>demo</title>
+<meta name="description" content="Estudio NK. Donde la pasin de un estudio se suma a la estrategia de una agencia."/>
+
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/css.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+</head>
+<body id="home">
+
+<header>
+  <div class="logo">
+  	<a href="demo.html">
+  
+    <img src="img/ara-logo-s2.png" class="salmon"/>
+  	<img src="img/ara-logo-s.png" class="blue"/>
+    </a>
+  </div>
+  <div class="btnMenu"><i></i><i></i><i></i></div>
+  <nav>
+    <div class="botonera">
+        <i></i>
+        <ul>
+          <li><a href="demo.html" class="act">home<i></i></a></li>
+          <li><a href="1.html">1<i></i></a></li>
+          <li><a href="2.html">2<i></i></a></li>
+          <li><a href="3.html">3<i></i></a></li>
+          <li><a href="4.html">4<i></i></a></li>
+		  <li><a href="5.html">5<i></i></a></li>
+		  <li><a href="6.html">6<i></i></a></li>
+        </ul>
+        <i></i>
+    </div>
+  </nav>
+</header>
+<div id="nav_main">
+    <div class="nav-main" data-section="inicio"></div>
+    <div class="nav-main" data-section="slide1"></div>
+    <div class="nav-main" data-section="slide2"></div>
+    <div class="nav-main" data-section="slide3"></div>
+	<div class="nav-main" data-section="slide4"></div>
+    <div class="nav-main" data-section="slide5"></div>
+	<div class="nav-main" data-section="slide6"></div>
+    <div class="nav-main" data-section="slide7"></div>
+</div>
+
+<section id="inicio" class="salmonGlow in" data-rel="#slide1">
+<a href="slide3" target="_blank">
+        	<img src="img/logo-behance.png" class="behance" alt="behance">
+             
+            </a>
+ 
+
+</section>
+
+<section id="slide1" class="blueGlow" data-rel="#slide2">	
+</section>
+
+<section id="slide2" class="salmonGlow" data-rel="#slide3">	
+</section>
+
+
+<section id="slide3" class="blueGlow" data-rel="#slide4">	
+</section>
+
+<section id="slide4" class="salmonGlow" data-rel="#slide5">	
+</section>
+
+
+
+<section id="slide5" class="blueGlow" data-rel="#slide6">	
+</section>
+
+<section id="slide6" class="salmonGlow" data-rel="#slide7">	
+</section>
+
+
+<section id="slide7" class="blueGlow">
+</section>
+
+
+
+
+
+<script src="js/parallax.js"></script>
+<script src="js/js.js"></script>
+<script>
+$(document).ready(function(){
+//PARALLAX
+//if($(window).width() > 768){
+    var scene = document.getElementById('inicio');
+    var scene1 = document.getElementById('slide1');
+    var scene2 = document.getElementById('slide2');
+    var scene3 = document.getElementById('slide3');
+	var scene1 = document.getElementById('slide4');
+    var scene2 = document.getElementById('slide5');
+    var scene3 = document.getElementById('slide6');
+	var scene1 = document.getElementById('slide7');
+
+    var parallax = new Parallax(scene);
+    var parallax = new Parallax(slide1);
+    var parallax = new Parallax(slide2);
+    var parallax = new Parallax(slide3);
+	var parallax = new Parallax(slide4);
+    var parallax = new Parallax(slide5);
+    var parallax = new Parallax(slide6);
+	var parallax = new Parallax(slide7);
+//}
+//CANTIDAD SLIDES
+  var cantSlide = $('.flexManifiesto ul.slides li').length;
+  $('#cant').html('/'+cantSlide);
+  $('.flexSivori').flexslider({
+	animation: "fade"
+  });
+  $('.flexManifiesto').flexslider({
+	animation: "slide"
+  });
+  //HEADER SCROLL
+	$(window).scroll(function(e){
+		var scrol = $(window).scrollTop();
+		var section = $('section').height() - 100;
+		if(scrol >= section && scrol < (section*2)){
+			$('#home header').addClass('headSalmon');
+			$('nav').addClass('navBlue');	
+		}else if(scrol > (section*3)){
+			$('#home header').addClass('headSalmon');
+			$('nav').addClass('navBlue');					
+		}else{
+			$('#home header').removeClass('headSalmon');
+			$('nav').removeClass('navBlue');
+		}
+		navMainScroll()
+	});
+});
+//botoncitos
+navMainScroll()
+
+$(".nav-main").on('click', function(e){
+	e.preventDefault();
+	var newtop = $("#"+$(this).data("section")).offset().top;
+	scrolling=true;
+	$("html,body").stop(true,true).animate({scrollTop:  newtop + "px"}, 300,function(){
+		scrolling=false;
+	});
+});
+function navMainScroll(){	
+	var scrol = $(window).scrollTop();
+	// nav lateral
+	$(".nav-main").each(function(e,i){
+		var sec = $("#"+$(this).data("section"));
+
+		if (!sec.offset()) return
+			if( (scrol+$(window).height()/2) >= sec.offset().top && (sec.offset().top+$(window).height()) > scrol && !sec.hasClass("active")){
+			$(".nav-main").removeClass("active");
+			$(this).addClass("active");
+		}
+	});	
+}
+/*mouseWhell*/
+if($(window).width() > 768){
+
+    var scrol = 0;
+    var handleAvailable = true;
+
+    // function sube(){
+    //     window.onmousewheel = document.onmousewheel = null;
+    //     window.removeEventListener('DOMMouseScroll', wheel, false);
+    //             handleAvailable = true;
+    //     $(window).scroll(function(){
+    //         //alert($('body').scrollTop());
+    //         //alert($('#slide3').offset().top);
+    //         if($('body').scrollTop() < $('#slide3').offset().top){
+    //             scroll=1;
+    //             window.onmousewheel = document.onmousewheel = wheel;
+    //             window.addEventListener('DOMMouseScroll', wheel, false);
+    //             // handle(1);
+    //         }
+    //     });
+    // }
+    function handle(delta) {
+        
+        //window.onmousewheel = document.onmousewheel = wheel;
+        //window.addEventListener('DOMMouseScroll', wheel, false);
+
+        if(handleAvailable == true){
+        
+            if (delta < 0){ 
+                console.log(scrol);
+                handleAvailable = false;
+
+                if(scrol == 0){
+                    playSection('slide1', 0);
+                    scrol = 1;
+
+                }else if(scrol == 1){
+                    playSection('slide2', 0);
+                    scrol = 2;
+
+                }else if(scrol == 2){
+                    playSection('slide3', 0);
+                    scrol = 3;
+
+                }else if(scrol == 3){
+                    playSection('slide3', 0);
+                    //window.onmousewheel = document.onmousewheel = null;
+                    //window.removeEventListener('DOMMouseScroll', wheel, false);
+                   // sube();
+                    scrol = 4;  
+                }else if(scrol == 4){
+                    playSection('slide4', 0);
+                    scrol = 5;  
+                }else if(scrol == 5){
+                    playSection('slide5', 0);
+                    scrol = 6;
+
+                }else if(scrol == 6){
+                    playSection('slide6', 0);
+                    scrol = 7;
+
+                }else if(scrol == 7){
+                    playSection('slide7', 0);
+                    scrol = 8;
+
+                }else if(scrol == 8){
+                    playSection('footer', 0);
+                    scrol = 9;
+
+                }           
+            }
+            else if(delta > 0){
+                console.log(scrol);
+                handleAvailable = false;
+
+                if(scrol == 8){
+                    //playSection('slide3', 350);
+                    scrol = 7;
+                }else if(scrol == 7){
+                    playSection('slide7', 0);
+                    scrol = 6;
+                }else if(scrol == 6){
+                    playSection('slide6', 0);
+                    scrol = 5;
+                }else if(scrol == 5){
+                    playSection('slide5', 0);
+                    scrol = 4;
+                }else if(scrol == 4){
+                    playSection('slide4', 0);
+                    scrol = 3;
+                }else if(scrol == 3){
+                    playSection('slide3', 0);
+                    scrol = 2;
+                }else if(scrol == 2){
+                    playSection('slide2', 0);
+                    scrol = 1;
+                }else if(scrol == 1){
+                    playSection('slide1', 0);
+                    scrol = 0;
+                } else if(scrol == 0){
+                    playSection('inicio', 0);
+                    scrol = 0;
+                }
+            }
+        }
+    }
+
+    function playSection(section, x){
+        
+        $('html, body').animate({scrollTop: $('#'+section).offset().top + x}, 300);
+        setTimeout(function(){
+            handleAvailable = true; // una vez que termina el video habilito el scroll de nuevo
+        }, 1000);
+    }
+
+    function wheel(event){
+            var delta = 0;
+            if (!event)
+                    event = window.event;
+            if (event.wheelDelta) {
+                    delta = event.wheelDelta/120;
+            } else if (event.detail) { 
+                    delta = -event.detail/7;
+            }
+            if (delta)
+                    handle(delta);
+           
+            if (event.preventDefault)
+                    event.preventDefault();
+            event.returnValue = false;
+    }
+    if (window.addEventListener)
+            /** DOMMouseScroll is for mozilla. */
+            window.addEventListener('DOMMouseScroll', wheel, false);
+    /** IE/Opera. */
+    window.onmousewheel = document.onmousewheel = wheel;
+
+}
+</script>
+
+</body>
+</html>

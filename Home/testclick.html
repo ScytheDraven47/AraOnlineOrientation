@@ -1,0 +1,36 @@
+<html>
+  <head>
+  <style type="text/css">
+	nav {position:fixed;top:0;}
+#seniorExecutive {margin:500px 0 0 0}
+#mba {margin:500px 0 0 0}
+#experiencedHire {margin:500px 0 0 0}
+#graduate {margin:500px 0 0 0}
+#intern {margin:500px 0 0 0}
+
+		
+		
+		
+	</style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      function goToByScroll(id){
+        $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+      }
+    </script>      
+  </head>
+  <body>
+    <nav><ul>
+      <li><a href="javascript:void(0)" onclick="goToByScroll('seniorExecutive')">Senior Executive</a></li>
+      <li><a href="javascript:void(0)" onclick="goToByScroll('mba')">MBA</a></li>
+      <li><a href="javascript:void(0)" onclick="goToByScroll('experiencedHire')">Experienced Hire</a></li>
+      <li><a href="javascript:void(0)" onclick="goToByScroll('graduate')">Graduate</a></li>
+      <li><a href="javascript:void(0)" onclick="goToByScroll('intern')">Intern</a></li>
+      </ul></nav>
+    <div id="seniorExecutive">Senior Executive</div>
+    <div id="mba">MBA</div>
+    <div id="experiencedHire">Experienced Hire</div>
+    <div id="graduate">Graduate</div>
+    <div id="intern">Intern</div>
+  </body>
+</html>
