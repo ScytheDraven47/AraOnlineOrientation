@@ -1,19 +1,27 @@
 <html>
 
 <head>
-
 <style>
 body {
 	padding: 0;
 	margin: 0;
+	overflow-x: hidden;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.parent {
-	width: 700%;
+#theform {
+	margin: 0;
 }
 .question {
     height: 100%;
-    width: calc(100% / 7);
-	float:left;
+    width: 100%;
+	position: absolute;
+	visibility: hidden;
+	-webkit-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.activeslide {
+	-webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 fieldset {
 	width: 100%;
@@ -21,7 +29,12 @@ fieldset {
 	margin: auto;
 	border: none;
 }
+.studyfield {
+	width: calc(100% - 10em);
+	margin: auto;
+}
 fieldset button {
+	cursor: pointer;
 	padding: 0;
 	border: 2px solid black;
 	width: 100%;
@@ -32,140 +45,104 @@ button img {
 .wrap3 {
 	width: 20%;
 	float: left;
-	margin-left: calc(calc(40% - 6em) / 4);
+	margin-left: 10%;
 }
 .wrap2 {
 	width: 25%;
 	float: left;
-	margin-left: calc(calc(50% - 6em) / 3);
+	margin-left: calc(50% / 3);
 }
-.wrap3 button, .wrap2 button, .wrap3 label, .wrap2 label {
+.wrap4 {
+	width: 10%;
+	float: left;
+	margin-left: calc(60% / 5);
+}
+.wrap3 button, .wrap2 button, .wrap4 button, .wrap3 label, .wrap2 label, .wrap4 label {
 	display: block;
 }
 .wrap3 label, .wrap2 label {
 	text-align: center;
 	margin: 1em;
 }
+.wrap4 label {
+	text-align: center;
+	margin: 0.5em;
+	font-size: 75%;
+}
 .questiontext {
 	text-align: center;
-	margin-top: 20%;
+	margin-top: 0;
 }
-.navbutton {
-	width: 3em;
-	height: 3em;
-	margin-top: calc(10% - 1.5em);
-	border: none;
-	background-color: Transparent;
-	outline:none;
-}
-.prevbutton {
-	float: left;
-	margin-left: 1em;
-}
-#q1 .prevbutton {
-	visibility: hidden;
-}
-.nextbutton {
-	float: right;
-	margin-right: 1em;
-}
-#q7 .nextbutton {
-	visibility: hidden;
-}
-
-.navdots {
+#navdots {
+	width: 19.5em;
+	bottom: 2em;
 	position: fixed;
-	top: 95%;
-	left: calc(50% - 10.5em);
+	margin-left: calc(50% - 9.5em);
 }
-.navdots ul {
-	position: relative;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	cursor: default;
-	width: 21em;
-}
-.navdots li {
-	position: relative;
-	display: block;
-	float: left;
-	margin: 0 1em;
-	width: 1em;
-	height: 1em;
-	cursor: pointer;
-}
-.navdots li button {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	outline: none;
+.dots {
+	height: 2em;
+	width: 2em;
 	border-radius: 50%;
+	margin: 0 0.5em;
 	border: none;
 	cursor: pointer;
-	position: absolute;
+	outline: none;
+}
+.dots:hover {
+	background-color: red;
+}
+.activedot {
 	background-color: blue;
-	transition: background 0.5s;
 }
-.navdots li button:hover, .navdots li button:focus {
-	background-color: purple;
-}
-
 .tooltiptext {
 	visibility: hidden;
+	position: absolute;
+	width: 12.5em;
+	text-align: center;
+    padding: 5px 0;
+	top: -2.5em;
+	margin-left: -7.5em;
 }
-.navdots li button:hover .tooltiptext {
+.dots:hover + .tooltiptext {
 	visibility: visible;
 }
+.topposition {
+	height: 20%;
+}
+#navbuttons {
+	position: fixed;
+	bottom: 1em;
+	width: 100%;
+}
+.navbutton {
+	width: 4em;
+	height: 4em;
+	border: none;
+	background-color: Transparent;
+	outline: none;
+	cursor: pointer;
+}
+#prevbutton {
+	margin-left: 1em;
+}
+#nextbutton {
+	margin-left: calc(100% - 10em);
+}
 </style>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript">
-$(function() {
-	$('.question button').bind('click',function(event){
-		var $anchor = $(this);
-		
-		$('html, body').stop().animate({
-			scrollLeft: $($anchor.attr('href')).offset().left
-		}, 1000);
-		
-
-		event.preventDefault();
-	});
-});
-
-$(function() {
-	$('.navdots button').bind('click',function(event){
-		var $anchor = $(this);
-		
-		$('html, body').stop().animate({
-			scrollLeft: $($anchor.attr('href')).offset().left
-		}, 1000);
-		
-
-		event.preventDefault();
-	});
-});
-</script>
 
 </head>
 
 <body>
 
-<div class="parent">
-
-<form action="">
+<form id="theform" action="">
 
 	<div class="question" id="q1">
+		<div class="topposition"></div>
 		<h1 class="questiontext">Studying Status:</h1>
 		<fieldset>
 		
-		<button type="button" class="prevbutton navbutton" href="#q1"><img src="arrowleft.png"></button>
-		
 		<div class="wrap3">
-		<button type="button" id="interested" name="status" value="interested"><img src="placeholder.png"></button>
+		<button type="button" id="interested" name="status" value="interested" ><img src="placeholder.png"></button>
 		<label for="interested">Interested</label>
 		</div>
 		
@@ -179,17 +156,14 @@ $(function() {
 		<label for="returning">Returning</label>
 		</div>
 		
-		<button type="button" class="nextbutton navbutton" href="#q2"><img src="arrowright.png"></button>
-		
 		</fieldset>
 		
 	</div>
 
 	<div class="question" id="q2">
+		<div class="topposition"></div>
 		<h1 class="questiontext">Age:</h1>
 		<fieldset>
-		
-		<button type="button" class="prevbutton navbutton" href="#q1"><img src="arrowleft.png"></button>
 		
 		<div class="wrap3">
 		<button type="button" id="youth" name="age" value="youth"><img src="placeholder.png"></button>
@@ -206,16 +180,13 @@ $(function() {
 		<label for="older">Over 24</label>
 		</div>
 		
-		<button type="button" class="nextbutton navbutton" href="#q3"><img src="arrowright.png"></button>
-		
 		</fieldset>
 	</div>
 
 	<div class="question" id="q3">
+		<div class="topposition"></div>
 		<h1 class="questiontext">Gender:</h1>
 		<fieldset>
-		
-		<button type="button" class="prevbutton navbutton" href="#q2"><img src="arrowleft.png"></button>
 		
 		<div class="wrap3">
 		<button type="button" id="male" name="gender" value="male"><img src="placeholder.png"></button>
@@ -232,16 +203,13 @@ $(function() {
 		<label for="other">Other</label>
 		</div>
 		
-		<button type="button" class="nextbutton navbutton" href="#q4"><img src="arrowright.png"></button>
-		
 		</fieldset>
 	</div>
 
 	<div class="question" id="q4">
+		<div class="topposition"></div>
 		<h1 class="questiontext">Ethnicity:</h1>
 		<fieldset>
-		
-		<button type="button" class="prevbutton navbutton" href="#q3"><img src="arrowleft.png"></button>
 		
 		<div class="wrap3">
 		<button type="button" id="nzeuropean" name="ethnicity" value="nzeuropean"><img src="placeholder.png"></button>
@@ -258,40 +226,117 @@ $(function() {
 		<label for="international">International</label>
 		</div>
 		
-		<button type="button" class="nextbutton navbutton" href="#q5"><img src="arrowright.png"></button>
-		
 		</fieldset>
 	</div>
 
 	<div class="question" id="q5">
-	
-	<button type="button" class="prevbutton navbutton" href="#q4"><img src="arrowleft.png"></button>
-		Area of Study:<br>
-		<input type="checkbox" name="studyarea" value="architecture">Architecture
-		<input type="checkbox" name="studyarea" value="artdesign">Art and Design
-		<input type="checkbox" name="studyarea" value="broadcasting">Broadcasting
-		<input type="checkbox" name="studyarea" value="business">Business
-		<input type="checkbox" name="studyarea" value="computing">Computing
-		<input type="checkbox" name="studyarea" value="engineering">Engineering<br>
-		<input type="checkbox" name="studyarea" value="english">English
-		<input type="checkbox" name="studyarea" value="foodhospitality">Food and Hospitality
-		<input type="checkbox" name="studyarea" value="hairbeauty">Hair and Beauty
-		<input type="checkbox" name="studyarea" value="healthscience">Health Science
-		<input type="checkbox" name="studyarea" value="humanities">Humanities
-		<input type="checkbox" name="studyarea" value="music">Music<br>
-		<input type="checkbox" name="studyarea" value="industries">Primary Industries (Agriculture, Horticulture, Transport)
-		<input type="checkbox" name="studyarea" value="sustainability">Sustainability
-		<input type="checkbox" name="studyarea" value="maori">Te Puna Wanaka
-		<input type="checkbox" name="studyarea" value="trades">Trades
+		<div class="topposition"></div>
+		<h1 class="questiontext">Area of Study:</h1>
+		<fieldset>
 		
-		<button type="button" class="nextbutton navbutton" href="#q6"><img src="arrowright.png"></button>
+		<fieldset class="studyfield">
+		
+		<div class="wrap4">
+		<button type="button" id="architecture" name="studyarea" value="architecture"><img src="placeholder.png"></button>
+		<label for="architecture">Architecture</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="artdesign" name="studyarea" value="artdesign"><img src="placeholder.png"></button>
+		<label for="artdesign">Art and Design</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="broadcasting" name="studyarea" value="broadcasting"><img src="placeholder.png"></button>
+		<label for="broadcasting">Broadcasting</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="business" name="studyarea" value="business"><img src="placeholder.png"></button>
+		<label for="business">Business</label>
+		</div>
+		
+		</fieldset>
+		
+		<fieldset class="studyfield">
+		
+		<div class="wrap4">
+		<button type="button" id="computing" name="studyarea" value="computing"><img src="placeholder.png"></button>
+		<label for="computing">Computing</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="engineering" name="studyarea" value="engineering"><img src="placeholder.png"></button>
+		<label for="engineering">Engineering</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="english" name="studyarea" value="english"><img src="placeholder.png"></button>
+		<label for="english">English</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="foodhospitality" name="studyarea" value="foodhospitality"><img src="placeholder.png"></button>
+		<label for="foodhospitality">Food and Hospitality</label>
+		</div>
+		
+		</fieldset>
+		
+		<fieldset class="studyfield">
+		
+		<div class="wrap4">
+		<button type="button" id="hairbeauty" name="studyarea" value="hairbeauty"><img src="placeholder.png"></button>
+		<label for="hairbeauty">Hair and Beauty</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="healthscience" name="studyarea" value="healthscience"><img src="placeholder.png"></button>
+		<label for="healthscience">Health Science</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="humanities" name="studyarea" value="humanities"><img src="placeholder.png"></button>
+		<label for="humanities">Humanities</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="music" name="studyarea" value="music"><img src="placeholder.png"></button>
+		<label for="music">Music</label>
+		</div>
+		
+		</fieldset>
+		
+		<fieldset class="studyfield">
+		
+		<div class="wrap4">
+		<button type="button" id="industries" name="studyarea" value="industries"><img src="placeholder.png"></button>
+		<label for="industries">Primary Industries</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="sustainability" name="studyarea" value="sustainability"><img src="placeholder.png"></button>
+		<label for="sustainability">Sustainability</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="maori" name="studyarea" value="maori"><img src="placeholder.png"></button>
+		<label for="maori">Te Puna Wanaka</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="trades" name="studyarea" value="trades"><img src="placeholder.png"></button>
+		<label for="trades">Trades</label>
+		</div>
+		
+		</fieldset>
+		
+		</fieldset>
 	</div>
 
 	<div class="question" id="q6">
+		<div class="topposition"></div>
 		<h1 class="questiontext">Learning or Health Condition:</h1>
 		<fieldset>
-		
-		<button type="button" class="prevbutton navbutton" href="#q5"><img src="arrowleft.png"></button>
 		
 		<div class="wrap2">
 		<button type="button" id="yes" name="condition" value="yes"><img src="placeholder.png"></button>
@@ -303,14 +348,13 @@ $(function() {
 		<label for="no">No</label>
 		</div>
 		
-		<button type="button" class="nextbutton navbutton" href="#q7"><img src="arrowright.png"></button>
-		
 		</fieldset>
 	</div>
 	
 	<div class="question" id="q7">
 	
-	<button type="button" class="prevbutton navbutton" href="#q6"><img src="arrowleft.png"></button>
+	<div class="topposition"></div>
+
 		Campus:<br>
 		<button type="button" name="campus" value="madras">Madras Street</button>
 		<button type="button" name="campus" value="woolston">Woolston</button>
@@ -319,25 +363,65 @@ $(function() {
 		<button type="button" name="campus" value="ashburton">Ashburton</button>
 		<button type="button" name="campus" value="distance">Distance</button><br>
 		<input type="submit" value="Submit">
-		
-		<button type="button" class="nextbutton navbutton" href="#q7"><img src="arrowright.png"></button>
-	</div>
 
+	</div>
+	
 </form>
 
-<div class="navdots">
-	<ul>
-		<li><button type="button" href="#q1"><span class="tooltiptext">Studying Status</span></button></li>
-		<li><button type="button" href="#q2"></button></li>
-		<li><button type="button" href="#q3"></button></li>
-		<li><button type="button" href="#q4"></button></li>
-		<li><button type="button" href="#q5"></button></li>
-		<li><button type="button" href="#q6"></button></li>
-		<li><button type="button" href="#q7"></button></li>
-	</ul>
-</div>
+<div id="navbuttons">
+
+<button type="button" id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="arrowleft.png"></button>
+<button type="button" id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="arrowright.png"></button>
 
 </div>
+
+<div id="navdots">
+	<button class="dots" onclick="currentDiv(1)"></button><span class="tooltiptext">Studying Status</span>
+	<button class="dots" onclick="currentDiv(2)"></button><span class="tooltiptext">Age</span>
+	<button class="dots" onclick="currentDiv(3)"></button><span class="tooltiptext">Gender</span>
+	<button class="dots" onclick="currentDiv(4)"></button><span class="tooltiptext">Ethnicity</span>
+	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Area of Study</span>
+	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Learning/Health Condition</span>
+	<button class="dots" onclick="currentDiv(7)"></button><span class="tooltiptext">Campus</span>
+</div>
+
+<script type="text/javascript">
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex  += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("question");
+	var dots = document.getElementsByClassName("dots");
+	var prevbut = document.getElementById("prevbutton");
+	var nextbut = document.getElementById("nextbutton");
+	if (n == 1) {prevbut.style.visibility = "hidden"}
+	else {prevbut.style.visibility = "visible"};
+	if (n == 7) {nextbut.style.visibility = "hidden"}
+	else {nextbut.style.visibility = "visible"}
+    if  (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex =  x.length} ;
+    for (i = 0; i < x.length; i++) {
+		x[i].className = x[i].className.replace(" activeslide", "");
+		x[i].style.opacity = "0";
+    }
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" activedot", "");
+	}
+	x[slideIndex-1].className += " activeslide";
+	x[slideIndex-1].style.visibility = "visible";
+	x[slideIndex-1].style.opacity = "1";
+	dots[slideIndex-1].className += " activedot";
+}
+</script>
 
 </body>
 
