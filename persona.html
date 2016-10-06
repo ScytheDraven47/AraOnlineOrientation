@@ -1,12 +1,12 @@
 <html>
-
 <head>
 <style>
 body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+	background-color: #d0e9de;
 }
 #theform {
 	margin: 0;
@@ -16,6 +16,8 @@ body {
     width: 100%;
 	position: absolute;
 	visibility: hidden;
+	display: table;
+    overflow: hidden;
 	-webkit-transition-delay: 0s;
     transition-delay: 0s;
 	-webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
@@ -30,6 +32,17 @@ fieldset {
 	padding: 0;
 	margin: auto;
 	border: none;
+}
+.questionfield {
+	position: absolute;
+    top: calc(50% - 2em);
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.questionfield fieldset {
+	width: 60%;
+	margin: auto;
 }
 .studyfield {
 	width: calc(100% - 10em);
@@ -50,19 +63,25 @@ button img {
 	margin-left: 10%;
 }
 .wrap2 {
-	width: 25%;
+	width: 20%;
 	float: left;
-	margin-left: calc(50% / 3);
+	margin-left: calc(60% / 3);
 }
 .wrap4 {
-	width: 10%;
+	width: 15%;
 	float: left;
-	margin-left: calc(60% / 5);
+	margin-left: calc(40% / 5);
+	margin-bottom: 1em;
 }
-.wrap3 button, .wrap2 button, .wrap4 button, .wrap3 label, .wrap2 label, .wrap4 label {
+.wrap5 {
+	width: 30%;
+	float: left;
+	margin-left: calc(40% / 3);
+}
+.wrap3 button, .wrap2 button, .wrap4 button, .wrap5 button, .wrap3 label, .wrap2 label, .wrap4 label, .wrap5 label {
 	display: block;
 }
-.wrap3 label, .wrap2 label {
+.wrap3 label, .wrap2 label, .wrap5 label {
 	text-align: center;
 	margin: 1em;
 }
@@ -73,11 +92,11 @@ button img {
 }
 .questiontext {
 	text-align: center;
-	margin-top: 0;
+	margin-top: 0;	
 }
 #navdots {
 	width: 19.5em;
-	bottom: 2em;
+	bottom: 2.5em;
 	position: fixed;
 	margin-left: calc(50% - 9.5em);
 }
@@ -89,12 +108,13 @@ button img {
 	border: none;
 	cursor: pointer;
 	outline: none;
+	background-color: #acdee4;
 }
 .dots:hover {
-	background-color: red;
+	background-color: #33b789;
 }
 .activedot {
-	background-color: blue;
+	background-color: #a03590;
 }
 .tooltiptext {
 	visibility: hidden;
@@ -108,12 +128,9 @@ button img {
 .dots:hover + .tooltiptext {
 	visibility: visible;
 }
-.topposition {
-	height: 20%;
-}
 #navbuttons {
 	position: fixed;
-	bottom: 1em;
+	bottom: 1.5em;
 	width: 100%;
 }
 .navbutton {
@@ -125,23 +142,122 @@ button img {
 	cursor: pointer;
 }
 #prevbutton {
-	margin-left: 1em;
+	margin-left: 1.5em;
 }
 #nextbutton {
-	margin-left: calc(100% - 10em);
+	margin-left: calc(100% - 11.5em);
+}
+#exit {
+	position: fixed;
+	top: 1.5em;
+	right: 1.5em;
+}
+#exitbutton {
+	border: none;
+	background-color: Transparent;
+	cursor: pointer;
+	width: 3em;
+	height: 3em;
+	padding: 0;
+	outline: none;
+}
+#exitbutton img {
+	width: 100%;
+}
+#logo {
+	display: block;
+	margin: auto;
+	width: 40%;
+}
+#welcomebuttons {
+	position: absolute;
+	bottom: 3em;
+	width: 20.5em;
+	margin-left: calc(50% - 10.25em);
+}
+.welcomebut {
+	width: 8em;
+	padding: 1.2em;
+	margin: 1em;
+	background-color: #acdee4;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 1em;
+	font-size: 100%;
+}
+#submitbutton {
+	position: absolute;
+	left: calc(50% - 5em);
+	bottom: -7em;
+}
+.container {
+	width: 480px;
+	height: 480px;
+	overflow: hidden;
+	margin: auto;
+}
+.slider {
+	width: 2880px;
+	height: 100%;
+}
+.slide {
+	width: 480px;
+	height: 100%;
+	float: left;
+}
+.slidebutton {
+	position: absolute;
+	top: 50%;
+}
+.slidebutton img {
+	width: 3em;
+	height: 3em;
+}
+.nextslidebutton {
+	left: calc(50% + 280px);
+}
+.previousslidebutton {
+	right: calc(50% + 280px);
 }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+<script type="text/javascript">  
+$(function() {  
+	$('.nextslidebutton').bind('click',function(event){  
+		var leftPos = $('.container').scrollLeft();
+		$('.container').stop().animate({
+			scrollLeft: (leftPos + 480)
+		}, 500);
+	});
+});
+$(function() {  
+	$('.previousslidebutton').bind('click',function(event){  
+		var leftPos = $('.container').scrollLeft();
+		$('.container').stop().animate({
+			scrollLeft: (leftPos - 480)
+		}, 500);
+	});
+});
+</script>
 </head>
-
 <body>
 
 <form id="theform" action="">
-
+	<div class="question" id="q0">
+		
+		<fieldset class="questionfield">
+		
+		<img id="logo" src="aralogo.png">
+		
+		</fieldset>
+		
+	</div>
+	
 	<div class="question" id="q1">
-		<div class="topposition"></div>
+		
+		<fieldset class="questionfield">
 		<h1 class="questiontext">Studying Status:</h1>
-		<fieldset>
 		
 		<div class="wrap3">
 		<button type="button" id="interested" name="status" value="interested" ><img src="placeholder.png"></button>
@@ -163,9 +279,9 @@ button img {
 	</div>
 
 	<div class="question" id="q2">
-		<div class="topposition"></div>
+
+		<fieldset class="questionfield">
 		<h1 class="questiontext">Age:</h1>
-		<fieldset>
 		
 		<div class="wrap3">
 		<button type="button" id="youth" name="age" value="youth"><img src="placeholder.png"></button>
@@ -186,9 +302,9 @@ button img {
 	</div>
 
 	<div class="question" id="q3">
-		<div class="topposition"></div>
+		
+		<fieldset class="questionfield">
 		<h1 class="questiontext">Gender:</h1>
-		<fieldset>
 		
 		<div class="wrap3">
 		<button type="button" id="male" name="gender" value="male"><img src="placeholder.png"></button>
@@ -209,9 +325,9 @@ button img {
 	</div>
 
 	<div class="question" id="q4">
-		<div class="topposition"></div>
+
+		<fieldset class="questionfield">
 		<h1 class="questiontext">Ethnicity:</h1>
-		<fieldset>
 		
 		<div class="wrap3">
 		<button type="button" id="nzeuropean" name="ethnicity" value="nzeuropean"><img src="placeholder.png"></button>
@@ -232,30 +348,26 @@ button img {
 	</div>
 
 	<div class="question" id="q5">
-		<div class="topposition"></div>
+
+		<fieldset class="questionfield">
 		<h1 class="questiontext">Area of Study:</h1>
-		<fieldset>
 		
 		<fieldset class="studyfield">
 		
 		<div class="wrap4">
 		<button type="button" id="architecture" name="studyarea" value="architecture"><img src="placeholder.png"></button>
-		<label for="architecture">Architecture</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="artdesign" name="studyarea" value="artdesign"><img src="placeholder.png"></button>
-		<label for="artdesign">Art and Design</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="broadcasting" name="studyarea" value="broadcasting"><img src="placeholder.png"></button>
-		<label for="broadcasting">Broadcasting</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="business" name="studyarea" value="business"><img src="placeholder.png"></button>
-		<label for="business">Business</label>
 		</div>
 		
 		</fieldset>
@@ -264,22 +376,18 @@ button img {
 		
 		<div class="wrap4">
 		<button type="button" id="computing" name="studyarea" value="computing"><img src="placeholder.png"></button>
-		<label for="computing">Computing</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="engineering" name="studyarea" value="engineering"><img src="placeholder.png"></button>
-		<label for="engineering">Engineering</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="english" name="studyarea" value="english"><img src="placeholder.png"></button>
-		<label for="english">English</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="foodhospitality" name="studyarea" value="foodhospitality"><img src="placeholder.png"></button>
-		<label for="foodhospitality">Food and Hospitality</label>
 		</div>
 		
 		</fieldset>
@@ -288,22 +396,18 @@ button img {
 		
 		<div class="wrap4">
 		<button type="button" id="hairbeauty" name="studyarea" value="hairbeauty"><img src="placeholder.png"></button>
-		<label for="hairbeauty">Hair and Beauty</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="healthscience" name="studyarea" value="healthscience"><img src="placeholder.png"></button>
-		<label for="healthscience">Health Science</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="humanities" name="studyarea" value="humanities"><img src="placeholder.png"></button>
-		<label for="humanities">Humanities</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="music" name="studyarea" value="music"><img src="placeholder.png"></button>
-		<label for="music">Music</label>
 		</div>
 		
 		</fieldset>
@@ -312,22 +416,18 @@ button img {
 		
 		<div class="wrap4">
 		<button type="button" id="industries" name="studyarea" value="industries"><img src="placeholder.png"></button>
-		<label for="industries">Primary Industries</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="sustainability" name="studyarea" value="sustainability"><img src="placeholder.png"></button>
-		<label for="sustainability">Sustainability</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="maori" name="studyarea" value="maori"><img src="placeholder.png"></button>
-		<label for="maori">Te Puna Wanaka</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" id="trades" name="studyarea" value="trades"><img src="placeholder.png"></button>
-		<label for="trades">Trades</label>
 		</div>
 		
 		</fieldset>
@@ -336,56 +436,99 @@ button img {
 	</div>
 
 	<div class="question" id="q6">
-		<div class="topposition"></div>
-		<h1 class="questiontext">Learning or Health Condition:</h1>
-		<fieldset>
+
+		<fieldset class="questionfield">
 		
-		<div class="wrap2">
-		<button type="button" id="yes" name="condition" value="yes"><img src="placeholder.png"></button>
+		<fieldset>
+		<h1 class="questiontext questiontextside">Learning or Health Condition:</h1>
+		
+		<div class="wrap5">
+		<button type="button" id="yes" name="condition" value="conditionyes"><img src="placeholder.png"></button>
 		<label for="yes">Yes</label>
 		</div>
 		
-		<div class="wrap2">
-		<button type="button" id="no" name="condition" value="no"><img src="placeholder.png"></button>
+		<div class="wrap5">
+		<button type="button" id="no" name="condition" value="conditionno"><img src="placeholder.png"></button>
 		<label for="no">No</label>
 		</div>
+		
+		</fieldset>
+		
+		<fieldset>
+		<h1 class="questiontext questiontextside">Children:</h1>
+		
+		<div class="wrap5">
+		<button type="button" id="yes" name="condition" value="childrenyes"><img src="placeholder.png"></button>
+		<label for="yes">Yes</label>
+		</div>
+		
+		<div class="wrap5">
+		<button type="button" id="no" name="condition" value="childrenno"><img src="placeholder.png"></button>
+		<label for="no">No</label>
+		</div>
+		</fieldset>
 		
 		</fieldset>
 	</div>
 	
 	<div class="question" id="q7">
-	
-	<div class="topposition"></div>
+		
+		<fieldset class="questionfield">
+		<h1 class="questiontext">Campus:</h1>
+		<div class="container">
+		<div class="slider">
+		
+			<img class="slide" id="slide1" src="placeholder.png"/>
+			<img class="slide" id="slide2" src="placeholder.png"/>
+			<img class="slide" id="slide3" src="placeholder.png"/>
+			<img class="slide" id="slide4" src="placeholder.png"/>
+			<img class="slide" id="slide5" src="placeholder.png"/>
+			<img class="slide" id="slide6" src="placeholder.png"/>
 
-		Campus:<br>
-		<button type="button" name="campus" value="madras">Madras Street</button>
-		<button type="button" name="campus" value="woolston">Woolston</button>
-		<button type="button" name="campus" value="timaru">Timaru</button>
-		<button type="button" name="campus" value="oamaru">Oamaru</button>
-		<button type="button" name="campus" value="ashburton">Ashburton</button>
-		<button type="button" name="campus" value="distance">Distance</button><br>
-		<input type="submit" value="Submit">
+		</div>
+		</div>
+		<input class="welcomebut" id="submitbutton" type="submit" value="Select">
+		<span type="button" class="navbutton slidebutton previousslidebutton"><img src="arrowleft.png"></span>
+		<span type="button" class="navbutton slidebutton nextslidebutton"><img src="arrowright.png"></span>
+		</fieldset>
+		
+		
 
 	</div>
 	
 </form>
 
+<div id="exit">
+
+<button id="exitbutton"><img src="exit.png"></button>
+
+</div>
+
 <div id="navbuttons">
 
-<button type="button" id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="arrowleft.png"></button>
-<button type="button" id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="arrowright.png"></button>
+<button id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="arrowleft.png"></button>
+<button id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="arrowright.png"></button>
 
 </div>
 
 <div id="navdots">
-	<button class="dots" onclick="currentDiv(1)"></button><span class="tooltiptext">Studying Status</span>
-	<button class="dots" onclick="currentDiv(2)"></button><span class="tooltiptext">Age</span>
-	<button class="dots" onclick="currentDiv(3)"></button><span class="tooltiptext">Gender</span>
-	<button class="dots" onclick="currentDiv(4)"></button><span class="tooltiptext">Ethnicity</span>
-	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Area of Study</span>
-	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Learning/Health Condition</span>
-	<button class="dots" onclick="currentDiv(7)"></button><span class="tooltiptext">Campus</span>
+	<button class="dots" onclick="currentDiv(2)"></button><span class="tooltiptext">Studying Status</span>
+	<button class="dots" onclick="currentDiv(3)"></button><span class="tooltiptext">Age</span>
+	<button class="dots" onclick="currentDiv(4)"></button><span class="tooltiptext">Gender</span>
+	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Ethnicity</span>
+	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Area of Study</span>
+	<button class="dots" onclick="currentDiv(7)"></button><span class="tooltiptext">Extras</span>
+	<button class="dots" onclick="currentDiv(8)"></button><span class="tooltiptext">Campus</span>
 </div>
+
+<div id="welcomebuttons">
+
+<button class="welcomebut" onclick="currentDiv(2)">Begin</button>
+<button class="welcomebut">Skip</button>
+
+</div>
+
+<div id="toplogo"></div>
 
 <script type="text/javascript">
 var slideIndex = 1;
@@ -394,6 +537,15 @@ showDivs(slideIndex);
 function plusDivs(n) {
     showDivs(slideIndex  += n);
 }
+
+window.addEventListener('wheel', function(e) {
+	if (e.deltaY < 0) {
+		plusDivs(-1);
+	}
+	if (e.deltaY > 0) {
+		plusDivs(+1);
+	}
+});
 
 function currentDiv(n) {
   showDivs(slideIndex = n);
@@ -405,12 +557,24 @@ function showDivs(n) {
 	var dots = document.getElementsByClassName("dots");
 	var prevbut = document.getElementById("prevbutton");
 	var nextbut = document.getElementById("nextbutton");
-	if (n == 1) {prevbut.style.visibility = "hidden"}
+	var navbuts = document.getElementById("navbuttons");
+	var navdots = document.getElementById("navdots");
+	var welbuts = document.getElementById("welcomebuttons");
+	var exit = document.getElementById("exit");
+	if (n <= 1) {navbuts.style.display = "none"}
+	else {navbuts.style.display = "inline"};
+	if (n <= 1) {navdots.style.display = "none"}
+	else {navdots.style.display = "inline"};
+	if (n <= 1) {welbuts.style.display = "inline"}
+	else {welbuts.style.display = "none"};
+	if (n <= 1) {exit.style.display = "none"}
+	else {exit.style.display = "inline"};
+	if (n == 2) {prevbut.style.visibility = "hidden"}
 	else {prevbut.style.visibility = "visible"};
-	if (n == 7) {nextbut.style.visibility = "hidden"}
-	else {nextbut.style.visibility = "visible"}
-    if  (n > x.length) {slideIndex = 1} 
-    if (n < 1) {slideIndex =  x.length} ;
+	if (n >= 8) {nextbut.style.visibility = "hidden"}
+	else {nextbut.style.visibility = "visible"};
+    if (n < 1) {slideIndex = 1};
+	if (n > 8) {slideIndex = 8};
     for (i = 0; i < x.length; i++) {
 		x[i].className = x[i].className.replace(" activeslide", "");
 		x[i].style.visibility = "hidden";
@@ -422,9 +586,12 @@ function showDivs(n) {
 	x[slideIndex-1].className += " activeslide";
 	x[slideIndex-1].style.visibility = "visible";
 	x[slideIndex-1].style.opacity = "1";
-	dots[slideIndex-1].className += " activedot";
+	if (slideIndex > 1) {
+		dots[slideIndex-2].className += " activedot"
+	}
 }
 </script>
+
 
 </body>
 
