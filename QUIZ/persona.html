@@ -1,0 +1,672 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Ara Online Orientation</title>
+<style>
+@font-face {
+    font-family: "My Custom Font";
+    src: url("font/STAGSANS-LIGHT.OTF") format("truetype");
+}
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: "My Custom Font", Verdana, Tahoma;
+	background-color: #d0e9de;
+}
+a {
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 120%;
+	margin: 1em;
+}
+a:hover {
+	color: #33b789;
+}
+#theform {
+	margin: 0;
+}
+.question {
+    height: 100%;
+    width: 1200px;
+	left: calc(calc(100% - 1200px) / 2);
+	position: absolute;
+	visibility: hidden;
+	display: table;
+    overflow: hidden;
+	-webkit-transition-delay: 0s;
+    transition-delay: 0s;
+	-webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+#q7 {
+	width: 100%;
+	left: 0;
+	background-image: url(img/background.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.activeslide {
+	-webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+fieldset {
+	width: 100%;
+	padding: 0;
+	margin: auto;
+	border: none;
+}
+.questionfield {
+	position: absolute;
+    top: calc(50% - 2em);
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.questionfield fieldset {
+	width: 60%;
+	margin: 3em auto;
+}
+.studyfield {
+	width: calc(100% - 10em);
+	margin: auto;
+}
+fieldset button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	width: 100%;
+	background-color: Transparent;
+	outline: none;
+}
+button img {
+	width: 100%;
+	margin: auto;
+}
+.wrap3 {
+	width: 20%;
+	float: left;
+	margin-left: 10%;
+}
+.wrap2 {
+	width: 20%;
+	float: left;
+	margin-left: calc(60% / 3);
+}
+.wrap3 button, .wrap2 button {
+	display: block;
+}
+.engsub {
+	text-align: center;
+	margin: 1em 0 0.5em 0;
+	font-size: 130%;
+	display: block;
+}
+.maorisub {
+	text-align: center;
+	font-size: 100%;
+	color: grey;
+	display: block;
+}
+.questiontext {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+.maoriquestiontext {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 2em;
+	font-size: 130%;
+	color: grey;
+}
+#navdots {
+	width: 19.5em;
+	bottom: 2.5em;
+	position: fixed;
+	margin-left: calc(50% - 9.5em);
+}
+.dots {
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	margin: 0 0.5em;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	background-color: #acdee4;
+}
+.dots:hover {
+	background-color: #33b789;
+}
+.activedot {
+	background-color: #a03590;
+}
+.tooltiptext {
+	visibility: hidden;
+	position: absolute;
+	width: 12.5em;
+	text-align: center;
+    padding: 5px 0;
+	top: -2.5em;
+	margin-left: -7.5em;
+}
+.dots:hover + .tooltiptext {
+	visibility: visible;
+}
+#navbuttons {
+	position: fixed;
+	bottom: 1.5em;
+	width: 100%;
+}
+.navbutton {
+	width: 4em;
+	height: 4em;
+	border: none;
+	background-color: Transparent;
+	outline: none;
+	cursor: pointer;
+}
+#prevbutton {
+	margin-left: 1.5em;
+}
+#nextbutton {
+	margin-left: calc(100% - 11.5em);
+}
+#exit {
+	position: fixed;
+	top: 1.5em;
+	right: 1.5em;
+}
+#exitbutton {
+	border: none;
+	background-color: Transparent;
+	cursor: pointer;
+	width: 3em;
+	height: 3em;
+	padding: 0;
+	outline: none;
+}
+#exitbutton img {
+	width: 100%;
+}
+#logo {
+	position: absolute;
+	display: block;
+	width: 40%;
+	left: 30%;
+}
+#welcomebuttons {
+	position: absolute;
+	bottom: 3em;
+	width: 11em;
+	margin-left: calc(50% - 5.5em);
+}
+#submitbutton {
+	position: absolute;
+	left: calc(50% - 2.5em);
+	bottom: -4em;
+}
+
+@media (max-width: 1200px) {
+	.question {
+		width: 100%;
+		left: 0;
+	}
+}
+
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) and (min-height: 800px), (max-width: 450px) {
+	#navdots {
+		bottom: 1.5em;
+		width: 13.5em;
+		margin-left: calc(50% - 6.75em);
+		visibility: hidden;
+	}
+	.dots {
+		height: 1em;
+		width: 1em;
+	}
+	.dots:hover + .tooltiptext {
+		visibility: hidden;
+	}
+	#exit {
+		top: 1em;
+		right: 1em;
+	}
+	#exitbutton {
+		height: 2em;
+		width: 2em;
+	}
+	#navbuttons {
+		bottom: 1.5em;
+	}
+	.navbutton {
+		height: 4em;
+		width: 4em;
+	}
+	#prevbutton {
+		margin-left: 1em;
+	}
+	#nextbutton {
+		margin-left: calc(100% - 10.5em);
+	}
+	.wrap3, .wrap2 {
+		width: 40%;
+		margin-left: calc(60% / 2)
+	}
+	button img {
+		width: 80%;
+	}
+	.questiontext {
+		font-size: 130%;
+		margin-top: 3em;
+	}
+	.maoriquestiontext {
+		font-size: 110%;
+		margin-bottom: 1em;
+	}
+	.engsub {
+		font-size: 110%;
+		margin: 0.5em 0 1em 0;
+	}
+	.maorisub {
+		display: none;
+	}
+}
+
+@media only screen and (orientation:portrait) {
+	#carouselDiv {  
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.poster-item {
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		-ms-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+	}
+}
+
+</style>
+<link type="text/css" rel="stylesheet" href="carousel.css">
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="carousel.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+<script type="text/javascript">  
+$(function() {  
+	$('.nextslidebutton').bind('click',function(event){  
+		var leftPos = $('.container').scrollLeft();
+		var slideWidth = $('.slide').width();
+		$('.container').stop().animate({
+			scrollLeft: (leftPos + slideWidth + 20)
+		}, 500);
+	});
+});
+$(function() {  
+	$('.previousslidebutton').bind('click',function(event){  
+		var leftPos = $('.container').scrollLeft();
+		var slideWidth = $('.slide').width();
+		$('.container').stop().animate({
+			scrollLeft: (leftPos - slideWidth - 20)
+		}, 500);
+	});
+});
+
+
+</script>
+</head>
+<body>
+
+<form id="theform" action="">
+	<div class="question" id="q0">
+		
+		<fieldset class="questionfield">
+		
+		<img id="logo" alt="Ara Logo" src="aralogo.png">
+		
+		</fieldset>
+		
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($){
+			$("#q0").mousemove(function(e){
+				var mouseX = e.pageX - $('#q0').offset().left;
+				var mouseY = e.pageY - $('#q0').offset().top;
+				var totalX = $('#q0').width();
+				var totalY = $('#q0').height();
+				var centerX = totalX / 2;
+				var centerY = totalY / 2;
+				var shiftX = centerX - mouseX;
+				var shiftY = centerY - mouseY;
+				
+				var startX = ($('#q0').width() / 2) - ($('#logo').width() / 2);
+				var startY = ($('#q0').height() / 2) - ($('#logo').height() / 2);
+
+				$('#logo').css({ 'left': startX + (shiftX/50) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
+			});
+		});	
+	</script>
+	
+	<div class="question" id="q1">
+		
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">What is your studying status?</h1>
+		<h1 class="maoriquestiontext">What is your studying status?</h1>
+		
+		<div class="wrap3">
+		<button type="button" id="interested" name="status" value="interested" ><img class="statusImage" alt="Interested" src="img/interested_student.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="interested">Interested</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="new" name="status" value="new"><img class="statusImage" alt="New Student" src="img/current_student.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="new">New</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="returning" name="status" value="returning"><img class="statusImage" alt="Returning Student" src="img/returning_student.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="returning">Returning</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		</fieldset>
+		
+	</div>
+
+	<div class="question" id="q2">
+
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">What is your age?</h1>
+		<h1 class="maoriquestiontext">What is your age?</h1>
+		
+		<div class="wrap3">
+		<button type="button" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="youth">Under 18</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="mid">18 - 24</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="older" name="age" value="older"><img class="ageimage" alt="Over 24" src="img/age_3.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="older">Over 24</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q3">
+		
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">What is your gender?</h1>
+		<h1 class="maoriquestiontext">What is your gender?</h1>
+		
+		<div class="wrap3">
+		<button type="button" id="male" name="gender" value="male"><img class="genderImage" alt="Male" src="img/male.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="male">Male</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="female" name="gender" value="female"><img class="genderImage" alt="Female" src="img/female.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="female">Female</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="other" name="gender" value="other"><img class="genderImage" alt="Other Gender" src="img/non_binary.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="other">Other</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q4">
+
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">Are you...</h1>
+		<h1 class="maoriquestiontext">Are you...</h1>
+		
+		<div class="wrap3">
+		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="maoripasifika">Maori/Pasifika</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="international">International</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/neither.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="nzeuropean">New Zealand</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		</fieldset>
+	</div>
+
+	<div class="question" id="q5">
+
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">Do you want study assistance?</h1>
+		<h1 class="maoriquestiontext">Do you want study assistance?</h1>
+			
+		<div class="wrap2">
+		<button type="button" id="yes" name="condition" value="learningyes"><img class="learningImage" alt="Study Assistance" src="img/yes_learning.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="yes">Yes</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+			
+		<div class="wrap2">
+		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="no">No</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+			
+		</fieldset>
+		
+	</div>
+
+	<div class="question" id="q6">
+		
+		<fieldset class="questionfield">
+		
+		<h1 class="questiontext">Do you have young children?</h1>
+		<h1 class="maoriquestiontext">Do you have young children?</h1>
+		
+		<div class="wrap2">
+		<button type="button" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="yes">Yes</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		<div class="wrap2">
+		<button type="button" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="no">No</label>
+		<label class="maorisub" for="interested">Maori Subheading</label>
+		</div>
+		
+		</fieldset>
+		
+	</div>
+	
+	<div class="question" id="q7">
+	
+		<fieldset class="questionfield" id="carouselFieldset">
+		
+		<h1 class="questiontext">Select your campus</h1>
+		<h1 class="maoriquestiontext">Select your campus</h1>
+		
+		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":1200,"height":530,"posterWidth":820,"posterHeight":490,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
+			<div class="poster-btn poster-prev-btn"></div>
+			<ul class="poster-list">
+				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
+			</ul>
+			<div class="poster-btn poster-next-btn"></div>
+		</div>
+		
+		</fieldset>
+
+	</div>
+	
+</form>
+
+<div id="exit">
+
+<button id="exitbutton"><img src="img/exit_icon.png"></button>
+
+</div>
+
+<div id="navbuttons">
+
+<button id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="img/arrow_left.png"></button>
+<button id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="img/arrow_right.png"></button>
+
+</div>
+
+<div id="navdots">
+	<button class="dots" onclick="currentDiv(2)"></button><span class="tooltiptext">Studying Status</span>
+	<button class="dots" onclick="currentDiv(3)"></button><span class="tooltiptext">Age</span>
+	<button class="dots" onclick="currentDiv(4)"></button><span class="tooltiptext">Gender</span>
+	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Culture</span>
+	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Assistance</span>
+	<button class="dots" onclick="currentDiv(7)"></button><span class="tooltiptext">Children</span>
+	<button class="dots" onclick="currentDiv(8)"></button><span class="tooltiptext">Campus</span>
+</div>
+
+<div id="welcomebuttons">
+
+<a onclick="currentDiv(2)">Begin</a>
+<a onclick="">Skip</a>
+
+</div>
+
+<div id="toplogo"></div>
+
+<script type="text/javascript">
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex  += n);
+}
+
+window.addEventListener('wheel', function(e) {
+	if (e.deltaY < 0) {
+		plusDivs(-1);
+	}
+	if (e.deltaY > 0) {
+		plusDivs(+1);
+	}
+});
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("question");
+	var dots = document.getElementsByClassName("dots");
+	var prevbut = document.getElementById("prevbutton");
+	var nextbut = document.getElementById("nextbutton");
+	var navbuts = document.getElementById("navbuttons");
+	var navdots = document.getElementById("navdots");
+	var welbuts = document.getElementById("welcomebuttons");
+	var exit = document.getElementById("exit");
+	if (n <= 1) {navbuts.style.display = "none"}
+	else {navbuts.style.display = "inline"};
+	if (n <= 1) {navdots.style.display = "none"}
+	else {navdots.style.display = "inline"};
+	if (n <= 1) {welbuts.style.display = "inline"}
+	else {welbuts.style.display = "none"};
+	if (n <= 1) {exit.style.display = "none"}
+	else {exit.style.display = "inline"};
+	if (n == 2) {prevbut.style.visibility = "hidden"}
+	else {prevbut.style.visibility = "visible"};
+	if (n >= 8) {nextbut.style.visibility = "hidden"}
+	else {nextbut.style.visibility = "visible"};
+    if (n < 1) {slideIndex = 1};
+	if (n > 8) {slideIndex = 8};
+    for (i = 0; i < x.length; i++) {
+		x[i].className = x[i].className.replace(" activeslide", "");
+		x[i].style.visibility = "hidden";
+		x[i].style.opacity = "0";
+    }
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" activedot", "");
+	}
+	x[slideIndex-1].className += " activeslide";
+	x[slideIndex-1].style.visibility = "visible";
+	x[slideIndex-1].style.opacity = "1";
+	if (slideIndex > 1) {
+		dots[slideIndex-2].className += " activedot"
+	}
+}
+
+$("#q0").on("swipeleft",function(){
+	plusDivs(+1);
+});
+$("#q1").on("swipeleft",function(){
+	plusDivs(+1);
+});
+$("#q1").on("swipeleft",function(){
+	plusDivs(-1);
+});
+
+function selectSingle(ele) {
+	var classes = ele.className;
+	var questionOptions = document.getElementsByClassName(classes);
+	for (i = 0; i < questionOptions.length; i++) {
+		questionOptions[i].src = questionOptions[i].src.replace("_selected.png", ".png");
+	}
+	ele.src = ele.src.replace(".png", "_selected.png");
+}
+
+function selectMultiple(ele) {
+	var srcImage = ele.src;
+	if (srcImage.endsWith("_selected.png")) {
+		ele.src = ele.src.replace("_selected.png", ".png");
+	}
+	else {
+		ele.src = ele.src.replace(".png", "_selected.png");
+	}
+}
+</script>
+<script>
+$(function(){
+	Carousel.init($(".pictureSlider"));
+});
+</script>
+
+</body>
+
+</html>
