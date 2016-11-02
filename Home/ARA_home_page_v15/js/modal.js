@@ -78,6 +78,18 @@ span20.onclick = function() {
 
 
 
+var modal1 = document.getElementById('myModal1');
+var btn1 = document.getElementById("myimg1");
+var span1 = document.getElementsByClassName("close1")[0];
+btn1.onclick = function() {
+    modal1.style.display = "block";
+}
+span1.onclick = function() {
+    modal1.style.display = "none";
+}
+
+
+
 
 
 
@@ -91,9 +103,9 @@ span20.onclick = function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
 	
-    if (event.target == modal20 ||event.target == modal21 ||event.target == modal22 ||event.target == modal23 ||event.target == modal24 ||event.target == modal25) {
+    if (event.target == modal1 ||event.target == modal20 ||event.target == modal21 ||event.target == modal22 ||event.target == modal23 ||event.target == modal24 ||event.target == modal25) {
   
-
+modal1.style.display = "none";
 		modal20.style.display = "none";
 		modal21.style.display = "none";
 		modal22.style.display = "none";
