@@ -256,7 +256,7 @@ button img {
 		margin-left: calc(60% / 2)
 	}
 	button img {
-		width: 70%;
+		width: 65%;
 	}
 	.questiontext {
 		font-size: 130%;
@@ -289,6 +289,23 @@ button img {
 		-o-transform: rotate(-90deg);
 		-ms-transform: rotate(-90deg);
 		transform: rotate(-90deg);
+	}
+	#carouselFieldset {
+		height: 90%;
+	}
+	#carouselDiv {
+		margin-top: 30%;
+	}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.activeslide {
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	.question {
+		-webkit-transition: visibility 0s linear 0s, opacity 0s linear;
+		transition: visibility 0s linear 0s, opacity 0s linear;
 	}
 }
 
@@ -396,24 +413,24 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your studying status?</h1>
-		<h1 class="maoriquestiontext">What is your studying status?</h1>
+		<h1 class="maoriquestiontext">He aha te mea koutou t&umacr;nga ako?</h1>
 		
 		<div class="wrap3">
 		<button type="button" id="interested" name="status" value="interested" ><img class="statusImage" alt="Interested" src="img/interested_student.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="interested">Interested</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Hiahia</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="new" name="status" value="new"><img class="statusImage" alt="New Student" src="img/current_student.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="new">New</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Hou</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="returning" name="status" value="returning"><img class="statusImage" alt="Returning Student" src="img/returning_student.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="returning">Returning</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Hoki</label>
 		</div>
 		
 		</fieldset>
@@ -425,24 +442,24 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your age?</h1>
-		<h1 class="maoriquestiontext">What is your age?</h1>
+		<h1 class="maoriquestiontext">He aha te mea koutou tau?</h1>
 		
 		<div class="wrap3">
 		<button type="button" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="youth">Under 18</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Raro 18</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="mid">18 - 24</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">18 - 24</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="older" name="age" value="older"><img class="ageimage" alt="Over 24" src="img/age_3.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="older">Over 24</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Runga 24</label>
 		</div>
 		
 		</fieldset>
@@ -453,24 +470,24 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your gender?</h1>
-		<h1 class="maoriquestiontext">What is your gender?</h1>
+		<h1 class="maoriquestiontext">He aha te mea koutou ira?</h1>
 		
 		<div class="wrap3">
 		<button type="button" id="male" name="gender" value="male"><img class="genderImage" alt="Male" src="img/male.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="male">Male</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Tane</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="female" name="gender" value="female"><img class="genderImage" alt="Female" src="img/female.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="female">Female</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">Wahine</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="other" name="gender" value="other"><img class="genderImage" alt="Other Gender" src="img/non_binary.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="other">Other</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">&Emacr;tahi atu Ira</label>
 		</div>
 		
 		</fieldset>
@@ -485,20 +502,20 @@ function handleTouchMove(evt) {
 		
 		<div class="wrap3">
 		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectMultiple(this)"></button>
-		<label class="engsub" for="maoripasifika">Maori/Pasifika</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="international">International</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/neither.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="nzeuropean">New Zealand</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		</fieldset>
@@ -514,13 +531,13 @@ function handleTouchMove(evt) {
 		<div class="wrap2">
 		<button type="button" id="yes" name="condition" value="learningyes"><img class="learningImage" alt="Study Assistance" src="img/yes_learning.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="yes">Yes</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 			
 		<div class="wrap2">
 		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="no">No</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 			
 		</fieldset>
@@ -537,13 +554,13 @@ function handleTouchMove(evt) {
 		<div class="wrap2">
 		<button type="button" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="yes">Yes</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		<div class="wrap2">
 		<button type="button" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="no">No</label>
-		<label class="maorisub" for="interested">Maori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		</fieldset>
@@ -554,10 +571,10 @@ function handleTouchMove(evt) {
 	
 		<fieldset class="questionfield" id="carouselFieldset">
 		
-		<h1 class="questiontext">Select your campus</h1>
-		<h1 class="maoriquestiontext">Select your campus</h1>
+		<h1 class="questiontext portraitcarousel">Select your campus</h1>
+		<h1 class="maoriquestiontext portraitcarousel">Select your campus</h1>
 		
-		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":1200,"height":530,"posterWidth":820,"posterHeight":490,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
+		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":450,"height":200,"posterWidth":300,"posterHeight":190,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
 			<div class="poster-btn poster-prev-btn"></div>
 			<ul class="poster-list">
 				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
@@ -672,10 +689,16 @@ function showDivs(n) {
 function selectSingle(ele) {
 	var classes = ele.className;
 	var questionOptions = document.getElementsByClassName(classes);
+	var srcImage = ele.src;
 	for (i = 0; i < questionOptions.length; i++) {
 		questionOptions[i].src = questionOptions[i].src.replace("_selected.png", ".png");
 	}
-	ele.src = ele.src.replace(".png", "_selected.png");
+	if (srcImage.endsWith("_selected.png")) {
+		ele.src = ele.src.replace("_selected.png", ".png");
+	}
+	else {
+		ele.src = ele.src.replace(".png", "_selected.png");
+	}
 }
 
 function selectMultiple(ele) {
