@@ -18,7 +18,7 @@ a {
 	text-decoration: underline;
 	cursor: pointer;
 	font-weight: bold;
-	font-size: 120%;
+	font-size: 140%;
 	margin: 1em;
 }
 a:hover {
@@ -83,6 +83,14 @@ fieldset button {
 button img {
 	width: 100%;
 	margin: auto;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+button img:hover {
+	-ms-transform: scale(1.05, 1.05);
+	-webkit-transform: scale(1.05, 1.05);
+	transform: scale(1.05, 1.05);
 }
 .wrap3 {
 	width: 20%;
@@ -155,12 +163,9 @@ button img {
 .dots:hover + .tooltiptext {
 	visibility: visible;
 }
-#navbuttons {
-	position: fixed;
-	bottom: 1.5em;
-	width: 100%;
-}
 .navbutton {
+	position: absolute;
+	bottom: calc(50% - 1em);
 	width: 4em;
 	height: 4em;
 	border: none;
@@ -169,10 +174,10 @@ button img {
 	cursor: pointer;
 }
 #prevbutton {
-	margin-left: 1.5em;
+	left: 1.5em;
 }
 #nextbutton {
-	margin-left: calc(100% - 11.5em);
+	right: 1em;
 }
 #exit {
 	position: fixed;
@@ -191,22 +196,38 @@ button img {
 #exitbutton img {
 	width: 100%;
 }
-#logo {
-	position: absolute;
-	display: block;
-	width: 40%;
-	left: 30%;
-}
 #welcomebuttons {
 	position: absolute;
 	bottom: 3em;
-	width: 11em;
-	margin-left: calc(50% - 5.5em);
+	width: 12em;
+	margin-left: calc(50% - 6em);
 }
 #submitbutton {
 	position: absolute;
 	left: calc(50% - 2.5em);
 	bottom: -4em;
+}
+#fronttitle {
+	position: relative;
+	width: 60%;
+	margin: auto;
+	height: 10px;
+}
+#pagetitle {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+#fronttext {
+	width: 60%;
+	margin: auto;
+	margin-top: 3em;
+}
+#logo {
+	display: block;
+	width: 15em;
+	position: absolute;
+	bottom: 0;
 }
 
 @media (max-width: 1200px) {
@@ -272,6 +293,23 @@ button img {
 	}
 	.maorisub {
 		display: none;
+	}
+	#fronttitle {
+		width: 80%;
+	}
+	#fronttext {
+		width: 80%;
+	}
+	#logo {
+		width: 50%;
+		left: 25%;
+		bottom: 20;
+	}
+	#pagetitle {
+		top: 5;
+		font-size: 130%;
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -381,7 +419,8 @@ function handleTouchMove(evt) {
 		
 		<fieldset class="questionfield">
 		
-		<img id="logo" alt="Ara Logo" src="aralogo.png">
+		<div id="fronttitle"><img id="logo" alt="Ara Logo" src="aralogo.png"><h1 id="pagetitle">Ara Institute Orientation</h1></div>
+		<p id="fronttext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		
 		</fieldset>
 		
@@ -400,10 +439,10 @@ function handleTouchMove(evt) {
 				var shiftX = centerX - mouseX;
 				var shiftY = centerY - mouseY;
 				
-				var startX = ($('#q0').width() / 2) - ($('#logo').width() / 2);
-				var startY = ($('#q0').height() / 2) - ($('#logo').height() / 2);
+				var startX = ($('#q0').width() / 2) - ($('#fronttitle').width() / 2);
+				var startY = ($('#q0').height() / 2) - ($('#fronttitle').height() / 2);
 
-				$('#logo').css({ 'left': startX + (shiftX/50) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
+				$('#fronttitle').css({ 'left': startX + (shiftX/50) - (totalX/5) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
 			});
 		});	
 	</script>
@@ -497,24 +536,24 @@ function handleTouchMove(evt) {
 
 		<fieldset class="questionfield">
 		
-		<h1 class="questiontext">Are you...</h1>
-		<h1 class="maoriquestiontext">Are you...</h1>
+		<h1 class="questiontext">Are you a...</h1>
+		<h1 class="maoriquestiontext">Are you a...</h1>
 		
 		<div class="wrap3">
 		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectMultiple(this)"></button>
-		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika</label>
+		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika Student</label>
 		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectMultiple(this)"></button>
-		<label class="engsub" for="international">International</label>
+		<label class="engsub" for="international">International Student</label>
 		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/neither.png" onclick="selectMultiple(this)"></button>
-		<label class="engsub" for="nzeuropean">New Zealand</label>
+		<label class="engsub" for="nzeuropean">Domestic Student</label>
 		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 		
@@ -525,18 +564,24 @@ function handleTouchMove(evt) {
 
 		<fieldset class="questionfield">
 		
-		<h1 class="questiontext">Do you want study assistance?</h1>
-		<h1 class="maoriquestiontext">Do you want study assistance?</h1>
+		<h1 class="questiontext">Are you in need of study assistance due to...</h1>
+		<h1 class="maoriquestiontext">Are you in need of study assistance due to...</h1>
 			
-		<div class="wrap2">
-		<button type="button" id="yes" name="condition" value="learningyes"><img class="learningImage" alt="Study Assistance" src="img/yes_learning.png" onclick="selectSingle(this)"></button>
-		<label class="engsub" for="yes">Yes</label>
+		<div class="wrap3">
+		<button type="button" id="physical" name="condition" value="learningyes"><img class="learningImage" alt="Physical Disability" src="img/yes_learning.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="physical">Physical Disability</label>
+		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage" alt="Learning Impairment" src="img/yes_learning.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="physical">Learning Impairment</label>
 		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 			
-		<div class="wrap2">
-		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
-		<label class="engsub" for="no">No</label>
+		<div class="wrap3">
+		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectMultiple(this)"></button>
+		<label class="engsub" for="no">No Assistance Needed</label>
 		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
 		</div>
 			
@@ -548,8 +593,8 @@ function handleTouchMove(evt) {
 		
 		<fieldset class="questionfield">
 		
-		<h1 class="questiontext">Do you have young children?</h1>
-		<h1 class="maoriquestiontext">Do you have young children?</h1>
+		<h1 class="questiontext">Do you have children under six?</h1>
+		<h1 class="maoriquestiontext">Do you have children under six?</h1>
 		
 		<div class="wrap2">
 		<button type="button" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png" onclick="selectSingle(this)"></button>
@@ -574,7 +619,7 @@ function handleTouchMove(evt) {
 		<h1 class="questiontext portraitcarousel">Select your campus</h1>
 		<h1 class="maoriquestiontext portraitcarousel">Select your campus</h1>
 		
-		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":450,"height":200,"posterWidth":300,"posterHeight":190,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
+		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":1000,"height":530,"posterWidth":820,"posterHeight":490,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
 			<div class="poster-btn poster-prev-btn"></div>
 			<ul class="poster-list">
 				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
