@@ -20,11 +20,11 @@ abbr,acronym{border:0;}
 
 @media only screen and (orientation:portrait) {
 	.poster-main .poster-prev-btn {
-		left: -40;
+		left: -20;
 		background: url(img/arrow_left.png) no-repeat center center;
 	}
 	.poster-main .poster-next-btn {
-		right: -80;
+		right: -60;
 		background: url(img/arrow_right.png) no-repeat center center;
 	}
 }
