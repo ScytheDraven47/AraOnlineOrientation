@@ -1,0 +1,213 @@
+*
+body.nav-open .lower-screen {
+  -webkit-transform: scale(0.8, 0.8);
+      -ms-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+}
+body.nav-open .nav {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+body.nav-open .nav-toggle {
+  box-shadow: none;
+}
+body.nav-open .nav-toggle:before {
+  width: 5000px;
+  height: 5000px;
+  
+  background-color: rgba(74, 117, 230, 0.95);
+
+  background-repeat: repeat-x;
+}
+body.nav-open .nav-toggle .icon {
+  width: 0;
+}
+body.nav-open .nav-toggle .icon:before {
+  -webkit-transform: translateY(9px) rotate(45deg);
+      -ms-transform: translateY(9px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
+}
+body.nav-open .nav-toggle .icon:after {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+      -ms-transform: translateY(-9px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
+}
+.nav-toggle {
+  width: 60px;
+  height: 60px;
+  z-index: 8;
+  border-radius: 50%;
+  margin: 15px;
+
+  position: fixed;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition-duration: 0.66s;
+          transition-duration: 0.66s;
+  -webkit-transition-timing-function: swing;
+          transition-timing-function: swing;
+		 
+}
+.nav-toggle:before {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #51acc7;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-transition-duration: 0.66s;
+          transition-duration: 0.66s;
+  -webkit-transition-timing-function: swing;
+          transition-timing-function: swing;
+}
+.nav-toggle .icon {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 28px;
+  left: 15px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  transition-timing-function: swing;
+}
+.nav-toggle .icon:before,
+.nav-toggle .icon:after {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  content: "";
+  position: absolute;
+  left: 0;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: swing;
+  transition-timing-function: swing;
+}
+.nav-toggle .icon:before {
+  top: -9px;
+}
+.nav-toggle .icon:after {
+  top: 9px;
+}
+.nav {
+		display:inline-block;
+  position: absolute;
+  top: 40%;
+
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+
+     float: center;
+  -webkit-transition-duration: 0.66s;
+          transition-duration: 0.66s;
+  -webkit-transition-timing-function: swing;
+          transition-timing-function: swing;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+		 
+}
+.nav ul{
+	padding-left:5%;
+		display:inline-block;
+
+
+    float: center;
+	text-align: center;
+	
+	
+	
+	
+	
+	
+	
+}
+.nav ul li {
+
+	display:inline-block;
+  list-style: none;
+  margin:3% ;
+width: 18.5%;
+
+	
+	  /*
+  height: 10%;
+background-color: #003300;*/
+}
+
+
+
+.nav ul li:hover
+{
+    background-color: #990000;
+}
+
+.nav ul li a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size:20px;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+.nav ul:hover li a {
+  opacity: 0.5;
+}
+.nav ul:hover li:hover a {
+  opacity: 1;
+}
+
+
+
+
+.menu
+{
+		
+	display:inline-block;
+	
+ /*vertical-align:middle;*/
+ float: center;
+  margin: 1%;
+	text-align: center;
+	margin-left: 10%;
+}
+.menu a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size:20px;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+
+.menu:hover a {
+  opacity: 1;
+}
+.menu:hover
+{
+    background-color: #990000;
+}
+
+
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  /*横屏 css*/
+.nav ul li a {
+
+  font-size:15px;
+
+}
+}
