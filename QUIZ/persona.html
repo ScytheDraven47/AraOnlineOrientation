@@ -400,6 +400,35 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+function carouselResize() {
+	var element = document.getElementById("carouselDiv");
+	if ($(window).width() <= 1200 && $(window).width() > 1000) {
+		element.setAttribute("data-setting", '{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else if ($(window).width() <= 1000 && $(window).width() > 850) {
+		element.setAttribute("data-setting", '{"width":850,"height":420,"posterWidth":600,"posterHeight":380,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else if ($(window).width() <= 850 && $(window).width() > 650) {
+		element.setAttribute("data-setting", '{"width":750,"height":360,"posterWidth":500,"posterHeight":320,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else if ($(window).width() <= 650 && $(window).width() > 450) {
+		element.setAttribute("data-setting", '{"width":450,"height":265,"posterWidth":400,"posterHeight":255,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else if ($(window).width() <= 450 && $(window).width() > 250) {
+		element.setAttribute("data-setting", '{"width":390,"height":200,"posterWidth":300,"posterHeight":190,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else if ($(window).width() <= 250) {
+		element.setAttribute("data-setting", '{"width":250,"height":165,"posterWidth":200,"posterHeight":125,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	else {
+		element.setAttribute("data-setting", '{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
+	}
+	Carousel.init($(".pictureSlider"));
+};
+
+window.onload = carouselResize;
+window.onresize = carouselResize;
 </script>
 </head>
 <body>
@@ -609,11 +638,10 @@ function handleTouchMove(evt) {
 		<h1 class="questiontext portraitcarousel">Select your campus</h1>
 		<h1 class="maoriquestiontext portraitcarousel">Select your campus</h1>
 		
-		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":1000,"height":530,"posterWidth":820,"posterHeight":490,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
+		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'>
 			<div class="poster-btn poster-prev-btn"></div>
 			<ul class="poster-list">
 				<li class="poster-item"><a href="#"><img src="img/campus_madras.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
 				<li class="poster-item"><a href="#"><img src="img/campus_timaru.png" width="100%" height="100%"></a></li>
 				<li class="poster-item"><a href="#"><img src="img/campus_ashburton.png" width="100%" height="100%"></a></li>
 				<li class="poster-item"><a href="#"><img src="img/campus_oamaru.png" width="100%" height="100%"></a></li>
