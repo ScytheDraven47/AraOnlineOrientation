@@ -12,7 +12,9 @@ body {
 	margin: 0;
 	overflow-x: hidden;
 	font-family: "My Custom Font", Verdana, Tahoma;
-	background-color: #d0e9de;
+	background-image: url(img/background.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 a {
 	text-decoration: underline;
@@ -43,7 +45,7 @@ a:hover {
 #q7 {
 	width: 100%;
 	left: 0;
-	background-image: url(img/background.png);
+	background-image: url(img/campus_background.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
@@ -199,35 +201,34 @@ button img:hover {
 #welcomebuttons {
 	position: absolute;
 	bottom: 3em;
-	width: 12em;
-	margin-left: calc(50% - 6em);
+	width: 290px;
+	margin-left: calc(50% - 145px);
+}
+#welcomebuttons button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	height: 100%;
+	background-color: Transparent;
+	outline: none;
+	margin: 10px;
 }
 #submitbutton {
 	position: absolute;
 	left: calc(50% - 2.5em);
 	bottom: -4em;
 }
-#fronttitle {
-	position: relative;
-	width: 60%;
-	margin: auto;
-	height: 10px;
-}
-#pagetitle {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
 #fronttext {
 	width: 60%;
 	margin: auto;
 	margin-top: 3em;
+	font-size: 120%;
 }
 #logo {
 	display: block;
-	width: 15em;
+	width: 40%;
 	position: absolute;
-	bottom: 0;
+	margin-top: -70px;
 }
 
 @media (max-width: 1200px) {
@@ -259,15 +260,13 @@ button img:hover {
 		height: 2em;
 		width: 2em;
 	}
-	#navbuttons {
-		bottom: 1em;
-	}
 	.navbutton {
 		height: 4em;
 		width: 4em;
+		bottom: 1.5em;
 	}
 	#prevbutton {
-		margin-left: 1em;
+		margin-left: -0.7em;
 	}
 	#nextbutton {
 		margin-left: calc(100% - 10.5em);
@@ -276,7 +275,7 @@ button img:hover {
 		width: 40%;
 		margin-left: calc(60% / 2)
 	}
-	button img {
+	fieldset button img, #navbuttons button img {
 		width: 65%;
 	}
 	.questiontext {
@@ -294,9 +293,6 @@ button img:hover {
 	.maorisub {
 		display: none;
 	}
-	#fronttitle {
-		width: 80%;
-	}
 	#fronttext {
 		width: 80%;
 	}
@@ -304,12 +300,6 @@ button img:hover {
 		width: 50%;
 		left: 25%;
 		bottom: 20;
-	}
-	#pagetitle {
-		top: 5;
-		font-size: 130%;
-		width: 100%;
-		text-align: center;
 	}
 }
 
@@ -419,8 +409,8 @@ function handleTouchMove(evt) {
 		
 		<fieldset class="questionfield">
 		
-		<div id="fronttitle"><img id="logo" alt="Ara Logo" src="aralogo.png"><h1 id="pagetitle">Ara Institute Orientation</h1></div>
-		<p id="fronttext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<img id="logo" alt="Ara Logo" src="aralogo.png">
+		<p id="fronttext">Welcome to Ara Online Orientation. For best results, take the quiz to personalize your orientation experience. You can skip or exit the quiz at any time.</p>
 		
 		</fieldset>
 		
@@ -439,10 +429,10 @@ function handleTouchMove(evt) {
 				var shiftX = centerX - mouseX;
 				var shiftY = centerY - mouseY;
 				
-				var startX = ($('#q0').width() / 2) - ($('#fronttitle').width() / 2);
-				var startY = ($('#q0').height() / 2) - ($('#fronttitle').height() / 2);
+				var startX = ($('#q0').width() / 2) - ($('#logo').width() / 2);
+				var startY = ($('#q0').height() / 2) - ($('#logo').height() / 2);
 
-				$('#fronttitle').css({ 'left': startX + (shiftX/50) - (totalX/5) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
+				$('#logo').css({ 'left': startX + (shiftX/50) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
 			});
 		});	
 	</script>
@@ -537,24 +527,24 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Are you a...</h1>
-		<h1 class="maoriquestiontext">Are you a...</h1>
+		<h1 class="maoriquestiontext">Ko koe he...</h1>
 		
 		<div class="wrap3">
-		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika Student</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">M&amacr;ori/Pasifika &Amacr;konga</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="international">International Student</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">International &Amacr;konga</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/neither.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/domestic.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="nzeuropean">Domestic Student</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">Domestic &Amacr;konga</label>
 		</div>
 		
 		</fieldset>
@@ -565,24 +555,24 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Are you in need of study assistance due to...</h1>
-		<h1 class="maoriquestiontext">Are you in need of study assistance due to...</h1>
+		<h1 class="maoriquestiontext">Ko koe i roto i te hiahia o te &amacr;whina ako e tika ana ki...</h1>
 			
 		<div class="wrap3">
-		<button type="button" id="physical" name="condition" value="learningyes"><img class="learningImage" alt="Physical Disability" src="img/yes_learning.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="physical" name="condition" value="learningyes"><img class="learningImage" alt="Physical Disability" src="img/physical_disability.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="physical">Physical Disability</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">Hau&amacr;tanga Tinana</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage" alt="Learning Impairment" src="img/yes_learning.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage" alt="Learning Impairment" src="img/learning_condition.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="physical">Learning Impairment</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">Waimaerotanga Ako</label>
 		</div>
 			
 		<div class="wrap3">
 		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectMultiple(this)"></button>
 		<label class="engsub" for="no">No Assistance Needed</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">K&amacr;ore he &Amacr;whina Hiahiatia</label>
 		</div>
 			
 		</fieldset>
@@ -594,18 +584,18 @@ function handleTouchMove(evt) {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Do you have children under six?</h1>
-		<h1 class="maoriquestiontext">Do you have children under six?</h1>
+		<h1 class="maoriquestiontext">E whai koe tamariki i raro i ono?</h1>
 		
 		<div class="wrap2">
 		<button type="button" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="yes">Yes</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">Ae</label>
 		</div>
 		
 		<div class="wrap2">
 		<button type="button" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="no">No</label>
-		<label class="maorisub" for="interested">M&amacr;ori Subheading</label>
+		<label class="maorisub" for="interested">Kahore</label>
 		</div>
 		
 		</fieldset>
@@ -622,12 +612,12 @@ function handleTouchMove(evt) {
 		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":1000,"height":530,"posterWidth":820,"posterHeight":490,"scale":0.5,"autoPlay":false,"delay":2000,"speed":300}'>
 			<div class="poster-btn poster-prev-btn"></div>
 			<ul class="poster-list">
-				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/campus_madras.png" width="100%" height="100%"></a></li>
 				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/madras_buildings.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/reccentre.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/campus_timaru.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/campus_ashburton.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/campus_oamaru.png" width="100%" height="100%"></a></li>
+				<li class="poster-item"><a href="#"><img src="img/campus_distance.png" width="100%" height="100%"></a></li>
 			</ul>
 			<div class="poster-btn poster-next-btn"></div>
 		</div>
@@ -655,16 +645,16 @@ function handleTouchMove(evt) {
 	<button class="dots" onclick="currentDiv(2)"></button><span class="tooltiptext">Studying Status</span>
 	<button class="dots" onclick="currentDiv(3)"></button><span class="tooltiptext">Age</span>
 	<button class="dots" onclick="currentDiv(4)"></button><span class="tooltiptext">Gender</span>
-	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Culture</span>
-	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Assistance</span>
+	<button class="dots" onclick="currentDiv(5)"></button><span class="tooltiptext">Student Status</span>
+	<button class="dots" onclick="currentDiv(6)"></button><span class="tooltiptext">Study Assistance</span>
 	<button class="dots" onclick="currentDiv(7)"></button><span class="tooltiptext">Children</span>
 	<button class="dots" onclick="currentDiv(8)"></button><span class="tooltiptext">Campus</span>
 </div>
 
 <div id="welcomebuttons">
 
-<a onclick="currentDiv(2)">Begin</a>
-<a onclick="">Skip</a>
+<button onclick="currentDiv(2)"><img src="img/continue.png"></button>
+<button onclick=""><img src="img/skip.png"></button>
 
 </div>
 
