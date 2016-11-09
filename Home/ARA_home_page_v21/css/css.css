@@ -1,0 +1,571 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url("font/STAGSANS-LIGHT.OTF") format("truetype");
+}
+
+body{color:#222;-webkit-text-size-adjust:none; font-family: "My Custom Font", Verdana, Tahoma;}
+		body,h1,h2,h3,h4,h5,h6,hr,blockquote,dl, dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,iframe{margin:0; padding:0;}
+		h1,h2,h3,h4,h5,h6{font-size:2.4em;}
+		body,button,input,select,textarea {font-size:62.5%; line-height:normal	;}
+		ol,ul{list-style:none;}
+		p{font-size:2.4em;
+text-indent : 10px;text-align:center}
+html,body{ width:100%; height:100%; overflow:hidden;
+		background-image: url(../img/background.png);
+
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+		}
+
+
+.section-wrap{width:100%;height:100%;overflow:visible;transition:transform 1s cubic-bezier(0.86,0,0.03,1);-webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);}
+		.section-wrap .section{position:relative; width:100%; height:100%;}
+		.section-wrap .section .title{width:100%;height:100%;position:absolute;color:#000;text-align:center;margin: 0 auto;}
+		/*.section-wrap .section .title p{ padding:0 4%;opacity:0}
+		.section-wrap .section .title.active .tit{ opacity:1;transform:translateY(-25px);-webkit-transform:translateY(-5px);transition:all 2s cubic-bezier(0.86,0,0.8,1);-webkit-transition:all 2s cubic-bezier(0.86,0,0.8,1);}
+		/*.section-wrap .section-1{ /*background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}
+		.section-wrap .section-2{ background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}
+		.section-wrap .section-3{ background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}
+		.section-wrap .section-4{ background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}
+		.section-wrap .section-5{ background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}
+		.section-wrap .section-6{ background-image: url(../img/background.png);
+
+	background-size: 100% 100%;}*/
+		.put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}
+		.put-section-1{ transform:translateY(-100%);-webkit-transform:translateY(-100%);}
+		.put-section-2{ transform:translateY(-200%);-webkit-transform:translateY(-200%);}
+		.put-section-3{ transform:translateY(-300%);-webkit-transform:translateY(-300%);}
+		.put-section-4{ transform:translateY(-400%);-webkit-transform:translateY(-400%);}
+		.section-btn{ width:14px;position:fixed;right: 3%; top: calc(50% - 3.25em);}
+		.section-btn li{font-size:100%; width: 1.5em; height: 1.5em; cursor:pointer;text-indent:-9999px;border-radius:50%;-webkit-border-radius:50%;margin-bottom:1em; background-color: #acdee4; text-align:center; color:#fff; onsor:pointer;}
+		.section-btn li:hover {background-color: #33b789;}
+		.section-btn li.on{background-color: #ffffff;}
+
+		.uparrow{top:25%;
+width:6%;
+	position:fixed;right: 1%;}
+
+		.downarrow{bottom :15%;
+		width:6%;
+	position:fixed;right: 1%;}
+
+	
+
+#main{
+width:80%;
+height:80%;
+position:absolute;
+text-align:center;
+margin: 0 auto;	
+top:12%;
+left:10%;
+overflow:hidden;	
+}
+
+
+	
+#header{
+		text-align:center;
+	
+}
+.header-top{
+	width: 100%;
+	height: 10%;
+
+z-index: 1;
+	position:fixed;
+	vertical-align: middle;
+
+	
+}
+.logoImg {
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+
+
+	margin: 1em auto;
+}
+.SocialIcon{
+	
+	
+	
+	width:60px;
+}
+.SocialIcon2{
+display:none;
+}
+.topRight {
+	text-align:center;
+	position:fixed;
+top: 15px;
+	right: 1%;
+
+	z-index: 2;
+width: 20%;
+}
+
+
+.topleft {
+	position:fixed;
+	top: 15px;
+	left: 100px;
+
+	z-index: 2;
+	width: 20%;
+}
+.firstimg{
+
+/*	background-image: url(../img/madras_buildings.png);
+	 background-size: cover;*/
+background-image: url(../img/campus_madras.png);
+/*filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')"; 
+-moz-background-size:100% 100%; 
+background-size:100% 100%; */
+background-size:contain; 
+	background-repeat: no-repeat;
+
+	 position: relative; 
+	  width: 100%;
+  height : 100%;
+  
+  /*width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+  */
+  word-wrap: break-word; 
+word-break: normal; 
+
+background-position:center;
+}
+
+
+
+
+#main .bigimg.secondtest{
+				 position: absolute; 
+padding-top:50%;
+
+	  width: 100%;
+  height : 100%;
+}
+
+
+
+.firsttest{
+			 position: absolute; 
+padding-top:50%;
+
+	  width: 100%;
+  height : 100%;
+	
+	
+	
+}
+
+.inner{
+		width: 100%;
+	height: 100%;
+
+float:center;
+	position:relative;
+}
+.bigimg{
+	
+	background-image: url(../img/reccentre_building.png);
+
+	
+	background-image: url(../img/learning_services/learning_services.png);
+
+	background-size:contain; 
+	background-repeat: no-repeat;
+background-position:center;
+
+	 position: relative; 
+		float:center;
+
+	height:50%;
+	width:100%;
+word-wrap: break-word; 
+word-break: normal; 
+}
+.icons{
+		 position: relative; 
+	padding-top:5%;
+	float:center;
+	height:50%;
+	width:100%;
+
+
+ text-align: center;
+}
+
+
+.secondtest{
+			 position: absolute; 
+padding-top:25%;
+
+	  width: 100%;
+  height : 100%;
+	
+	
+	
+}
+#search {
+	z-index:9;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    -webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+	-moz-transform: translate(0px, -100%) scale(0, 0);
+	-o-transform: translate(0px, -100%) scale(0, 0);
+	-ms-transform: translate(0px, -100%) scale(0, 0);
+	transform: translate(0px, -100%) scale(0, 0);
+    
+    opacity: 0;
+}
+
+#search.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+	-o-transform: translate(0px, 0px) scale(1, 1);
+	-ms-transform: translate(0px, 0px) scale(1, 1);
+	transform: translate(0px, 0px) scale(1, 1); 
+    opacity: 1;
+}
+
+#search input[type="search"] {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0px;
+    margin: 0px auto;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+}
+#search .btn {
+	/*background-image: url(../img/search_icon2.png);
+	 background-repeat: no-repeat;*/
+	width:10%;
+	height:10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 61px;
+    margin-left: -45px;
+}
+
+/*
+    background-image: url(/images/buttons/add.png); /* 16px x 16px */
+ /*  background-color: transparent; /* make the button transparent */
+ /*   background-repeat: no-repeat;  /* make the background image appear only once */
+ /*   background-position: 0px 0px;  /* equivalent to 'top left' */
+ /*   border: none;           /* assuming we don't want any borders */
+ /*   cursor: pointer;        /* make the cursor like hovering over an <a> element */
+  /*  height: 16px;           /* make this the size of your image */
+  /*  padding-left: 16px;     /* make text start to the right of the image */
+ /*   vertical-align: middle; /* align the text vertically centered */
+
+
+
+
+#search .close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	opacity: 1;
+	padding: 10px 17px;
+	font-size: 27px;
+}
+
+
+
+
+.CampusImg{
+z-index: -10;
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+	margin: 1em auto;
+
+}
+.upimg{
+	height:50%;
+}
+.downimg{
+	height:50%;
+}
+.service-img {
+
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+	margin: 1em auto;
+
+}
+.service-icon {
+	height: 22%;
+
+	margin: 1%;
+
+
+}
+
+
+/*
+.service-page {
+	margin-top: 2em;
+}
+
+.service-services {
+	margin-top: 2em;
+}
+
+.service-header {
+	min-width: 300px;
+	width: 80%;
+
+}
+
+*/
+
+@media screen and (max-width: 800px) {
+	#header{
+	
+	}
+
+	.topRight {
+display:none;
+
+}
+	.topleft {
+display:none;
+
+}
+.SocialIcon2{
+			display:initial;
+	
+	
+	width:20px;
+}
+.service-icon {
+	height: 20%;
+
+	margin: 0.5%;
+}
+  .bigimg{
+	float:center;
+	width:100%;
+height:40%;
+}
+.icons{
+		padding-top:5%;
+	float:center;
+	width:100%;
+height:60%;
+}
+  
+  .firstimg{
+
+
+background-position:0% 0%;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+} 
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  /*横屏 css*/
+  .bigimg{
+	float:left;
+	width:60%;
+height:100%;
+}
+
+.service-icon {
+	height: 17%;
+
+	margin: 0.5%;
+}
+.icons{
+	float:left;
+	width:40%;
+height:100%;
+}
+  
+.firstimg{
+		
+		height:100%;
+	width:100%;
+}
+}
+
+
+
+/*
+
+ul.hotGroup,ul.livelyGroup {
+ padding-top: 12px;
+}
+ul.hotGroup li,ul.livelyGroup li {
+ float: left;
+ width: 65px;
+ text-align: center;
+}
+ul.hotGroup li a,ul.livelyGroup li a {
+ display: block;
+ height: 50px;
+ width: 50px;
+
+ margin-right: auto;
+ margin-left: auto;
+ white-space: nowrap;
+ overflow: hidden;
+}
+ul.hotGroup li img, ul.livelyGroup li img {
+ height: 50px;
+ width: 50px;
+}
+ul.hotGroup li span,ul.livelyGroup li span {
+ line-height: 22px;
+ display: block;
+ height: 22px;
+ width: 50px;
+ margin-right: auto;
+ margin-left: auto;
+ white-space: nowrap;
+ overflow: hidden;
+}
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+.icons ul li {
+  list-style: none;
+  margin: 1%;
+
+    float: left;
+	
+	
+	
+	  /*width: 10%;
+  height: 10%;
+background-color: #003300;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+background-color || background-image || background-repeat || background-attachment || background-position
+
+分别解释：
+
+1、background-color 设置颜色作为对象背景颜色；
+
+设置纯色背景（background-color 不能继承，其默认值是 transparent。transparent 有“透明”之意。也就是说，如果一个元素没有指定背景色，那么背景就是透明的，这样其祖先元素的背景才能可见。）
+
+2、background-image 设置图片作为背景图片；
+
+设置图片为背景，可以让图片重复平铺横铺，或将图片作为对象背景固定在对象任何位置。（background-image 也不能继承。事实上，所有背景属性都不能继承。）
+
+3、background-repeat 设置背景平铺重复方向；
+
+属性值 repeat 导致图像在水平垂直方向上都平铺，就像以往背景图像的通常做法一样。repeat-x 和 repeat-y 分别导致图像只在水平或垂直方向上重复，no-repeat 则不允许图像在任何方向上平铺。
+
+4、background-attachment 设置或检索背景图像是随对象内容滚动还是固定的；
+
+background-attachment 属性的默认值是 scroll，也就是说，在默认的情况下，背景会随文档滚动。 
+scroll: 默认值。背景图像会随着页面其余部分的滚动而移动。 
+fixed: 当页面的其余部分滚动时，背景图像不会移动。 
+inherit: 规定应该从父元素继承 background-attachment 属性的设置。
+
+5、background-position 设置或检索对象的背景图像位置。
+
+可以使用一些关键字：top、bottom、left、right 和 center。通常，这些关键字会成对出现，不过也不总是这样。还可以使用长度值，如 100px 或 5cm，最后也可以使用百分数值。不同类型的值对于背景图像的放置稍有差异。
+
+
+
+*/
+
+.smailicons
+{display:inline-block;
+	
+  margin: 1%;
+	 text-align: center;
+	/*margin-left: 10%;*/
+}
+.smailicons label{
+	text-align: center;
+	margin: 1em;
+		display: block;
+}
+
+
+
+
+
+
+
