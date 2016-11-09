@@ -94,17 +94,22 @@ button img:hover {
 	-webkit-transform: scale(1.05, 1.05);
 	transform: scale(1.05, 1.05);
 }
-.wrap3 {
-	width: 20%;
-	float: left;
-	margin-left: 10%;
-}
 .wrap2 {
-	width: 20%;
+	width: 15%;
 	float: left;
-	margin-left: calc(60% / 3);
+	margin-left: calc(70% / 3);
 }
-.wrap3 button, .wrap2 button {
+.wrap3 {
+	width: 15%;
+	float: left;
+	margin-left: calc(55% / 4);
+}
+.wrap4 {
+	width: 15%;
+	float: left;
+	margin-left: calc(40% / 5);
+}
+.wrap2 button, .wrap3 button, .wrap4 button {
 	display: block;
 }
 .engsub {
@@ -261,33 +266,39 @@ button img:hover {
 		width: 2em;
 	}
 	.navbutton {
-		height: 4em;
-		width: 4em;
-		bottom: 1.5em;
+		height: 3em;
+		width: 3em;
+		bottom: 2.5em;
 	}
-	#prevbutton {
-		margin-left: -0.7em;
+	.wrap2, .wrap3 {
+		width: 60%;
+		margin-left: 20%;
 	}
-	#nextbutton {
-		margin-left: calc(100% - 10.5em);
-	}
-	.wrap3, .wrap2 {
+	.wrap4 {
 		width: 40%;
-		margin-left: calc(60% / 2)
+		margin-left: calc(20% / 3);
 	}
-	fieldset button img, #navbuttons button img {
-		width: 65%;
+	.wrap2 button img, .wrap3 button img {
+		width: 50%;
+	}
+	.wrap4 button img {
+		width: 75%;
 	}
 	.questiontext {
-		font-size: 120%;
+		width: 95%;
+		margin: auto;
+		font-size: 110%;
 		margin-top: 3em;
+		margin-bottom: 0.3em;
 	}
 	.maoriquestiontext {
-		font-size: 110%;
+		width: 95%;
+		margin: auto;
+		font-size: 100%;
 		margin-bottom: 1em;
 	}
 	.engsub {
-		font-size: 110%;
+		font-size: 100%;
 		margin: 0.5em 0 1em 0;
 	}
 	.maorisub {
@@ -502,22 +513,28 @@ window.onresize = carouselResize;
 		<h1 class="questiontext">What is your age?</h1>
 		<h1 class="maoriquestiontext">He aha te mea koutou tau?</h1>
 		
-		<div class="wrap3">
+		<div class="wrap4">
 		<button type="button" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="youth">Under 18</label>
 		<label class="maorisub" for="interested">Raro 18</label>
 		</div>
 		
-		<div class="wrap3">
+		<div class="wrap4">
 		<button type="button" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="mid">18 - 24</label>
 		<label class="maorisub" for="interested">18 - 24</label>
 		</div>
 		
-		<div class="wrap3">
-		<button type="button" id="older" name="age" value="older"><img class="ageimage" alt="Over 24" src="img/age_3.png" onclick="selectSingle(this)"></button>
-		<label class="engsub" for="older">Over 24</label>
-		<label class="maorisub" for="interested">Runga 24</label>
+		<div class="wrap4">
+		<button type="button" id="older" name="age" value="oldmid"><img class="ageimage" alt="25 to 50" src="img/age_3.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="oldmid">25 - 50</label>
+		<label class="maorisub" for="interested">25 - 50</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" id="older" name="age" value="older"><img class="ageimage" alt="Over 50" src="img/age_3.png" onclick="selectSingle(this)"></button>
+		<label class="engsub" for="older">Over 50</label>
+		<label class="maorisub" for="interested">Runga 50</label>
 		</div>
 		
 		</fieldset>
@@ -588,19 +605,19 @@ window.onresize = carouselResize;
 			
 		<div class="wrap3">
 		<button type="button" id="physical" name="condition" value="disabilityyes"><img class="learningImage learningImage2" alt="Physical Disability" src="img/physical_disability.png" onclick="selectMultipleSome(this)"></button>
-		<label class="engsub" for="physical">Physical Disability</label>
+		<label class="engsub" for="disabilityyes">Physical Disability</label>
 		<label class="maorisub" for="interested">Hau&amacr;tanga Tinana</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage learningImage2" alt="Learning Impairment" src="img/learning_condition.png" onclick="selectMultipleSome(this)"></button>
-		<label class="engsub" for="physical">Learning Impairment</label>
+		<label class="engsub" for="learningyes">Learning Impairment</label>
 		<label class="maorisub" for="interested">Waimaerotanga Ako</label>
 		</div>
 			
 		<div class="wrap3">
 		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
-		<label class="engsub" for="no">No Assistance Needed</label>
+		<label class="engsub" for="learningno">No Assistance Needed</label>
 		<label class="maorisub" for="interested">K&amacr;ore he &Amacr;whina Hiahiatia</label>
 		</div>
 			
