@@ -587,19 +587,19 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">Ko koe i roto i te hiahia o te &amacr;whina ako e tika ana ki...</h1>
 			
 		<div class="wrap3">
-		<button type="button" id="physical" name="condition" value="learningyes"><img class="learningImage" alt="Physical Disability" src="img/physical_disability.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="physical" name="condition" value="disabilityyes"><img class="learningImage learningImage2" alt="Physical Disability" src="img/physical_disability.png" onclick="selectMultipleSome(this)"></button>
 		<label class="engsub" for="physical">Physical Disability</label>
 		<label class="maorisub" for="interested">Hau&amacr;tanga Tinana</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage" alt="Learning Impairment" src="img/learning_condition.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage learningImage2" alt="Learning Impairment" src="img/learning_condition.png" onclick="selectMultipleSome(this)"></button>
 		<label class="engsub" for="physical">Learning Impairment</label>
 		<label class="maorisub" for="interested">Waimaerotanga Ako</label>
 		</div>
 			
 		<div class="wrap3">
-		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectMultiple(this)"></button>
+		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
 		<label class="engsub" for="no">No Assistance Needed</label>
 		<label class="maorisub" for="interested">K&amacr;ore he &Amacr;whina Hiahiatia</label>
 		</div>
@@ -765,6 +765,26 @@ function selectSingle(ele) {
 }
 
 function selectMultiple(ele) {
+	var srcImage = ele.src;
+	if (srcImage.endsWith("_selected.png")) {
+		ele.src = ele.src.replace("_selected.png", ".png");
+	}
+	else {
+		ele.src = ele.src.replace(".png", "_selected.png");
+	}
+}
+
+function selectMultipleSome(ele) {
+	var firstClasses = ele.className.split(' ')[0];
+	var secondClasses = ele.className.split(' ')[1];
+	var allQuestionOptions = document.getElementsByClassName(firstClasses);
+	var multiQuestionOptions = document.getElementsByClassName(secondClasses);
+	var diff = $(allQuestionOptions).not(multiQuestionOptions).get();
+	for (i = 0; i < diff.length; i++) {
+		if (diff[i].src.endsWith("_selected.png")) {
+			diff[i].src = diff[i].src.replace("_selected.png", ".png");
+		}
+	}
 	var srcImage = ele.src;
 	if (srcImage.endsWith("_selected.png")) {
 		ele.src = ele.src.replace("_selected.png", ".png");
