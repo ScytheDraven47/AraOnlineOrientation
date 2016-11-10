@@ -21,7 +21,6 @@ a {
 	cursor: pointer;
 	font-weight: bold;
 	font-size: 140%;
-	margin: 16px;
 }
 a:hover {
 	color: #33b789;
@@ -81,7 +80,7 @@ fieldset button {
 	width: 100%;
 	background-color: Transparent;
 	outline: none;
-	width: 60%;
+	width: 70%;
 	margin: auto;
 }
 button img {
@@ -236,6 +235,43 @@ button img:hover {
 	position: absolute;
 	margin-top: -70px;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #d0e9de;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+	cursor: pointer;
+}
+.close img {
+	width: 32px;
+	height: 32px;
+	padding: 10px;
+}
+.modaloptions {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	text-align: center;
+}
+.modal-content a {
+	display: inline-block;
+	width: calc(calc(100% - 42px) / 3);
+	margin-left: calc(calc(calc(100% - 42px) / 3) / 3);
+	text-align: left;
+}
 
 @media (max-width: 1000px) {
 	.question {
@@ -279,8 +315,8 @@ button img:hover {
 		width: 40%;
 		margin-left: calc(20% / 3);
 	}
-	.wrap2 button img, .wrap3 button img {
-		width: 80%;
+	fieldset button {
+		width: 50%;
 	}
 	.questiontext {
 		width: 95%;
@@ -671,17 +707,9 @@ window.onresize = carouselResize;
 	
 </form>
 
-<div id="exit">
-
-<button id="exitbutton"><img src="img/exit_icon.png"></button>
-
-</div>
-
 <div id="navbuttons">
-
-<button id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="img/arrow_left.png"></button>
-<button id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="img/arrow_right.png"></button>
-
+	<button id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="img/arrow_left.png"></button>
+	<button id="nextbutton" class="navbutton" onclick="plusDivs(+1)"><img src="img/arrow_right.png"></button>
 </div>
 
 <div id="navdots">
@@ -695,13 +723,25 @@ window.onresize = carouselResize;
 </div>
 
 <div id="welcomebuttons">
-
-<button onclick="currentDiv(2)"><img src="img/continue.png"></button>
-<button onclick=""><img src="img/skip.png"></button>
-
+	<button onclick="currentDiv(2)"><img src="img/continue.png"></button>
+	<button onclick=""><img src="img/skip.png"></button>
 </div>
 
 <div id="toplogo"></div>
+
+<div id="exit">
+	<button id="exitbutton"><img src="img/exit_icon.png"></button>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close"><img src="img/exit_icon.png"></span>
+			<br/>
+			<div class="modaloptions">
+			<a href="">Continue Without Saving</a>
+			<a href="">Continue With Saving</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 var slideIndex = 1;
@@ -807,6 +847,21 @@ function selectMultipleSome(ele) {
 	else {
 		ele.src = ele.src.replace(".png", "_selected.png");
 	}
+}
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("exitbutton");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
 <script>
