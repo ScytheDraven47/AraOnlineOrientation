@@ -51,3 +51,27 @@ page.addEventListener("wheel", function (e) {
 	setTimeout(function(){},1000)
 }		
 );	
+
+
+
+
+
+
+	
+		
+		$wrap.ready('swipe',sw);
+		function sw(event, direction, distance, duration, fingerCount) {
+			 if(direction == "up")//当向上滑动手指时令当前页面记数器加1
+                         {
+                            up();run();	
+                         }
+                         else if(direction == "down")//当向下滑动手指时令当前页面记数器减1
+                         {
+                          down();run();	
+                         }
+  setTimeout(function(){$wrap.ready('swipe',sw)},1000)
+     };
+     
+		
+		
+
