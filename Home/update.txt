@@ -34,3 +34,20 @@ return false;
      //prevent page fom scrolling
      return false;
  });
+
+
+ var page = document.getElementsByClassName('section-wrap')[0];		
+page.addEventListener("wheel", function (e) {
+   if (e.deltaY < 0) {
+   down();run();
+}
+	setTimeout(function(){},1000)
+}		
+);
+page.addEventListener("wheel", function (e) {
+   if (e.deltaY > 0) {
+	up();run();
+}
+	setTimeout(function(){},1000)
+}		
+);	
