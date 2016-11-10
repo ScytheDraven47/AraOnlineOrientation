@@ -3,3 +3,20 @@ V19
 add how you feeling button.
 
 page.js try to fix the mousewheel
+
+
+
+
+
+ $wrap.bind('mousewheel', function(e){
+     if(e.originalEvent.wheelDelta < 0) {
+         //scroll down
+       	up();run();
+     }else {
+         //scroll up
+     	down();run();
+     }
+
+     //prevent page fom scrolling
+
+ });
