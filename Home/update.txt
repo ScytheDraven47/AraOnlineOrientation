@@ -7,7 +7,6 @@ page.js try to fix the mousewheel
 
 
 
-
  $wrap.bind('mousewheel', function(e){
      if(e.originalEvent.wheelDelta < 0) {
          //scroll down
@@ -16,7 +15,22 @@ page.js try to fix the mousewheel
          //scroll up
      	down();run();
      }
+setTimeout(function(){}, 3000);
+     //prevent page fom scrolling
+return false;
+ });
+
+ //Firefox
+ $wrap.bind('DOMMouseScroll', function(e){
+     if(e.originalEvent.detail > 0) {
+         //scroll down
+   	up();run();
+     }else {
+         //scroll up
+		      	down();run();
+    
+     }
 
      //prevent page fom scrolling
-
+     return false;
  });
