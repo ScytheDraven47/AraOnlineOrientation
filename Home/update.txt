@@ -217,3 +217,27 @@ text-indent : 10px;text-align:center}
   		p{font-size:1.8em;
 text-indent : 10px;text-align:center}
   		h1,h2,h3,h4,h5,h6{font-size:1.4em;}
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+.topleft {
+
+	position:fixed;
+top: 15px;
+left:auto;
+  right:15px;
+	z-index: 2;
+width:60px;
+height:60px;
+}
+.topleft .SocialIcon{
+	width:60px;
+}
+
+
+}
