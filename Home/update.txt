@@ -74,4 +74,21 @@ page.addEventListener("wheel", function (e) {
      
 		
 		
+     $wrap.swipe({});
+			   
+	                  function swipe(event, direction, distance, duration, fingerCount) {//事件，方向，距离（像素为单位），时间，手指数量
+                         if(direction == "up")//当向上滑动手指时令当前页面记数器加1
+                         {
+                            up();run();	
+                         }
+                         else if(direction == "down")//当向下滑动手指时令当前页面记数器减1
+                         {
+                          down();run();	
+                         }
+ 
 
+                    }
+
+					
+			
+					
