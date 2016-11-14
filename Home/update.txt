@@ -241,3 +241,39 @@ height:60px;
 
 
 }
+
+
+
+FEEL.CSS
+#ss_feel > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+
+  text-align: center;
+
+  border-radius: 50%;
+  display: table;
+
+  	z-index:100;
+	display:inline-block;
+}
+
+#ss_feel > div label{
+		text-align: center;
+
+		display: block;
+	
+}
+
+
+
+
+HTML
+  <div> <label >bored</label><i class="fa fa-bored"><a href="#" title="bored" ><img src="img/feel/bored.png" width="50px"/></a></i> </div>
+  <div> <label >broke</label><i class="fa fa-broke"><a href="#" title="broke" ><img src="img/feel/broke.png" width="50px"/></a></i> </div>
+  <div> <label >hungry</label><i class="fa fa-hungry"><a href="#" title="hungry" ><img src="img/feel/hungry.png" width="50px"/></a></i> </div>
+  <div> <label >sad</label><i class="fa fa-sad"><a href="#" title="sad" ><img src="img/feel/sad.png" width="50px"/></a></i> </div>
+ <div> <label >sick</label><i class="fa fa-sick"><a href="#" title="sick" ><img src="img/feel/sick.png" width="50px"/></a></i> </div>
+<div> <label >stressed</label><i class="fa fa-stressed"><a href="#" title="stressed" ><img src="img/feel/stressed.png" width="50px"/></a></i> </div>
