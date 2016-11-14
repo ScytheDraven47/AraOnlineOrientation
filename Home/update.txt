@@ -130,4 +130,90 @@ function handleTouchMove(evt) {
 };
 
 	
-					
+modal.css
+@media screen and (max-width: 800px) {
+.close20{
+
+    font-size:35px;
+
+}
+
+
+.modal-header {
+
+    top: 10%;
+
+    height: 8%;
+
+
+}
+
+
+.modalscroll {
+   
+
+    top: 18%;
+
+    height: 72%; /* Full height */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+} 
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  /*横屏 css*/
+.close20{
+
+    font-size:30px;
+
+}
+.modal-header {
+
+    top: 10%;
+
+    height: 10%;
+
+
+}
+
+
+.modalscroll {
+   
+
+    top: 20%;
+
+    height: 70%; /* Full height */
+
+}
+
+
+}
+
+
+
+css.css
+
+@media screen and (max-width: 800px) {
+  		p{font-size:1.4em;
+text-indent : 10px;text-align:center}
+  		h1,h2,h3,h4,h5,h6{font-size:1.8em;}
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+
+  		p{font-size:1.8em;
+text-indent : 10px;text-align:center}
+  		h1,h2,h3,h4,h5,h6{font-size:1.4em;}
