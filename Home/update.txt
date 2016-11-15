@@ -277,3 +277,36 @@ HTML
   <div> <label >sad</label><i class="fa fa-sad"><a href="#" title="sad" ><img src="img/feel/sad.png" width="50px"/></a></i> </div>
  <div> <label >sick</label><i class="fa fa-sick"><a href="#" title="sick" ><img src="img/feel/sick.png" width="50px"/></a></i> </div>
 <div> <label >stressed</label><i class="fa fa-stressed"><a href="#" title="stressed" ><img src="img/feel/stressed.png" width="50px"/></a></i> </div>
+
+
+
+#ss_feel div:nth-child(1) {
+  top: 5px;
+  right: -179px;
+}
+#ss_feel div:nth-child(5) {
+  top:-58px;
+  right: -174.0px;
+}
+
+#ss_feel div:nth-child(4) {
+  top:-115.8px;
+  right: -146.2px;
+}
+#ss_feel div:nth-child(3) {
+  top: -147.8px;
+  right: -102.2px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: -172.4px;
+  right: -50.6px;
+}
+
+
+
+
+#ss_feel div:nth-child(6) {
+  top: -190.4px;
+  right: 5.0px;
+}
