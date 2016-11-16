@@ -354,7 +354,7 @@ button img:hover {
 	#logo {
 		width: 50%;
 		left: 25%;
-		bottom: 20;
+		bottom: 20%;
 	}
 }
 
@@ -420,9 +420,20 @@ function handleTouchMove(evt) {
 
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
-            plusDivs(+1);
+			if (slideIndex == 1) {
+				return false;
+			}
+			else {
+				plusDivs(+1);
+			}
         } else {
-            plusDivs(-1);
+			if (slideIndex == 2) {
+				return false;
+			}
+			else {
+				plusDivs(-1);
+			}
+            
         }                       
     } else {
         if ( yDiff > 0 ) {
@@ -582,13 +593,13 @@ function hideImg(imgID)
 		<h1 class="maoriquestiontext">Ko koe he...</h1>
 		
 		<div class="wrap3">
-		<button type="button" class="optionButtonSingle" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/domestic.png"></button>
+		<button type="button" class="optionButtonSome" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage ethnicityImage2" alt="New Zealander" src="img/domestic.png"></button>
 		<label class="engsub" for="nzeuropean">Domestic Student</label>
 		<label class="maorisub" for="interested">Domestic &Amacr;konga</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" class="optionButtonSingle" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png"></button>
+		<button type="button" class="optionButtonSome" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage ethnicityImage2" alt="Maori/Pasifika" src="img/maori_pasifika.png"></button>
 		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika Student</label>
 		<label class="maorisub" for="interested">M&amacr;ori/Pasifika &Amacr;konga</label>
 		</div>
@@ -727,10 +738,20 @@ function plusDivs(n) {
 
 window.addEventListener('wheel', function(e) {
 	if (e.deltaY < 0) {
-		plusDivs(-1);
+		if (slideIndex == 2) {
+			return false;
+		}
+		else {
+			plusDivs(-1);
+		}
 	}
 	if (e.deltaY > 0) {
-		plusDivs(+1);
+		if (slideIndex == 1) {
+			return false;
+		}
+		else {
+			plusDivs(+1);
+		}
 	}
 });
 
