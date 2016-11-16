@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width">
+<meta charset="UTF-8">
 <title>Ara Online Orientation</title>
 <style>
 @font-face {
@@ -15,6 +16,12 @@ body {
 	background-image: url(img/background.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+	-webkit-transition: background-image 0.3s linear 0.5s;
+    transition: background-image 0.3s linear 0.5s;
+	-webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+	height: 100%;
+	overflow-y: hidden;
 }
 a {
 	text-decoration: underline;
@@ -31,7 +38,7 @@ a:hover {
 .question {
     height: 100%;
     width: 1000px;
-	left: calc(calc(100% - 1000px) / 2);
+	margin-left: calc(50% - 500px);
 	position: absolute;
 	visibility: hidden;
 	display: table;
@@ -40,13 +47,6 @@ a:hover {
     transition-delay: 0s;
 	-webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
     transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-}
-#q7 {
-	width: 100%;
-	left: 0;
-	background-image: url(img/campus_background.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 }
 .activeslide {
 	-webkit-transition-delay: 0.3s;
@@ -206,8 +206,8 @@ button img:hover {
 #welcomebuttons {
 	position: absolute;
 	bottom: 48px;
-	width: 290px;
-	margin-left: calc(50% - 145px);
+	width: 310px;
+	margin-left: calc(50% - 155px);
 }
 #welcomebuttons button {
 	cursor: pointer;
@@ -217,11 +217,6 @@ button img:hover {
 	background-color: Transparent;
 	outline: none;
 	margin: 10px;
-}
-#submitbutton {
-	position: absolute;
-	left: calc(50% - 40px);
-	bottom: -64px;
 }
 #fronttext {
 	width: 60%;
@@ -272,11 +267,26 @@ button img:hover {
 	margin-left: calc(calc(calc(100% - 42px) / 3) / 3);
 	text-align: left;
 }
+#canterburymap {
+	width: 500px;
+	margin-left: calc(50% - 250px);
+}
+.campusimage {
+	display: none;
+}
+.campusimageShow {
+	display: inline;
+	width: 700px;
+	position: absolute;
+	left: calc(50% - 350px);
+	margin-top: 100px;
+}
 
 @media (max-width: 1000px) {
 	.question {
 		width: 100%;
 		left: 0;
+		margin-left: 0;
 	}
 }
 
@@ -349,26 +359,7 @@ button img:hover {
 }
 
 @media only screen and (orientation:portrait) {
-	#carouselDiv {  
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-		transform: rotate(90deg);
-	}
-	.poster-item {
-		-webkit-transform: rotate(-90deg);
-		-moz-transform: rotate(-90deg);
-		-o-transform: rotate(-90deg);
-		-ms-transform: rotate(-90deg);
-		transform: rotate(-90deg);
-	}
-	#carouselFieldset {
-		height: 90%;
-	}
-	#carouselDiv {
-		margin-top: 30%;
-	}
+
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -383,9 +374,7 @@ button img:hover {
 }
 
 </style>
-<link type="text/css" rel="stylesheet" href="carousel.css">
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript" src="carousel.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
 <script type="text/javascript">  
 $(function() {  
@@ -446,34 +435,17 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 };
 
-function carouselResize() {
-	var element = document.getElementById("carouselDiv");
-	if ($(window).width() <= 1200 && $(window).width() > 1000) {
-		element.setAttribute("data-setting", '{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else if ($(window).width() <= 1000 && $(window).width() > 850) {
-		element.setAttribute("data-setting", '{"width":850,"height":420,"posterWidth":600,"posterHeight":380,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else if ($(window).width() <= 850 && $(window).width() > 650) {
-		element.setAttribute("data-setting", '{"width":750,"height":360,"posterWidth":500,"posterHeight":320,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else if ($(window).width() <= 650 && $(window).width() > 450) {
-		element.setAttribute("data-setting", '{"width":450,"height":265,"posterWidth":400,"posterHeight":255,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else if ($(window).width() <= 450 && $(window).width() > 250) {
-		element.setAttribute("data-setting", '{"width":390,"height":200,"posterWidth":300,"posterHeight":190,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else if ($(window).width() <= 250) {
-		element.setAttribute("data-setting", '{"width":250,"height":165,"posterWidth":200,"posterHeight":125,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	else {
-		element.setAttribute("data-setting", '{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'); 
-	}
-	Carousel.init($(".pictureSlider"));
-};
+function showImg(imgID)
+{
+	var obj=document.getElementById(imgID);
+	obj.className = 'campusimageShow';
+}
 
-window.onload = carouselResize;
-window.onresize = carouselResize;
+function hideImg(imgID)
+{
+	var obj=document.getElementById(imgID);
+	obj.className = 'campusimage';
+}
 </script>
 </head>
 <body>
@@ -519,19 +491,19 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">He aha te mea koutou t&umacr;nga ako?</h1>
 		
 		<div class="wrap3">
-		<button type="button" id="interested" name="status" value="interested" ><img class="statusImage" alt="Interested" src="img/interested_student.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="interested" name="status" value="interested" ><img class="statusImage" alt="Interested" src="img/interested_student.png"></button>
 		<label class="engsub" for="interested">Interested</label>
 		<label class="maorisub" for="interested">Hiahia</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="new" name="status" value="new"><img class="statusImage" alt="New Student" src="img/current_student.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="new" name="status" value="new"><img class="statusImage" alt="New Student" src="img/current_student.png"></button>
 		<label class="engsub" for="new">New</label>
 		<label class="maorisub" for="interested">Hou</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="returning" name="status" value="returning"><img class="statusImage" alt="Returning Student" src="img/returning_student.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="returning" name="status" value="returning"><img class="statusImage" alt="Returning Student" src="img/returning_student.png"></button>
 		<label class="engsub" for="returning">Returning</label>
 		<label class="maorisub" for="interested">Hoki</label>
 		</div>
@@ -548,25 +520,25 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">He aha te mea koutou tau?</h1>
 		
 		<div class="wrap4">
-		<button type="button" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png"></button>
 		<label class="engsub" for="youth">Under 18</label>
 		<label class="maorisub" for="interested">Raro 18</label>
 		</div>
 		
 		<div class="wrap4">
-		<button type="button" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png"></button>
 		<label class="engsub" for="mid">18 - 24</label>
 		<label class="maorisub" for="interested">18 - 24</label>
 		</div>
 		
 		<div class="wrap4">
-		<button type="button" id="older" name="age" value="oldmid"><img class="ageimage" alt="25 to 50" src="img/age_3.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="older" name="age" value="oldmid"><img class="ageimage" alt="25 to 50" src="img/age_3.png"></button>
 		<label class="engsub" for="oldmid">25 - 50</label>
 		<label class="maorisub" for="interested">25 - 50</label>
 		</div>
 		
 		<div class="wrap4">
-		<button type="button" id="older" name="age" value="older"><img class="ageimage" alt="Over 50" src="img/age_3.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="older" name="age" value="older"><img class="ageimage" alt="Over 50" src="img/age_3.png"></button>
 		<label class="engsub" for="older">Over 50</label>
 		<label class="maorisub" for="interested">Runga 50</label>
 		</div>
@@ -582,19 +554,19 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">He aha te mea koutou ira?</h1>
 		
 		<div class="wrap3">
-		<button type="button" id="male" name="gender" value="male"><img class="genderImage" alt="Male" src="img/male.png" onclick="selectMultiple(this)"></button>
+		<button type="button" class="optionButtonMultiple" id="male" name="gender" value="male"><img class="genderImage" alt="Male" src="img/male.png"></button>
 		<label class="engsub" for="male">Male</label>
 		<label class="maorisub" for="interested">Tane</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="female" name="gender" value="female"><img class="genderImage" alt="Female" src="img/female.png" onclick="selectMultiple(this)"></button>
+		<button type="button" class="optionButtonMultiple" id="female" name="gender" value="female"><img class="genderImage" alt="Female" src="img/female.png"></button>
 		<label class="engsub" for="female">Female</label>
 		<label class="maorisub" for="interested">Wahine</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="other" name="gender" value="other"><img class="genderImage" alt="Other Gender" src="img/non_binary.png" onclick="selectMultiple(this)"></button>
+		<button type="button" class="optionButtonMultiple" id="other" name="gender" value="other"><img class="genderImage" alt="Other Gender" src="img/non_binary.png"></button>
 		<label class="engsub" for="other">Other</label>
 		<label class="maorisub" for="interested">&Emacr;tahi atu Ira</label>
 		</div>
@@ -610,21 +582,21 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">Ko koe he...</h1>
 		
 		<div class="wrap3">
-		<button type="button" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/domestic.png"></button>
+		<label class="engsub" for="nzeuropean">Domestic Student</label>
+		<label class="maorisub" for="interested">Domestic &Amacr;konga</label>
+		</div>
+		
+		<div class="wrap3">
+		<button type="button" class="optionButtonSingle" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage" alt="Maori/Pasifika" src="img/maori_pasifika.png"></button>
 		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika Student</label>
 		<label class="maorisub" for="interested">M&amacr;ori/Pasifika &Amacr;konga</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png"></button>
 		<label class="engsub" for="international">International Student</label>
 		<label class="maorisub" for="interested">International &Amacr;konga</label>
-		</div>
-		
-		<div class="wrap3">
-		<button type="button" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage" alt="New Zealander" src="img/domestic.png" onclick="selectSingle(this)"></button>
-		<label class="engsub" for="nzeuropean">Domestic Student</label>
-		<label class="maorisub" for="interested">Domestic &Amacr;konga</label>
 		</div>
 		
 		</fieldset>
@@ -638,19 +610,19 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">Ko koe i roto i te hiahia o te &amacr;whina ako e tika ana ki...</h1>
 			
 		<div class="wrap3">
-		<button type="button" id="physical" name="condition" value="disabilityyes"><img class="learningImage learningImage2" alt="Physical Disability" src="img/physical_disability.png" onclick="selectMultipleSome(this)"></button>
+		<button type="button" class="optionButtonSome" id="physical" name="condition" value="disabilityyes"><img class="learningImage learningImage2" alt="Physical Disability" src="img/physical_disability.png"></button>
 		<label class="engsub" for="disabilityyes">Physical Disability</label>
 		<label class="maorisub" for="interested">Hau&amacr;tanga Tinana</label>
 		</div>
 		
 		<div class="wrap3">
-		<button type="button" id="impair" name="condition" value="learningyes"><img class="learningImage learningImage2" alt="Learning Impairment" src="img/learning_condition.png" onclick="selectMultipleSome(this)"></button>
+		<button type="button" class="optionButtonSome" id="impair" name="condition" value="learningyes"><img class="learningImage learningImage2" alt="Learning Impairment" src="img/learning_condition.png"></button>
 		<label class="engsub" for="learningyes">Learning Impairment</label>
 		<label class="maorisub" for="interested">Waimaerotanga Ako</label>
 		</div>
 			
 		<div class="wrap3">
-		<button type="button" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png"></button>
 		<label class="engsub" for="learningno">No Assistance Needed</label>
 		<label class="maorisub" for="interested">K&amacr;ore he &Amacr;whina Hiahiatia</label>
 		</div>
@@ -667,13 +639,13 @@ window.onresize = carouselResize;
 		<h1 class="maoriquestiontext">E whai koe tamariki i raro i ono?</h1>
 		
 		<div class="wrap2">
-		<button type="button" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png"></button>
 		<label class="engsub" for="yes">Yes</label>
 		<label class="maorisub" for="interested">Ae</label>
 		</div>
 		
 		<div class="wrap2">
-		<button type="button" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png" onclick="selectSingle(this)"></button>
+		<button type="button" class="optionButtonSingle" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png"></button>
 		<label class="engsub" for="no">No</label>
 		<label class="maorisub" for="interested">Kahore</label>
 		</div>
@@ -689,17 +661,19 @@ window.onresize = carouselResize;
 		<h1 class="questiontext portraitcarousel">Select your campus</h1>
 		<h1 class="maoriquestiontext portraitcarousel">T&imacr;pakohia koutou w&amacr;nanga</h1>
 		
-		<div id="carouselDiv" class="pictureSlider poster-main" data-setting='{"width":950,"height":485,"posterWidth":700,"posterHeight":445,"scale":0.45,"autoPlay":false,"delay":2000,"speed":300}'>
-			<div class="poster-btn poster-prev-btn"></div>
-			<ul class="poster-list">
-				<li class="poster-item"><a href="#"><img src="img/campus_madras.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/campus_timaru.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/campus_ashburton.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/campus_oamaru.png" width="100%" height="100%"></a></li>
-				<li class="poster-item"><a href="#"><img src="img/campus_distance.png" width="100%" height="100%"></a></li>
-			</ul>
-			<div class="poster-btn poster-next-btn"></div>
-		</div>
+		<img id="canterburymap" src="img/canterbury_map.png" alt="Canterbury Map" usemap="#canterburymap">
+		<map name="canterburymap">
+		   <area shape="circle" coords="340,320,25" onclick="showImg('madrasimage')" alt="City">
+		   <area shape="circle" coords="355,320,25" onclick="showImg('woolstonimage')" alt="Woolston">
+		   <area shape="circle" coords="285,410,25" onclick="showImg('ashburtonimage')" alt="Ashburton">
+		   <area shape="circle" coords="220,510,25" onclick="showImg('timaruimage')" alt="Timaru">
+		   <area shape="circle" coords="220,650,25" onclick="showImg('oamaruimage')" alt="Oamaru">
+		</map>
+		<img class="campusimage" id="madrasimage" onclick="hideImg('madrasimage')" src="img/campus_madras.png">
+		<img class="campusimage" id="woolstonimage" onclick="hideImg('woolstonimage')" src="img/campus_woolston.png">
+		<img class="campusimage" id="ashburtonimage" onclick="hideImg('ashburtonimage')" src="img/campus_ashburton.png">
+		<img class="campusimage" id="timaruimage" onclick="hideImg('timaruimage')" src="img/campus_timaru.png">
+		<img class="campusimage" id="oamaruimage" onclick="hideImg('oamaruimage')" src="img/campus_oamaru.png">
 		
 		</fieldset>
 
@@ -733,7 +707,7 @@ window.onresize = carouselResize;
 	<button id="exitbutton"><img src="img/exit_icon.png"></button>
 	<div id="myModal" class="modal">
 		<div class="modal-content">
-			<span class="close"><img src="img/exit_icon.png"></span>
+			<span class="close">Close</span>
 			<br/>
 			<div class="modaloptions">
 			<a href="">Continue Without Saving</a>
@@ -774,6 +748,7 @@ function showDivs(n) {
 	var navdots = document.getElementById("navdots");
 	var welbuts = document.getElementById("welcomebuttons");
 	var exit = document.getElementById("exit");
+	var body = document.body;
 	if (n <= 1) {navbuts.style.display = "none"}
 	else {navbuts.style.display = "inline"};
 	if (n <= 1) {navdots.style.display = "none"}
@@ -786,6 +761,8 @@ function showDivs(n) {
 	else {prevbut.style.visibility = "visible"};
 	if (n >= 8) {nextbut.style.visibility = "hidden"}
 	else {nextbut.style.visibility = "visible"};
+	if (n >= 8) {body.style.backgroundImage = "url(img/campus_background.png)"}
+	else {body.style.backgroundImage = "url(img/background.png)"};
     if (n < 1) {slideIndex = 1};
 	if (n > 8) {slideIndex = 8};
     for (i = 0; i < x.length; i++) {
@@ -817,6 +794,7 @@ function selectSingle(ele) {
 	else {
 		ele.src = ele.src.replace(".png", "_selected.png");
 	}
+	return false;
 }
 
 function selectMultiple(ele) {
@@ -827,6 +805,7 @@ function selectMultiple(ele) {
 	else {
 		ele.src = ele.src.replace(".png", "_selected.png");
 	}
+	return false;
 }
 
 function selectMultipleSome(ele) {
@@ -847,6 +826,7 @@ function selectMultipleSome(ele) {
 	else {
 		ele.src = ele.src.replace(".png", "_selected.png");
 	}
+	return false;
 }
 
 var modal = document.getElementById('myModal');
@@ -863,11 +843,19 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-</script>
-<script>
-$(function(){
-	Carousel.init($(".pictureSlider"));
-});
+
+var questionsSingle = document.getElementsByClassName("optionButtonSingle");
+for (var i = 0; i < questionsSingle.length; i++) {
+    questionsSingle[i].addEventListener("click", function() { selectSingle(this.firstChild); }, false);
+};
+var questionsMultiple = document.getElementsByClassName("optionButtonMultiple");
+for (var i = 0; i < questionsMultiple.length; i++) {
+    questionsMultiple[i].addEventListener("click", function() { selectMultiple(this.firstChild); }, false);
+};
+var questionsSome = document.getElementsByClassName("optionButtonSome");
+for (var i = 0; i < questionsSome.length; i++) {
+    questionsSome[i].addEventListener("click", function() { selectMultipleSome(this.firstChild); }, false);
+};
 </script>
 
 </body>
