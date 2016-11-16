@@ -310,3 +310,45 @@ HTML
   top: -190.4px;
   right: 5.0px;
 }
+
+
+.smailicons
+{
+width:22%;
+
+display:inline-block;
+vertical-align: top;  
+position:relative;
+  margin: 1%;
+	 text-align: center;
+
+
+}
+.smailicons label{
+	
+		
+ text-align: center;
+	margin: 1em;
+		display: block;
+
+
+	  word-wrap: break-word; 
+word-break: normal; 
+}
+
+.service-icon {
+
+	margin: 1%;
+
+}
+
+@media screen and (max-width: 800px) {
+.service-icon {
+width:auto;
+height:20%;
+}}
+landscape
+.service-icon {
+width:auto;
+height:15%;
+}
