@@ -64,6 +64,7 @@ fieldset {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+	max-height: 85%;
 }
 .questionfield fieldset {
 	width: 60%;
@@ -227,8 +228,7 @@ button img:hover {
 #logo {
 	display: block;
 	width: 40%;
-	position: absolute;
-	margin-top: -70px;
+	margin-left: 30%;
 }
 .modal {
     display: none;
@@ -267,19 +267,67 @@ button img:hover {
 	margin-left: calc(calc(calc(100% - 42px) / 3) / 3);
 	text-align: left;
 }
-#canterburymap {
-	width: 500px;
-	margin-left: calc(50% - 250px);
+.carouselcontainer {
+	margin: 100px auto;
+	width: 40%;
+	height: 200px;
+	position: relative;
+	perspective: 1000px;
 }
-.campusimage {
-	display: none;
-}
-.campusimageShow {
-	display: inline;
-	width: 700px;
+.carousel {
+	height: 100%;
+	width: 100%;
 	position: absolute;
-	left: calc(50% - 350px);
-	margin-top: 100px;
+	transform-style: preserve-3d;
+	transition: transform 0.7s;
+}
+.item {
+	display: block;
+	position: absolute;
+	background: Transparent;
+	width: 100%;
+	text-align: center;
+	opacity: 0.4;
+}
+.item img {
+	width: 100%;
+	margin-top: 20px;
+}
+.a {
+	transform: rotateY(0deg) translateZ(400px);
+	opacity: 1;
+}
+.b {
+	transform: rotateY(60deg) translateZ(400px);
+}
+.c {
+	transform: rotateY(120deg) translateZ(400px);
+}
+.d {
+	transform: rotateY(180deg) translateZ(400px);
+}
+.e {
+	transform: rotateY(240deg) translateZ(400px);
+} 
+.f {
+	transform: rotateY(300deg) translateZ(400px);
+}
+.carouselnext, .carouselprev {
+	position: absolute;
+	bottom: -10%;
+	padding: 1em 2em;
+	cursor: pointer;
+}
+.carouselnext img, .carouselpre img {
+	width: 100%;
+}
+.carouselnext:active, .carouselprev:active {
+	bottom: -11%;
+}
+.carouselnext { right: 5em; }
+.carouselprev { left: 5em; }
+.ie-alt {
+	display: none;
 }
 
 @media (max-width: 1000px) {
@@ -290,7 +338,87 @@ button img:hover {
 	}
 }
 
-@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) and (min-height: 800px), (max-width: 450px) {
+@media (max-width: 1050px) {
+	.wrap4 {
+		margin-left: calc(50% / 3);
+	}
+}
+
+@media (max-height: 450px) {
+	#navdots {
+		visibility: hidden;
+	}
+	.maorisub {
+		display: none;
+	}
+	.questionfield {
+		top: 50%;
+	}
+	.wrap2 {
+		width: 20%;
+		margin-left: 20%;
+	}
+	.wrap3 {
+		width: 20%;
+		margin-left: 10%;
+	}
+	.wrap4 {
+		width: 15%;
+		margin-left: calc(40% / 5);
+	}
+	#exit {
+		top: 18px;
+		right: 18px;
+	}
+	#prevbutton {
+		left: 18px;
+	}
+	#nextbutton {
+		right: 18px;
+	}
+	.navbutton {
+		bottom: 36px;
+	}
+	.questiontext {
+		font-size: 130%;
+	}
+	.maoriquestiontext {
+		font-size: 110%;
+	}
+	.engsub {
+		font-size: 100%;
+	}
+	#fronttext {
+		margin-top: 18px;
+	}
+	#welcomebuttons {
+		height: 50px;
+		bottom: 24px;
+		width: 220px;
+		margin-left: calc(50% - 110px);
+	}
+	#welcomebuttons button img {
+		height: 100%;
+		width: auto;
+	}
+	#welcomefieldset {
+		top: 40%;
+	}
+	.carouselcontainer {
+		height: 100px;
+		width: 25%;
+		margin-top: 10px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
+	}
+	
+}
+
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
 	#navdots {
 		bottom: 24px;
 		width: 216px;
@@ -352,9 +480,19 @@ button img:hover {
 		width: 80%;
 	}
 	#logo {
+		width: 60%;
+		margin-left: 20%;
+	}
+	.carouselcontainer {
+		height: 150px;
 		width: 50%;
-		left: 25%;
-		bottom: 20%;
+		margin-top: 50px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
 	}
 }
 
@@ -371,11 +509,21 @@ button img:hover {
 		-webkit-transition: visibility 0s linear 0s, opacity 0s linear;
 		transition: visibility 0s linear 0s, opacity 0s linear;
 	}
+	.carouselcontainer, .carouselnext, .carouselprev {
+		display: none;
+	}
+	.ie-alt {
+		display: inline;
+	}
+	.ie-alt p {
+		text-align: center;
+	}
 }
 
 </style>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript">  
 $(function() {  
 	$('.nextslidebutton').bind('click',function(event){  
@@ -445,18 +593,6 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
-
-function showImg(imgID)
-{
-	var obj=document.getElementById(imgID);
-	obj.className = 'campusimageShow';
-}
-
-function hideImg(imgID)
-{
-	var obj=document.getElementById(imgID);
-	obj.className = 'campusimage';
-}
 </script>
 </head>
 <body>
@@ -464,7 +600,8 @@ function hideImg(imgID)
 <form id="theform" action="">
 	<div class="question" id="q0">
 		
-		<fieldset class="questionfield">
+		
+		<fieldset class="questionfield" id="welcomefieldset">
 		
 		<img id="logo" alt="Ara Logo" src="aralogo.png">
 		<p id="fronttext">Welcome to Ara Online Orientation. For best results, take the quiz to personalize your orientation experience. You can skip or exit the quiz at any time.</p>
@@ -472,27 +609,6 @@ function hideImg(imgID)
 		</fieldset>
 		
 	</div>
-	
-	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function($){
-			$("#q0").mousemove(function(e){
-				var mouseX = e.pageX - $('#q0').offset().left;
-				var mouseY = e.pageY - $('#q0').offset().top;
-				var totalX = $('#q0').width();
-				var totalY = $('#q0').height();
-				var centerX = totalX / 2;
-				var centerY = totalY / 2;
-				var shiftX = centerX - mouseX;
-				var shiftY = centerY - mouseY;
-				
-				var startX = ($('#q0').width() / 2) - ($('#logo').width() / 2);
-				var startY = ($('#q0').height() / 2) - ($('#logo').height() / 2);
-
-				$('#logo').css({ 'left': startX + (shiftX/50) + 'px', 'top': startY + (shiftY/50) - (totalY/2) + 'px' });
-			});
-		});	
-	</script>
 	
 	<div class="question" id="q1">
 		
@@ -667,24 +783,35 @@ function hideImg(imgID)
 	
 	<div class="question" id="q7">
 	
-		<fieldset class="questionfield" id="carouselFieldset">
+		<fieldset class="questionfield">
 		
-		<h1 class="questiontext portraitcarousel">Select your campus</h1>
-		<h1 class="maoriquestiontext portraitcarousel">T&imacr;pakohia koutou w&amacr;nanga</h1>
+		<h1 class="questiontext">Select your campus</h1>
+		<h1 class="maoriquestiontext">T&imacr;pakohia koutou w&amacr;nanga</h1>
 		
-		<img id="canterburymap" src="img/canterbury_map.png" alt="Canterbury Map" usemap="#canterburymap">
-		<map name="canterburymap">
-		   <area shape="circle" coords="340,320,25" onclick="showImg('madrasimage')" alt="City">
-		   <area shape="circle" coords="355,320,25" onclick="showImg('woolstonimage')" alt="Woolston">
-		   <area shape="circle" coords="285,410,25" onclick="showImg('ashburtonimage')" alt="Ashburton">
-		   <area shape="circle" coords="220,510,25" onclick="showImg('timaruimage')" alt="Timaru">
-		   <area shape="circle" coords="220,650,25" onclick="showImg('oamaruimage')" alt="Oamaru">
-		</map>
-		<img class="campusimage" id="madrasimage" onclick="hideImg('madrasimage')" src="img/campus_madras.png">
-		<img class="campusimage" id="woolstonimage" onclick="hideImg('woolstonimage')" src="img/campus_woolston.png">
-		<img class="campusimage" id="ashburtonimage" onclick="hideImg('ashburtonimage')" src="img/campus_ashburton.png">
-		<img class="campusimage" id="timaruimage" onclick="hideImg('timaruimage')" src="img/campus_timaru.png">
-		<img class="campusimage" id="oamaruimage" onclick="hideImg('oamaruimage')" src="img/campus_oamaru.png">
+		<div class="carouselcontainer">
+			<div class="carousel">
+				<div class="item a"><a href="#"><img src="img/campus_madras.png"></a></div>
+				<div class="item b"><a href="#"><img src="img/campus_woolston.png"></a></div>
+				<div class="item c"><a href="#"><img src="img/campus_ashburton.png"></a></div>
+				<div class="item d"><a href="#"><img src="img/campus_timaru.png"></a></div>
+				<div class="item e"><a href="#"><img src="img/campus_oamaru.png"></a></div>
+				<div class="item f"><a href="#"><img src="img/campus_distance.png"></a></div>
+			</div>
+		</div>
+		<div class="carouselnext"><img src="img/arrow_right.png"></div>
+		<div class="carouselprev"><img src="img/arrow_left.png"></div>
+		
+		<div class="ie-alt">
+		<ul>
+			<li><a href="#">Christchurch (Madras)</a></li>
+			<li><a href="#">Woolston (Trades)</a></li>
+			<li><a href="#">Ashburton</a></li>
+			<li><a href="#">Timaru</a></li>
+			<li><a href="#">Oamaru</a></li>
+			<li><a href="#">Distance</a></li>
+		</ul>
+		<p>To view this section properly please use a different browser. For best results, we recommend <a href="https://www.google.com/chrome/">Google Chrome</a>.</p>
+		</div>
 		
 		</fieldset>
 
@@ -728,6 +855,7 @@ function hideImg(imgID)
 	</div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -736,23 +864,29 @@ function plusDivs(n) {
     showDivs(slideIndex  += n);
 }
 
+var timer;
 window.addEventListener('wheel', function(e) {
-	if (e.deltaY < 0) {
-		if (slideIndex == 2) {
-			return false;
-		}
-		else {
-			plusDivs(-1);
-		}
+	if(timer) {
+		window.clearTimeout(timer);
 	}
-	if (e.deltaY > 0) {
-		if (slideIndex == 1) {
-			return false;
+	timer = window.setTimeout(function() {
+		if (e.deltaY < 0) {
+			if (slideIndex == 2) {
+				return false;
+			}
+			else {
+				plusDivs(-1);
+			}
 		}
-		else {
-			plusDivs(+1);
+		if (e.deltaY > 0) {
+			if (slideIndex == 1) {
+				return false;
+			}
+			else {
+				plusDivs(+1);
+			}
 		}
-	}
+	}, 100);
 });
 
 function currentDiv(n) {
@@ -877,6 +1011,59 @@ var questionsSome = document.getElementsByClassName("optionButtonSome");
 for (var i = 0; i < questionsSome.length; i++) {
     questionsSome[i].addEventListener("click", function() { selectMultipleSome(this.firstChild); }, false);
 };
+
+var carousel = $(".carousel");
+var currdeg  = 0;
+var campuses = document.getElementsByClassName("item");
+
+$(".carouselnext").on("click", { d: "n" }, rotate);
+$(".carouselprev").on("click", { d: "p" }, rotate);
+
+function getDeg(currdeg) {
+	while (currdeg < 0) {
+		currdeg = currdeg + 360;
+	}
+	while (currdeg >= 360) {
+		currdeg = currdeg - 360;
+	}
+	return currdeg;
+}
+
+function rotate(e) {
+	if (e.data.d=="n") {
+		currdeg = currdeg - 60;
+	}
+	if (e.data.d=="p") {
+		currdeg = currdeg + 60;
+	}
+	carousel.css({
+		"-webkit-transform": "rotateY("+currdeg+"deg)",
+		"-moz-transform": "rotateY("+currdeg+"deg)",
+		"-o-transform": "rotateY("+currdeg+"deg)",
+		"transform": "rotateY("+currdeg+"deg)"
+	});
+	for (i = 0; i < campuses.length; i++) {
+		campuses[i].style.opacity = "0.4";
+	}
+	if (getDeg(currdeg) == 0) {
+		campuses[0].style.opacity = "1";
+	}
+	if (getDeg(currdeg) == 60) {
+		campuses[5].style.opacity = "1";
+	}
+	if (getDeg(currdeg) == 120) {
+		campuses[4].style.opacity = "1";
+	}
+	if (getDeg(currdeg) == 180) {
+		campuses[3].style.opacity = "1";
+	}
+	if (getDeg(currdeg) == 240) {
+		campuses[2].style.opacity = "1";
+	}
+	if (getDeg(currdeg) == 300) {
+		campuses[1].style.opacity = "1";
+	}
+}
 </script>
 
 </body>
