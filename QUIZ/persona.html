@@ -314,15 +314,15 @@ button img:hover {
 }
 .carouselnext, .carouselprev {
 	position: absolute;
-	bottom: -10%;
-	padding: 1em 2em;
+	bottom: -15%;
 	cursor: pointer;
+	width: 150px;
 }
-.carouselnext img, .carouselpre img {
+.carouselnext img, .carouselprev img {
 	width: 100%;
 }
 .carouselnext:active, .carouselprev:active {
-	bottom: -11%;
+	bottom: -16%;
 }
 .carouselnext { right: 5em; }
 .carouselprev { left: 5em; }
@@ -489,10 +489,21 @@ button img:hover {
 		margin-top: 50px;
 	}
 	.carouselnext, .carouselprev {
-		bottom: 0;
+		left: calc(50% - 75px);
 	}
-	.carouselnext:active, .carouselprev:active {
-		bottom: -1%;
+	.carouselnext {
+		bottom: 0;
+		margin-left: 14px;
+	}
+	.carouselprev {
+		bottom: -50px;
+		margin-right: 14px;
+	}
+	.carouselnext:active {
+		bottom: -4px;
+	}
+	.carouselprev:active {
+		bottom: -54px;
 	}
 }
 
@@ -790,16 +801,16 @@ function handleTouchMove(evt) {
 		
 		<div class="carouselcontainer">
 			<div class="carousel">
-				<div class="item a"><a href="#"><img src="img/campus_madras.png"></a></div>
-				<div class="item b"><a href="#"><img src="img/campus_woolston.png"></a></div>
-				<div class="item c"><a href="#"><img src="img/campus_ashburton.png"></a></div>
-				<div class="item d"><a href="#"><img src="img/campus_timaru.png"></a></div>
-				<div class="item e"><a href="#"><img src="img/campus_oamaru.png"></a></div>
-				<div class="item f"><a href="#"><img src="img/campus_distance.png"></a></div>
+				<div class="item a"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_woolston.png"></a></div>
+				<div class="item b"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_ashburton.png"></a></div>
+				<div class="item c"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_madras.png"></a></div>
+				<div class="item d"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_timaru.png"></a></div>
+				<div class="item e"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_oamaru.png"></a></div>
+				<div class="item f"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_distance.png"></a></div>
 			</div>
 		</div>
-		<div class="carouselnext"><img src="img/arrow_right.png"></div>
-		<div class="carouselprev"><img src="img/arrow_left.png"></div>
+		<div class="carouselnext"><img src="img/next_campus.png"></div>
+		<div class="carouselprev"><img src="img/prev_campus.png"></div>
 		
 		<div class="ie-alt">
 		<ul>
