@@ -1,3 +1,68 @@
+<a href="https://campus.ara.ac.nz/search" target="_blank" title="search"><img class="SocialIcon" src="img/search_icon2.png" alt="search"></a>
+
+
+@media screen and (max-width: 800px) {
+	#ss_feel {
+position:fixed;
+top: 10px;
+left:auto;
+  right:25px;
+	z-index: 2;
+width:60px;
+height:60px;
+ }
+
+#ss_feel div:nth-child(1) {
+  top: 5px;
+  right: 160px;
+}
+#ss_feel div:nth-child(5) {
+  top:70px;
+  right: 160px;
+}
+
+#ss_feel div:nth-child(4) {
+  top:70px;
+  right: 100px;
+}
+#ss_feel div:nth-child(3) {
+  top: 135px;
+  right: 100px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: 135px;
+  right: 40px;
+}
+
+
+#ss_feel div:nth-child(6) {
+  top: 200px;
+  right: 40px;
+}
+	
+#ss_feel > .feel.ss_active {
+	background-image:none;
+	    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+
+  -webkit-transform: scale(8);
+  -moz-transform: scale(8);
+  -ms-transform: scale(8);
+  -o-transform: scale(8);
+  transform: scale(8);
+z-index:-1;
+}
+#ss_feel > div label{
+
+color:#fff;
+
+}
+
+}
+
+
+****************************************************************************************************************************************
 V19
 
 add how you feeling button.
