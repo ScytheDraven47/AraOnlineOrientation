@@ -1,3 +1,21 @@
+
+		$(document).ready(
+			function() {
+	            $(".section-wrap").swipe({   
+	                swipe : function(event, direction, distance, duration, fingerCount) {
+                         if(direction == "up")
+                         {
+                            up();run();	
+                         }
+                         else if(direction == "down")
+                         {
+                          down();run();	
+                         }
+					}
+				});
+            }			
+		);
+****************************************************************************************************************************************
 <a href="https://campus.ara.ac.nz/search" target="_blank" title="search"><img class="SocialIcon" src="img/search_icon2.png" alt="search"></a>
 
 
