@@ -314,7 +314,8 @@ button img:hover {
 }
 .carouselnext, .carouselprev {
 	position: absolute;
-	bottom: -15%;
+	bottom: -10%;
+	padding: 1em 2em;
 	cursor: pointer;
 	width: 150px;
 }
@@ -322,7 +323,7 @@ button img:hover {
 	width: 100%;
 }
 .carouselnext:active, .carouselprev:active {
-	bottom: -16%;
+	bottom: -11%;
 }
 .carouselnext { right: 5em; }
 .carouselprev { left: 5em; }
@@ -489,21 +490,10 @@ button img:hover {
 		margin-top: 50px;
 	}
 	.carouselnext, .carouselprev {
-		left: calc(50% - 75px);
-	}
-	.carouselnext {
 		bottom: 0;
-		margin-left: 14px;
 	}
-	.carouselprev {
-		bottom: -50px;
-		margin-right: 14px;
-	}
-	.carouselnext:active {
-		bottom: -4px;
-	}
-	.carouselprev:active {
-		bottom: -54px;
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
 	}
 }
 
@@ -512,13 +502,26 @@ button img:hover {
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.activeslide {
+	body {
+		-webkit-transition: background-image 0s;
+		transition: background-image 0s;
 		-webkit-transition-delay: 0s;
 		transition-delay: 0s;
 	}
 	.question {
-		-webkit-transition: visibility 0s linear 0s, opacity 0s linear;
-		transition: visibility 0s linear 0s, opacity 0s linear;
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+		-webkit-transition: visibility 0s, opacity 0s;
+		transition: visibility 0s, opacity 0s;
+	}
+	.activeslide {
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	button img {
+		-ms-transition: all 0s;
+		-webkit-transition: all 0s;
+		transition: all 0s;
 	}
 	.carouselcontainer, .carouselnext, .carouselprev {
 		display: none;
