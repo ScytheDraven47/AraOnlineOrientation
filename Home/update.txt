@@ -1,4 +1,314 @@
+CSS
+.modal-box{
+	   margin-left: auto;
+margin-right: auto;
+vertical-align: middle;
 
+    z-index: 11; /* Sit on top */
+    left: 10%;
+    top: 10%;
+    width: 80%; /* Full width */
+    height: 80%; /* Full height */
+	position: fixed;
+   overflow: hidden; 
+		border: 1px solid #fff;
+     /* Enable scroll if needed */
+	 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	
+}
+.modal-icons{
+	    width:100%; /* Full width */
+text-align:center;
+	position: absolute;
+		   margin-left: auto;
+margin-right: auto;
+vertical-align: middle;
+	display: block;
+	 z-index: 20;
+}
+/* Modal Content/Box */
+.modal-content1 {
+    background-color: #fefefe;
+width: 100%;
+    min-height: 100%;
+    height: auto;
+  /*  margin: 5% auto; /* 15% from the top and centered */
+   /* padding: 20px;
+    
+    width: 80%; /* Could be more or less, depending on screen size */
+	border: 1px solid #fff;
+	z-index:11;
+}
+
+.modal21 {
+    display: none; /* Hidden by default */
+
+    z-index: 11; /* Sit on top */
+ 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+	position: absolute;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close21{
+	bottom:1px;
+	text-align:center;
+	    width:100%; /* Full width */
+text-align:center;
+	position: absolute;
+		   margin-left: auto;
+margin-right: auto;
+vertical-align: middle;
+	display: block;
+ z-index: 20;
+}
+/* Modal Header */
+.modal-header {
+/*			position: absolute;
+font-size: 20px;
+    background-color: #5cb85c;
+	    left: 10%;
+    top: 10%;
+    width: 80%; /* Full width */
+ /*    height: 10%;
+    color: white;
+*/
+	margin: 0 auto;
+	padding-top:3%;
+
+	text-align:center;
+	float:center;
+
+    background-color: #fff;
+    color: #000;
+}
+
+/* Modal Footer */
+.modal-footer {
+
+margin: 0 auto;
+	padding-bottom:3%;
+
+	text-align:center;
+	float:center;
+    background-color: #fff;
+    color: #000;
+}
+/* The Modal (background) */
+.modalscroll {
+   
+top:5%;
+left:5%;
+    z-index: 11; /* Sit on top */
+
+    width:90%; /* Full width */
+    height: 90%; /* Full height */
+	position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+	
+     /* Enable scroll if needed */
+	 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,1); /* Black w/ opacity */
+}
+
+.midal-box-img{
+width:6%;
+}
+.midal-close-img{
+width:5%;
+}
+.modal-content-BigDiv{
+
+	margin-left:20%;
+	margin-right:20%;
+
+	float:left;
+}
+.modal-content-BigDiv p{
+
+	text-align:left;
+
+}
+.modal-content-div1{
+		margin-left:5%;
+	margin-right:5%;
+	width:40%;
+		float:left;
+}
+.modal-content-div2{
+		margin-left:5%;
+	margin-right:5%;
+		width:40%;
+			float:left;
+}
+.modal-content-div1 p{
+
+	text-align:left;
+
+}
+.modal-content-div2 p{
+
+	text-align:left;
+
+}
+.modal-content-div2 img{
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+.modal-content-div1 img{
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+
+
+
+HTML
+
+
+
+
+  
+  			
+				
+<div id="myModal21" class="modal21">
+  <!-- Modal content -->
+
+<div class="modal-box">
+<div class="modal-icons">
+<img class="midal-box-img" src="img/signup_icon.png"/>
+</div>
+
+  <div class="modalscroll">
+    <div class="modal-header">
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	     </div>
+  <div class="modal-content1">
+  <div class="modal-content-BigDiv">
+ <p >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <div class="modal-content-div1">
+  <p >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+<img src="img/reccentre_building.png"     />
+  </div>
+  <div class="modal-content-div2">
+  <p >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.
+The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+
+  </div>
+ 
+  
+
+<p >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+<p >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+<p  >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+
+<p  >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+<p  >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+<p  >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+
+<p  >The Ara Sports and Recreation Centre is committed to 
+providing high quality sports and recreational 
+experiences that benefit Ara students, staff and the wider community.  
+Reflecting the varied health, fitness and wellness needs 
+of our customers, the Recreation Centre provides extensive 
+access to a broad range of recreational activities and services.</p>
+
+  </div>
+    <div class="modal-footer">
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	   <h2>Recreation Centre</h2>
+	     </div>
+  </div>
+   <span class="close21"><img class="midal-close-img" src="img/feel/exit_icon.png"/></span>
+  </div>
+  </div>			
+
+
+*************************************************************************************************************************************
 #ss_feel div:nth-child(1) {
   top: 5px;
   right: 100px;
