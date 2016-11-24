@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url("font/STAGSANS-LIGHT.OTF") format("truetype");
+}
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: "My Custom Font", Verdana, Tahoma;
+	background-image: url(img/background.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	-webkit-transition: background-image 0.3s linear 0.5s;
+    transition: background-image 0.3s linear 0.5s;
+	-webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+	height: 100%;
+	overflow-y: hidden;
+}
+a {
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 140%;
+}
+a:hover {
+	color: #33b789;
+}
+#theform {
+	margin: 0;
+}
+.question {
+    height: 100%;
+    width: 1000px;
+	margin-left: calc(50% - 500px);
+	position: absolute;
+	visibility: hidden;
+	display: table;
+    overflow: hidden;
+	-webkit-transition-delay: 0s;
+    transition-delay: 0s;
+	-webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+@media (max-width: 1000px) {
+	.question {
+		width: 100%;
+		left: 0;
+		margin-left: 0;
+	}
+}
+.activeslide {
+	-webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+fieldset {
+	width: 100%;
+	padding: 0;
+	margin: auto;
+	border: none;
+}
+.questionfield {
+	position: absolute;
+    top: calc(50% - 32px);
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	max-height: 85%;
+}
+.questionfield fieldset {
+	width: 60%;
+	margin: 48px auto;
+}
+.studyfield {
+	width: calc(100% - 160px);
+	margin: auto;
+}
+fieldset button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	width: 100%;
+	background-color: Transparent;
+	outline: none;
+	width: 70%;
+	margin: auto;
+	overflow: visible;
+}
+button img {
+	width: 100%;
+	margin: auto;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+button img:hover {
+	-ms-transform: scale(1.05, 1.05);
+	-webkit-transform: scale(1.05, 1.05);
+	transform: scale(1.05, 1.05);
+}
+.wrap2 {
+	width: 25%;
+	float: left;
+	margin-left: calc(50% / 3);
+}
+.wrap3 {
+	width: 25%;
+	float: left;
+	margin-left: calc(25% / 4);
+}
+.wrap4 {
+	width: 25%;
+	float: left;
+}
+@media (max-width: 1050px) {
+	.wrap4 {
+		margin-left: calc(50% / 3);
+	}
+}
+.wrap2 button, .wrap3 button, .wrap4 button {
+	display: block;
+}
+.engsub {
+	text-align: center;
+	margin: 16px 0 8px 0;
+	font-size: 130%;
+	display: block;
+}
+.maorisub {
+	text-align: center;
+	font-size: 100%;
+	color: grey;
+	display: block;
+}
+.questiontext {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+.maoriquestiontext {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 32px;
+	font-size: 130%;
+	color: grey;
+}
+#navdots {
+	width: 304px;
+	bottom: 40px;
+	position: fixed;
+	margin-left: calc(50% - 152px);
+}
+.dots {
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	margin: 0 8px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	background-color: #acdee4;
+}
+.dots:hover {
+	background-color: #33b789;
+}
+.activedot {
+	background-color: #a03590;
+}
+.tooltiptext {
+	visibility: hidden;
+	position: absolute;
+	width: 200px;
+	text-align: center;
+    padding: 5px 0;
+	top: -40px;
+	margin-left: -120px;
+}
+.dots:hover + .tooltiptext {
+	visibility: visible;
+}
+.navbutton {
+	position: absolute;
+	bottom: calc(50% - 2px);
+	width: 44px;
+	height: 44px;
+	border: none;
+	background-color: Transparent;
+	outline: none;
+	cursor: pointer;
+	overflow: visible;
+}
+#prevbutton {
+	left: 24px;
+}
+#nextbutton {
+	right: 24px;
+}
+#exit {
+	position: fixed;
+	top: 24px;
+	right: 24px;
+}
+#exitbutton {
+	border: none;
+	background-color: Transparent;
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	outline: none;
+	overflow: visible;
+}
+#exitbutton img {
+	width: 100%;
+}
+#welcomebuttons {
+	position: absolute;
+	bottom: 48px;
+	width: 310px;
+	margin-left: calc(50% - 155px);
+}
+#welcomebuttons button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+	height: 100%;
+	background-color: Transparent;
+	outline: none;
+	margin: 10px;
+	overflow: visible;
+}
+#fronttext {
+	width: 60%;
+	margin: auto;
+	margin-top: 48px;
+	font-size: 120%;
+}
+#logo {
+	display: block;
+	width: 40%;
+	margin-left: 30%;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #d0e9de;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+	cursor: pointer;
+}
+.close img {
+	width: 32px;
+	height: 32px;
+	padding: 10px;
+}
+.modaloptions {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	text-align: center;
+}
+.modal-content a {
+	display: inline-block;
+	width: calc(calc(100% - 42px) / 3);
+	margin-left: calc(calc(calc(100% - 42px) / 3) / 3);
+	text-align: left;
+}
+.carouselcontainer {
+	margin: 100px auto;
+	width: 40%;
+	height: 200px;
+	position: relative;
+	perspective: 1000px;
+}
+.carousel {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 0.7s;
+}
+.item {
+	display: block;
+	position: absolute;
+	background: Transparent;
+	width: 100%;
+	text-align: center;
+	opacity: 0.4;
+}
+.item img {
+	width: 100%;
+	margin-top: 20px;
+}
+.a {
+	transform: rotateY(0deg) translateZ(400px);
+	opacity: 1;
+}
+.b {
+	transform: rotateY(60deg) translateZ(400px);
+}
+.c {
+	transform: rotateY(120deg) translateZ(400px);
+}
+.d {
+	transform: rotateY(180deg) translateZ(400px);
+}
+.e {
+	transform: rotateY(240deg) translateZ(400px);
+} 
+.f {
+	transform: rotateY(300deg) translateZ(400px);
+}
+.carouselnext, .carouselprev {
+	position: absolute;
+	bottom: -10%;
+	padding: 1em 2em;
+	cursor: pointer;
+	width: 150px;
+}
+.carouselnext img, .carouselprev img {
+	width: 100%;
+}
+.carouselnext:active, .carouselprev:active {
+	bottom: -11%;
+}
+.carouselnext {
+	right: 5em;
+}
+.carouselprev {
+	left: 5em;
+}
+.ie-alt {
+	display: none;
+	width: 100%;
+}
+#ie-slider {
+	width: 60%;
+	height: 350px;
+	margin: auto;
+}
+.ie-slide {
+	width: 100%;
+}
+#slidernext, #sliderprev {
+	position: absolute;
+	bottom: -10%;
+	padding: 1em 2em;
+	cursor: pointer;
+	width: 150px;
+	overflow: visible;
+}
+#slidernext img:hover, #sliderprev img:hover {
+	-ms-transform: scale(1.05, 1.05);
+	-webkit-transform: scale(1.05, 1.05);
+	transform: scale(1.05, 1.05);
+}
+#slidernext img, #sliderprev img {
+	width: 100%;
+}
+#slidernext {
+	right: 5em;
+}
+#sliderprev {
+	left: 5em;
+}

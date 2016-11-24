@@ -1,0 +1,149 @@
+@media (max-height: 450px) {
+	#navdots {
+		visibility: hidden;
+	}
+	.maorisub {
+		display: none;
+	}
+	.questionfield {
+		top: 50%;
+	}
+	.wrap2 {
+		width: 20%;
+		margin-left: 20%;
+	}
+	.wrap3 {
+		width: 20%;
+		margin-left: 10%;
+	}
+	.wrap4 {
+		width: 15%;
+		margin-left: calc(40% / 5);
+	}
+	#exit {
+		top: 18px;
+		right: 18px;
+	}
+	#prevbutton {
+		left: 18px;
+	}
+	#nextbutton {
+		right: 18px;
+	}
+	.navbutton {
+		bottom: 36px;
+	}
+	.questiontext {
+		font-size: 130%;
+	}
+	.maoriquestiontext {
+		font-size: 110%;
+	}
+	.engsub {
+		font-size: 100%;
+	}
+	#fronttext {
+		margin-top: 18px;
+	}
+	#welcomebuttons {
+		height: 50px;
+		bottom: 24px;
+		width: 220px;
+		margin-left: calc(50% - 110px);
+	}
+	#welcomebuttons button img {
+		height: 100%;
+		width: auto;
+	}
+	#welcomefieldset {
+		top: 40%;
+	}
+	.carouselcontainer {
+		height: 100px;
+		width: 25%;
+		margin-top: 10px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
+	}
+}
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	#navdots {
+		bottom: 24px;
+		width: 216px;
+		margin-left: calc(50% - 108px);
+		visibility: hidden;
+	}
+	.dots {
+		height: 16px;
+		width: 16px;
+	}
+	.dots:hover + .tooltiptext {
+		visibility: hidden;
+	}
+	#exit {
+		top: 16px;
+		right: 16px;
+	}
+	#exitbutton {
+		height: 32px;
+		width: 32px;
+	}
+	.navbutton {
+		height: 40px;
+		width: 40px;
+		bottom: 35px;
+	}
+	.wrap2, .wrap3 {
+		width: 60%;
+		margin-left: 20%;
+	}
+	.wrap4 {
+		width: 40%;
+		margin-left: calc(20% / 3);
+	}
+	fieldset button {
+		width: 50%;
+	}
+	.questiontext {
+		width: 95%;
+		margin: auto;
+		font-size: 110%;
+		margin-top: 48px;
+		margin-bottom: 5px;
+	}
+	.maoriquestiontext {
+		width: 95%;
+		margin: auto;
+		font-size: 100%;
+		margin-bottom: 16px;
+	}
+	.engsub {
+		font-size: 100%;
+		margin: 8px 0 16px 0;
+	}
+	.maorisub {
+		display: none;
+	}
+	#fronttext {
+		width: 80%;
+	}
+	#logo {
+		width: 60%;
+		margin-left: 20%;
+	}
+	.carouselcontainer {
+		height: 150px;
+		width: 50%;
+		margin-top: 50px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
+	}
+}
