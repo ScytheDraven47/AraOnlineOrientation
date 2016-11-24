@@ -1,3 +1,53 @@
+@media screen and (max-width: 800px) {
+
+.modal-content-div1{
+		margin-left:15%;
+	margin-right:15%;
+	width:auto;
+		float:left;
+}
+.modal-content-div2{
+		margin-left:15%;
+	margin-right:15%;
+		width:auto;
+			float:left;
+}
+
+
+
+.midal-box-img{
+width:11%;
+}
+.midal-close-img{
+width:10%;
+}
+
+
+
+
+}
+
+
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+} 
+@media screen and (orientation: landscape) and (max-height: 600px) {
+ 
+
+.midal-box-img{
+width:7%;
+}
+.midal-close-img{
+width:6%;
+}
+
+
+}
+
+
+
+
+**************************************************************************************************************************************
 HTML
   <div class="modal-content-div3">
  <div class="modal-content-VideoDiv">
