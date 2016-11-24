@@ -79,21 +79,42 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+$(document).ready(function() {
+	var movementStrength = 10;
+	var height = movementStrength / $(window).height();
+	var width = movementStrength / $(window).width();
+	$("body").on('mousemove resize', function(e) {
+		var pageX = e.pageX - ($(window).width() / 2);
+		var pageY = e.pageY - ($(window).height() / 2);
+		var newvalueX = width * pageX * -1 - 25;
+		var newvalueY = height * pageY * -1;
+		var topHeight = $('#staticlogo').innerHeight();
+		$('#cloudlogo').css("left", newvalueX+25+"px");
+		$('#cloudlogo').css("top", "calc("+topHeight+"px + "+newvalueY+"px)");
+	});
+	$(window).resize(function(e){
+			var topHeight = $('#staticlogo').innerHeight();
+			$('#cloudlogo').css("top", topHeight+"px");
+	});
+});
 </script>
 </head>
 <body>
 
 <form id="theform" action="">
 	<div class="question" id="q0">
-		
-		
 		<fieldset class="questionfield" id="welcomefieldset">
-		
-		<img id="logo" alt="Ara Logo" src="aralogo.png">
-		<p id="fronttext">Welcome to Ara Online Orientation. For best results, take the quiz to personalize your orientation experience. You can skip or exit the quiz at any time.</p>
-		
+		<div id="leftfloat">
+		<img id="staticlogo" alt="Ara Institute Logo" src="img/ara_logo.png">
+		<img class="logo" id="cloudlogo" src="img/orientation_logo_cloud.png">
+		<img class="logo" id="buildinglogo" alt="Student Orientation Logo" src="img/orientation_logo.png">
+		</div>
+		<div id="rightfloat">
+		<p class="fronttext">Welcome to the Ara Online Student Orientation, where you can find out about the services Ara has to offer.</p>
+		<p class="fronttext">To personalise your information and get the best experience possible, we recommend you take this short survey.</p>
+		</div>
 		</fieldset>
-		
 	</div>
 	
 	<div class="question" id="q1">
@@ -219,25 +240,31 @@ function handleTouchMove(evt) {
 
 		<fieldset class="questionfield">
 		
-		<h1 class="questiontext">Are you in need of study assistance due to...</h1>
+		<h1 class="questiontext">Do you need study arrangements?</h1>
 		<h1 class="maoriquestiontext">Ko koe i roto i te hiahia o te &amacr;whina ako e tika ana ki...</h1>
 			
-		<div class="wrap3">
-		<button type="button" class="optionButtonSome" id="physical" name="condition" value="disabilityyes"><img class="learningImage learningImage2" alt="Physical Disability" src="img/physical_disability.png"></button>
-		<label class="engsub" for="disabilityyes">Physical Disability</label>
-		<label class="maorisub" for="interested">Hau&amacr;tanga Tinana</label>
+		<div class="wrap4">
+		<button type="button" class="optionButtonSome" id="disability" name="condition" value="disability"><img class="learningImage learningImage2" alt="Disability or Health Needs" src="img/physical_disability.png"></button>
+		<label class="engsub" for="disability">Disability or Health Needs</label>
+		<label class="maorisub" for="disability">Hau&amacr;tanga Tinana</label>
 		</div>
 		
-		<div class="wrap3">
-		<button type="button" class="optionButtonSome" id="impair" name="condition" value="learningyes"><img class="learningImage learningImage2" alt="Learning Impairment" src="img/learning_condition.png"></button>
-		<label class="engsub" for="learningyes">Learning Impairment</label>
-		<label class="maorisub" for="interested">Waimaerotanga Ako</label>
+		<div class="wrap4">
+		<button type="button" class="optionButtonSome" id="dyslexia" name="condition" value="dyslexia"><img class="learningImage learningImage2" alt="Dyslexia" src="img/dyslexia.png"></button>
+		<label class="engsub" for="dyslexia">Dyslexia</label>
+		<label class="maorisub" for="dyslexia">Waimaerotanga Ako</label>
+		</div>
+		
+		<div class="wrap4">
+		<button type="button" class="optionButtonSome" id="deaf" name="condition" value="deaf"><img class="learningImage learningImage2" alt="Deaf" src="img/dyslexia.png"></button>
+		<label class="engsub" for="deaf">Deaf</label>
+		<label class="maorisub" for="deaf">Waimaerotanga Ako</label>
 		</div>
 			
-		<div class="wrap3">
-		<button type="button" class="optionButtonSingle" id="no" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png"></button>
+		<div class="wrap4">
+		<button type="button" class="optionButtonSingle" id="learningno" name="condition" value="learningno"><img class="learningImage" alt="No Study Assisatnce" src="img/no_learning.png"></button>
 		<label class="engsub" for="learningno">No Assistance Needed</label>
-		<label class="maorisub" for="interested">K&amacr;ore he &Amacr;whina Hiahiatia</label>
+		<label class="maorisub" for="learningno">K&amacr;ore he &Amacr;whina Hiahiatia</label>
 		</div>
 			
 		</fieldset>
@@ -300,21 +327,21 @@ function handleTouchMove(evt) {
 		<div id="slidernext"><img src="img/next_campus.png" onclick="plusSlides(1)"></div>
 		<div id="sliderprev"><img src="img/prev_campus.png" onclick="plusSlides(-1)"></div>
 		<script>
-		var sliderIndex = 1;
-		showSlides(sliderIndex);
-		function plusSlides(n) {
-			showSlides(sliderIndex += n);
-		}
-		function showSlides(n) {
-			var i;
-			var x = document.getElementsByClassName("ie-slide");
-			if (n > x.length) {sliderIndex = 1}    
-			if (n < 1) {sliderIndex = x.length}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";  
+			var sliderIndex = 1;
+			showSlides(sliderIndex);
+			function plusSlides(n) {
+				showSlides(sliderIndex += n);
 			}
-		x[sliderIndex-1].style.display = "block";  
-		}
+			function showSlides(n) {
+				var i;
+				var x = document.getElementsByClassName("ie-slide");
+				if (n > x.length) {sliderIndex = 1}    
+				if (n < 1) {sliderIndex = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";  
+				}
+			x[sliderIndex-1].style.display = "block";  
+			}
 		</script>
 		</div>
 		</fieldset>
@@ -339,8 +366,8 @@ function handleTouchMove(evt) {
 </div>
 
 <div id="welcomebuttons">
-	<button onclick="currentDiv(2)"><img src="img/continue.png"></button>
-	<button onclick=""><img src="img/skip.png"></button>
+	<button id="continuebutton" onclick="currentDiv(2)"><img src="img/continue.png"></button>
+	<button id="skipbutton" onclick=""><img src="img/skip.png"></button>
 </div>
 
 <div id="toplogo"></div>
@@ -408,6 +435,9 @@ function showDivs(n) {
 	var welbuts = document.getElementById("welcomebuttons");
 	var exit = document.getElementById("exit");
 	var body = document.body;
+	if (n <= 1) {body.style.backgroundImage = "url(img/background_welcome.png)"}
+	else if (n >= 8) {body.style.backgroundImage = "url(img/campus_background.png)"}
+	else {body.style.backgroundImage = "url(img/background.png)"};
 	if (n <= 1) {navbuts.style.display = "none"}
 	else {navbuts.style.display = "inline"};
 	if (n <= 1) {navdots.style.display = "none"}
@@ -420,8 +450,7 @@ function showDivs(n) {
 	else {prevbut.style.visibility = "visible"};
 	if (n >= 8) {nextbut.style.visibility = "hidden"}
 	else {nextbut.style.visibility = "visible"};
-	if (n >= 8) {body.style.backgroundImage = "url(img/campus_background.png)"}
-	else {body.style.backgroundImage = "url(img/background.png)"};
+	
     if (n < 1) {slideIndex = 1};
 	if (n > 8) {slideIndex = 8};
     for (i = 0; i < x.length; i++) {

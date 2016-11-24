@@ -28,5 +28,6 @@
 	}
 	.ie-alt p {
 		text-align: center;
+		margin: 0 20px 20px;
 	}
 }
