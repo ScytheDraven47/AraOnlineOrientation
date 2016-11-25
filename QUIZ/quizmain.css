@@ -1,9 +1,10 @@
+
 body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
 	font-family: "My Custom Font", Verdana, Tahoma;
-	background-image: url(img/background.png);
+	background-image: url(img/background_welcome.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	-webkit-transition: background-image 0.3s linear 0.5s;
