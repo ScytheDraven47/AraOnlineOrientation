@@ -1,3 +1,19 @@
+	
+		.tooltiptext {
+	visibility: hidden;
+	position: absolute;
+	width: 150px;
+	text-align: right;
+ 
+	top: -40px;
+	margin-left: -120px;
+}
+.section-btn li:hover + .tooltiptext {
+	visibility: visible;
+}
+		
+<span class="tooltiptext">Studying Status</span>
+************************************************************************************************************************************
 #ss_feel div:nth-child(1) {
   top: -10px;
   right: -180px;
