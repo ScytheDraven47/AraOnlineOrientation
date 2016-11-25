@@ -1,3 +1,118 @@
+#ss_feel div:nth-child(1) {
+  top: -10px;
+  right: -180px;
+}
+
+
+#ss_feel div:nth-child(4) {
+  top:-100px;
+  right: -150px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: -165px;
+  right: -75px;
+}
+
+#ss_feel div:nth-child(6) {
+  top: -180.4px;
+  right: 5.0px;
+}
+
+
+
+
+#ss_feel div:nth-child(5) {
+  top:-30px;
+  right: -120px;
+}
+#ss_feel div:nth-child(3) {
+  top: -85px;
+  right: -85px;
+}
+
+#ss_feel div:nth-child(7) {
+  top: -110px;
+  right: -25px;
+}
+
+
+*************************************@media screen and (max-width: 800px) {
+#ss_feel div:nth-child(1) {
+  top: 10px;
+  right: 180px;
+}
+
+
+#ss_feel div:nth-child(4) {
+  top:100px;
+  right: 150px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: 165px;
+  right: 75px;
+}
+
+#ss_feel div:nth-child(6) {
+  top: 180.4px;
+  right: 5.0px;
+}
+
+
+
+
+#ss_feel div:nth-child(5) {
+  top:30px;
+  right: 120px;
+}
+#ss_feel div:nth-child(3) {
+  top: 85px;
+  right: 80px;
+}
+
+#ss_feel div:nth-child(7) {
+  top: 110px;
+  right: 25px;
+}
+
+
+********************@media screen and (orientation: landscape) and (max-height: 600px)
+#ss_feel div:nth-child(1) {
+  top: 5px;
+  right: 100px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: 5px;
+  right: 150px;
+}
+
+#ss_feel div:nth-child(3) {
+  top: 5px;
+  right: 200px;
+}
+
+#ss_feel div:nth-child(4) {
+  top:5px;
+  right: 250px;
+}
+#ss_feel div:nth-child(5) {
+  top:5px;
+  right: 300px;
+}
+#ss_feel div:nth-child(6) {
+  top: 5px;
+  right: 350px;
+}
+#ss_feel div:nth-child(7) {
+  top: 5px;
+  right: 400px;
+}
+
+
+
+***************************************************************************************************************************************
 css
 .modal-box{
 	   margin-left: auto;
