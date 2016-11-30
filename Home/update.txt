@@ -1,4 +1,22 @@
-	
+$(document).ready(
+			function() {
+	            $(".section-wrap").swipe({   
+	                swipe : function(event, direction, distance, duration, fingerCount) {
+                         if(direction == "up")
+                         {
+                            up();run();	
+                         }
+                         else if(direction == "down")
+                         {
+                          down();run();	
+                         }
+					}
+				});
+            }			
+		);
+
+
+******************************************************************
 		.tooltiptext {
 	visibility: hidden;
 	position: absolute;
