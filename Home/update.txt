@@ -1,4 +1,58 @@
-HTML
+HTML  Student_expectations
+
+<div class="bigTest2">
+<img class="service-icon" src="img/Student_expectations/student_expectations_icon.png" />
+				<h1>student expectations</h1>
+				<img class="test-bar2" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+				<p> 1111111111111111111111111111111
+				</p>
+<p> 1111111111111111111111111111111
+				</p>
+
+
+			
+				</div>
+				<div class="icons3">
+				
+					<div class="bigIcons">
+					
+					<img class="service-icon" src="img/Student_expectations/student_rights_icon.png" />
+					<h2>Student rights</h2>
+					<p>111111111
+					</p>
+			
+		
+					<p><a href="#" title="contact" >cilck</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+			
+					<div class="bigIcons">
+					<img class="service-icon" src="img/Student_expectations/student_responsibilities_icon.png" />
+					<h2>student resposibilities</h2>
+					<p>1111111111111111
+					</p>
+					<p><a href="#" title="contact" >cilck</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+					<div class="bigIcons">
+					<img class="service-icon" src="img/Student_expectations/student_behaivour_icon.png" />
+					<h2>student behaivour</h2>
+					<p>11111111111
+					</p>
+					<p><a href="#" title="contact" >cilck</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+					
+			
+
+				
+					
+					
+					</div>
+
+
+*****************************************************************
+HTML  events
 <div class="bigTest2">
 <img class="service-icon" src="img/events/Events_icon.png" />
 				<h1>Events</h1>
@@ -55,7 +109,7 @@ background-position:center;
 	 position: relative; 
 		float:center;
 
-	height:30%;
+	height:40%;
 	width:100%;
 word-wrap: break-word; 
 word-break: normal; 
@@ -64,7 +118,7 @@ word-break: normal;
 		 position: relative; 
 	padding-top:5%;
 	float:center;
-	height:70%;
+	height:60%;
 	width:100%;
 
 
@@ -72,7 +126,7 @@ word-break: normal;
 }
 ****************************
 
-HTML
+HTML Before_you_start
 <div class="bigTest">
 				<h1>Befor you start</h1>
 				<img class="test-bar2" src="img/Before_you_start/main_title_line_before_you_startai.png" />
