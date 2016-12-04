@@ -87,6 +87,9 @@
 		width: 100%;
 		margin-left: 0;
 	}
+	#cloudlogo, #cloudlogo2 {
+		width: 45%;
+	}
 	.fronttext {
 		width: 90%;
 		margin-left: 5%;

@@ -262,8 +262,9 @@ button img:hover {
 		margin-left: 15%;
 	}
 }
-#cloudlogo {
+#cloudlogo, #cloudlogo2 {
 	position: absolute;
+	z-index: -1;
 }
 .fronttext {
 	width: 50%;

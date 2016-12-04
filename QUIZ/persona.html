@@ -11,25 +11,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript">  
-$(function() {  
-	$('.nextslidebutton').bind('click',function(event){  
-		var leftPos = $('.container').scrollLeft();
-		var slideWidth = $('.slide').width();
-		$('.container').stop().animate({
-			scrollLeft: (leftPos + slideWidth + 20)
-		}, 500);
-	});
-});
-$(function() {  
-	$('.previousslidebutton').bind('click',function(event){  
-		var leftPos = $('.container').scrollLeft();
-		var slideWidth = $('.slide').width();
-		$('.container').stop().animate({
-			scrollLeft: (leftPos - slideWidth - 20)
-		}, 500);
-	});
-});
-
 document.addEventListener('touchstart', handleTouchStart, false);        
 document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -98,6 +79,25 @@ $(document).ready(function() {
 			$('#cloudlogo').css("top", topHeight+"px");
 	});
 });
+
+$(document).ready(function() {
+	var movementStrength = 10;
+	var height = movementStrength / $(window).height();
+	var width = movementStrength / $(window).width();
+	$("body").on('mousemove resize', function(e) {
+		var pageX = e.pageX - ($(window).width() / 2);
+		var pageY = e.pageY - ($(window).height() / 2);
+		var newvalueX = width * pageX - 25;
+		var newvalueY = height * pageY ;
+		var topHeight = $('#staticlogo').innerHeight();
+		$('#cloudlogo2').css("left", newvalueX+25+"px");
+		$('#cloudlogo2').css("top", "calc("+topHeight+"px + "+newvalueY+"px)");
+	});
+	$(window).resize(function(e){
+			var topHeight = $('#staticlogo').innerHeight();
+			$('#cloudlogo2').css("top", topHeight+"px");
+	});
+});
 </script>
 </head>
 <body>
@@ -107,7 +107,8 @@ $(document).ready(function() {
 		<fieldset class="questionfield" id="welcomefieldset">
 		<div id="leftfloat">
 		<img id="staticlogo" alt="Ara Institute Logo" src="img/ara_logo.png">
-		<img class="logo" id="cloudlogo" src="img/orientation_logo_cloud.png">
+		<img class="logo" id="cloudlogo" src="img/orientation_logo_cloud1.png">
+		<img class="logo" id="cloudlogo2" src="img/orientation_logo_cloud2.png">
 		<img class="logo" id="buildinglogo" alt="Student Orientation Logo" src="img/orientation_logo.png">
 		</div>
 		<div id="rightfloat">
@@ -122,24 +123,24 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your studying status?</h1>
-		<h1 class="maoriquestiontext">He aha te mea koutou t&umacr;nga ako?</h1>
+		<h1 class="maoriquestiontext">He aha t&amacr;u e whai nei?</h1>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSingle" id="interested" name="status" value="interested" ><img class="statusImage" alt="Interested" src="img/interested_student.png"></button>
 		<label class="engsub" for="interested">Interested</label>
-		<label class="maorisub" for="interested">Hiahia</label>
+		<label class="maorisub" for="interested">He aha t&amacr;u e wawatatia nei</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSingle" id="new" name="status" value="new"><img class="statusImage" alt="New Student" src="img/current_student.png"></button>
 		<label class="engsub" for="new">New</label>
-		<label class="maorisub" for="interested">Hou</label>
+		<label class="maorisub" for="interested">He tauira hou koe</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSingle" id="returning" name="status" value="returning"><img class="statusImage" alt="Returning Student" src="img/returning_student.png"></button>
 		<label class="engsub" for="returning">Returning</label>
-		<label class="maorisub" for="interested">Hoki</label>
+		<label class="maorisub" for="interested">He tauira e hoki mai ana</label>
 		</div>
 		
 		</fieldset>
@@ -151,30 +152,30 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your age?</h1>
-		<h1 class="maoriquestiontext">He aha te mea koutou tau?</h1>
+		<h1 class="maoriquestiontext">He aha t&omacr; pakeke?</h1>
 		
 		<div class="wrap4">
 		<button type="button" class="optionButtonSingle" id="youth" name="age" value="youth"><img class="ageimage" alt="Under 18" src="img/age_1.png"></button>
 		<label class="engsub" for="youth">Under 18</label>
-		<label class="maorisub" for="interested">Raro 18</label>
+		<label class="maorisub" for="youth">Raro iho i te tekau m&amacr; waru</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" class="optionButtonSingle" id="mid" name="age" value="mid"><img class="ageimage" alt="18 to 24" src="img/age_2.png"></button>
 		<label class="engsub" for="mid">18 - 24</label>
-		<label class="maorisub" for="interested">18 - 24</label>
+		<label class="maorisub" for="mid">18 - 24</label>
 		</div>
 		
 		<div class="wrap4">
 		<button type="button" class="optionButtonSingle" id="older" name="age" value="oldmid"><img class="ageimage" alt="25 to 40" src="img/age_3.png"></button>
 		<label class="engsub" for="oldmid">25 - 40</label>
-		<label class="maorisub" for="interested">25 - 40</label>
+		<label class="maorisub" for="oldmid">25 - 40</label>
 		</div>
 		
 		<div class="wrap4">
-		<button type="button" class="optionButtonSingle" id="older" name="age" value="older"><img class="ageimage" alt="Over 40" src="img/age_3.png"></button>
+		<button type="button" class="optionButtonSingle" id="older" name="age" value="older"><img class="ageimage" alt="Over 40" src="img/age_4.png"></button>
 		<label class="engsub" for="older">Over 40</label>
-		<label class="maorisub" for="interested">Runga 40</label>
+		<label class="maorisub" for="older">Neke atu i te rua tekau m&amacr; wh&amacr;</label>
 		</div>
 		
 		</fieldset>
@@ -185,12 +186,12 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">What is your gender?</h1>
-		<h1 class="maoriquestiontext">He aha te mea koutou ira?</h1>
+		<h1 class="maoriquestiontext">He wahine, he t&amacr;ne r&amacr;nei koe?</h1>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonMultiple" id="male" name="gender" value="male"><img class="genderImage" alt="Male" src="img/male.png"></button>
 		<label class="engsub" for="male">Male</label>
-		<label class="maorisub" for="interested">Tane</label>
+		<label class="maorisub" for="interested">T&amacr;ne</label>
 		</div>
 		
 		<div class="wrap3">
@@ -202,7 +203,7 @@ $(document).ready(function() {
 		<div class="wrap3">
 		<button type="button" class="optionButtonMultiple" id="other" name="gender" value="other"><img class="genderImage" alt="Other Gender" src="img/non_binary.png"></button>
 		<label class="engsub" for="other">Other</label>
-		<label class="maorisub" for="interested">&Emacr;tahi atu Ira</label>
+		<label class="maorisub" for="interested">T&emacr;tahi atu tapa</label>
 		</div>
 		
 		</fieldset>
@@ -213,24 +214,24 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Are you a...</h1>
-		<h1 class="maoriquestiontext">Ko koe he...</h1>
+		<h1 class="maoriquestiontext">He aha koe...</h1>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSome" id="neither" name="ethnicity" value="neither"><img class="ethnicityImage ethnicityImage2" alt="New Zealander" src="img/domestic.png"></button>
 		<label class="engsub" for="nzeuropean">Domestic Student</label>
-		<label class="maorisub" for="interested">Domestic &Amacr;konga</label>
+		<label class="maorisub" for="interested">He tauira n&omacr; Aotearoa tonu</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSome" id="maoripasifika" name="ethnicity" value="maoripasifika"><img class="ethnicityImage ethnicityImage2" alt="Maori/Pasifika" src="img/maori_pasifika.png"></button>
 		<label class="engsub" for="maoripasifika">M&amacr;ori/Pasifika Student</label>
-		<label class="maorisub" for="interested">M&amacr;ori/Pasifika &Amacr;konga</label>
+		<label class="maorisub" for="interested">He tauira M&amacr;ori/o Te Moana-nui-a-Kiwa r&amacr;nei</label>
 		</div>
 		
 		<div class="wrap3">
 		<button type="button" class="optionButtonSingle" id="international" name="ethnicity" value="international"><img class="ethnicityImage" alt="International" src="img/international.png"></button>
 		<label class="engsub" for="international">International Student</label>
-		<label class="maorisub" for="interested">International &Amacr;konga</label>
+		<label class="maorisub" for="interested">He tauira n&omacr; taw&amacr;hi</label>
 		</div>
 		
 		</fieldset>
@@ -276,18 +277,18 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Do you have children under six?</h1>
-		<h1 class="maoriquestiontext">E whai koe tamariki i raro i ono?</h1>
+		<h1 class="maoriquestiontext">He tamariki &amacr;u i raro iho i te ono tau?</h1>
 		
 		<div class="wrap2">
 		<button type="button" class="optionButtonSingle" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png"></button>
 		<label class="engsub" for="yes">Yes</label>
-		<label class="maorisub" for="interested">Ae</label>
+		<label class="maorisub" for="interested">&Amacr;e</label>
 		</div>
 		
 		<div class="wrap2">
 		<button type="button" class="optionButtonSingle" id="no" name="condition" value="childrenno"><img class="childrenImage" alt="No Children" src="img/no_children.png"></button>
 		<label class="engsub" for="no">No</label>
-		<label class="maorisub" for="interested">Kahore</label>
+		<label class="maorisub" for="interested">K&amacr;o</label>
 		</div>
 		
 		</fieldset>
@@ -299,7 +300,7 @@ $(document).ready(function() {
 		<fieldset class="questionfield">
 		
 		<h1 class="questiontext">Select your campus</h1>
-		<h1 class="maoriquestiontext">T&imacr;pakohia koutou w&amacr;nanga</h1>
+		<h1 class="maoriquestiontext">Whiria te w&amacr;hi e ako ai koe</h1>
 		
 		<div class="carouselcontainer">
 			<div class="carousel">
