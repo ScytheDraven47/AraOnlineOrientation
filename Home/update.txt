@@ -1,3 +1,96 @@
+HTML
+<div class="bigTest">
+				<h1>Befor you start</h1>
+				<img class="test-bar2" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+				<p> Before you can start your journey at ara first things first!
+				</p>
+
+			
+				</div>
+				<div class="icons2">
+				
+					<div class="bigIcons">
+					<img class="service-icon" src="img/Before_you_start/Enrol_icon.png" />
+					<h2>Enrolment</h2>
+					<p>sign up to your dream course.
+					</p>
+					<p><a href="#" title="contact" >Enrol Me!</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+			
+					<div class="bigIcons">
+					<img class="service-icon" src="img/Before_you_start/study_link_icon.png" />
+					<h2>Study link</h2>
+					<p>Get your student loan sorted.
+					</p>
+					<p><a href="#" title="contact" >Get my loan!</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+					<div class="bigIcons">
+					<img class="service-icon" src="img/Before_you_start/accomodation_icon.png" />
+					<h2>Accommodation</h2>
+					<p>moveing to christchurch? Find accommodation
+					</p>
+					<p><a href="#" title="contact" >click here for more</a></p>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+					</div>		
+					
+			
+
+				
+					
+					
+					</div>
+					
+					
+					
+css
+
+.bigTest{
+
+	background-size:contain; 
+	background-repeat: no-repeat;
+background-position:center;
+
+	 position: relative; 
+		float:center;
+
+	height:20%;
+	width:100%;
+word-wrap: break-word; 
+word-break: normal; 
+}
+.icons2{
+		 position: relative; 
+	padding-top:5%;
+	float:center;
+	height:80%;
+	width:100%;
+
+
+ text-align: center;
+}
+.test-bar{
+	width:50%;
+}
+.test-bar2{
+	width:50%;
+}
+
+.bigIcons{
+
+width:30%;
+
+display:inline-block;
+vertical-align: top;  
+position:relative;
+  margin: 1%;
+	 text-align: center;
+
+
+}
+
+******************************************************************************************************
 $(document).ready(
 			function() {
 	            $(".section-wrap").swipe({   
