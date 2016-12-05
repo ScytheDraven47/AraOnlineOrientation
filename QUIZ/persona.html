@@ -330,12 +330,12 @@ $(document).ready(function() {
 		
 		<div class="carouselcontainer">
 			<div class="carousel">
-				<div class="item a"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_madras.png"></a></div>
-				<div class="item b"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_woolston.png"></a></div>
-				<div class="item c"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_ashburton.png"></a></div>
-				<div class="item d"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_timaru.png"></a></div>
-				<div class="item e"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_oamaru.png"></a></div>
-				<div class="item f"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img src="img/campus_distance.png"></a></div>
+				<div class="item a"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_madras.png"></a></div>
+				<div class="item b"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_woolston.png"></a></div>
+				<div class="item c"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_ashburton.png"></a></div>
+				<div class="item d"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_timaru.png"></a></div>
+				<div class="item e"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_oamaru.png"></a></div>
+				<div class="item f"><a href="http://elgar.ara.ac.nz/AraOnlineOrientation/"><img class="campusimg" src="img/campus_distance.png"></a></div>
 			</div>
 		</div>
 		<div class="carouselnext"><img src="img/next_campus.png"></div>
@@ -579,6 +579,7 @@ for (var i = 0; i < questionsSome.length; i++) {
 var carousel = $(".carousel");
 var currdeg  = 0;
 var campuses = document.getElementsByClassName("item");
+var campusimgs = document.getElementsByClassName("campusimg");
 
 $(".carouselnext").on("click", { d: "n" }, rotate);
 $(".carouselprev").on("click", { d: "p" }, rotate);
@@ -607,25 +608,32 @@ function rotate(e) {
 		"transform": "rotateY("+currdeg+"deg)"
 	});
 	for (i = 0; i < campuses.length; i++) {
-		campuses[i].style.opacity = "0.4";
+		campuses[i].style.opacity = "0.1";
+		campusimgs[i].style.transform = "scale(1)";
 	}
 	if (getDeg(currdeg) == 0) {
 		campuses[0].style.opacity = "1";
+		campuses[0].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 	if (getDeg(currdeg) == 60) {
 		campuses[5].style.opacity = "1";
+		campuses[5].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 	if (getDeg(currdeg) == 120) {
 		campuses[4].style.opacity = "1";
+		campuses[4].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 	if (getDeg(currdeg) == 180) {
 		campuses[3].style.opacity = "1";
+		campuses[3].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 	if (getDeg(currdeg) == 240) {
 		campuses[2].style.opacity = "1";
+		campuses[2].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 	if (getDeg(currdeg) == 300) {
 		campuses[1].style.opacity = "1";
+		campuses[1].firstChild.firstChild.style.transform = "scale(1.5)";
 	}
 }
 </script>

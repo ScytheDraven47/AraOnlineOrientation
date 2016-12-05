@@ -297,7 +297,6 @@ button img {
 	width: 40%;
 	height: 200px;
 	position: relative;
-	perspective: 1000px;
 }
 .carousel {
 	height: 100%;
@@ -311,15 +310,19 @@ button img {
 	background: Transparent;
 	width: 100%;
 	text-align: center;
-	opacity: 0.4;
+	opacity: 0.1;
 }
 .item img {
 	width: 100%;
 	margin-top: 20px;
+	transition: transform 0.7s;
 }
 .a {
 	transform: rotateY(0deg) translateZ(400px);
 	opacity: 1;
+}
+.a img {
+	transform: scale(1.5);
 }
 .b {
 	transform: rotateY(60deg) translateZ(400px);
