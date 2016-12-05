@@ -128,8 +128,8 @@
 		bottom: 35px;
 	}
 	.wrap2, .wrap3 {
-		width: 60%;
-		margin-left: 20%;
+		width: 50%;
+		margin-left: 25%;
 	}
 	.wrap4 {
 		width: 40%;
@@ -140,7 +140,7 @@
 		width: 50%;
 	}
 	.wrap4 button {
-		width: 70%;
+		width: 60%;
 	}
 	.questiontext {
 		width: 95%;

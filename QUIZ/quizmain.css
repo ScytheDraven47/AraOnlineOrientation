@@ -108,6 +108,12 @@ button img {
 	.wrap4 {
 		margin-left: calc(50% / 3);
 	}
+	#q5 .wrap4 .engsub {
+		height: 50px;
+	}
+	.wrap4 .maorisub {
+		height: 42px;
+	}
 }
 .wrap2 button, .wrap3 button, .wrap4 button {
 	display: block;
@@ -138,7 +144,6 @@ button img {
 	color: grey;
 }
 #navdots {
-	width: 308px;
 	bottom: 40px;
 	position: fixed;
 	margin-left: calc(50% - 154px);
@@ -203,8 +208,8 @@ button img {
 #welcomebuttons {
 	position: absolute;
 	bottom: 48px;
-	width: 300px;
-	margin-left: calc(50% - 150px);
+	width: 250px;
+	margin-left: calc(50% - 125px);
 }
 #welcomebuttons button {
 	cursor: pointer;
@@ -237,28 +242,55 @@ button img {
 }
 .logo {
 	display: block;
-	width: 55%;
-	margin-left: 22.5%;
+	width: 40%;
+	margin-left: 30%;
 	margin-bottom: 24px;
+}
+.fronttext {
+	width: 80%;
+	margin: auto;
+	margin-bottom: 24px;
+	font-size: 100%;
+	text-align: center;
+}
+@media (min-height: 650px) {
+	.logo {
+		width: 45%;
+		margin-left: 27.5%;
+	}
+}
+@media (min-height: 700px) {
+	.logo {
+		width: 50%;
+		margin-left: 25%;
+	}
+	#welcomebuttons {
+		width: 300px;
+		margin-left: calc(50% - 150px);
+	}
+}
+@media (min-height: 750px) {
+	.logo {
+		width: 60%;
+		margin-left: 20%;
+	}
+	.fronttext {
+		width: 60%;
+	}
 }
 @media (min-height: 800px) {
 	.logo {
 		width: 70%;
 		margin-left: 15%;
 	}
+	.fronttext {
+		width: 50%;
+	}
 }
 #cloudlogo, #cloudlogo2 {
 	position: absolute;
 	z-index: -1;
 }
-.fronttext {
-	width: 50%;
-	margin: auto;
-	margin-bottom: 24px;
-	font-size: 100%;
-	text-align: center;
-}
-
 .modal {
     display: none;
     position: fixed;
