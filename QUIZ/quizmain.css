@@ -1,9 +1,7 @@
-
 body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
-	font-family: "My Custom Font", Verdana, Tahoma;
 	background-image: url(img/background_welcome.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -18,11 +16,9 @@ body {
 a {
 	text-decoration: underline;
 	cursor: pointer;
+	font-size: 130%;
 	font-weight: bold;
-	font-size: 140%;
-}
-a:hover {
-	color: #33b789;
+	color: black;
 }
 h1 {
 	font-weight: normal;
@@ -94,11 +90,6 @@ button img {
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
-button img:hover {
-	-ms-transform: scale(1.05, 1.05);
-	-webkit-transform: scale(1.05, 1.05);
-	transform: scale(1.05, 1.05);
-}
 .wrap2 {
 	width: 25%;
 	float: left;
@@ -162,9 +153,6 @@ button img:hover {
 	outline: none;
 	background-color: #acdee4;
 }
-.dots:hover {
-	background-color: #33b789;
-}
 .activedot {
 	background-color: #a03590;
 }
@@ -176,9 +164,6 @@ button img:hover {
     padding: 5px 0;
 	top: -40px;
 	margin-left: -120px;
-}
-.dots:hover + .tooltiptext {
-	visibility: visible;
 }
 .navbutton {
 	position: absolute;
@@ -286,7 +271,7 @@ button img:hover {
     background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
-    background-color: #d0e9de;
+    background-color: #fff;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -294,22 +279,18 @@ button img:hover {
 }
 .close {
 	cursor: pointer;
-}
-.close img {
-	width: 32px;
-	height: 32px;
-	padding: 10px;
+	text-decoration: underline;
 }
 .modaloptions {
 	margin-top: 24px;
 	margin-bottom: 24px;
 	text-align: center;
 }
-.modal-content a {
-	display: inline-block;
-	width: calc(calc(100% - 42px) / 3);
-	margin-left: calc(calc(calc(100% - 42px) / 3) / 3);
-	text-align: left;
+.modaloptions a {
+	display: block;
+	width: 100%;
+	margin: auto;
+	margin-top: 30px;
 }
 .carouselcontainer {
 	margin: 100px auto;
@@ -326,7 +307,6 @@ button img:hover {
 	transition: transform 0.7s;
 }
 .item {
-	display: block;
 	position: absolute;
 	background: Transparent;
 	width: 100%;
@@ -393,11 +373,7 @@ button img:hover {
 	width: 150px;
 	overflow: visible;
 }
-#slidernext img:hover, #sliderprev img:hover {
-	-ms-transform: scale(1.05, 1.05);
-	-webkit-transform: scale(1.05, 1.05);
-	transform: scale(1.05, 1.05);
-}
+
 #slidernext img, #sliderprev img {
 	width: 100%;
 }
@@ -406,4 +382,28 @@ button img:hover {
 }
 #sliderprev {
 	left: 5em;
+}
+@media (hover:hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	a:hover {
+		color: #33b789;
+	}
+	button img:hover {
+		-ms-transform: scale(1.05, 1.05);
+		-webkit-transform: scale(1.05, 1.05);
+		transform: scale(1.05, 1.05);
+	}
+	.dots:hover {
+		background-color: #33b789;
+	}
+	.dots:hover + .tooltiptext {
+		visibility: visible;
+	}
+	.close:hover {
+		color: #33b789;
+	}
+	#slidernext img:hover, #sliderprev img:hover {
+		-ms-transform: scale(1.05, 1.05);
+		-webkit-transform: scale(1.05, 1.05);
+		transform: scale(1.05, 1.05);
+	}
 }

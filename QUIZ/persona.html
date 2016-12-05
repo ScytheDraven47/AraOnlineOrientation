@@ -7,6 +7,32 @@
 <link rel="stylesheet" href="quizmain.css">
 <link rel="stylesheet" href="quizmobile.css">
 <link rel="stylesheet" href="quizie.css">
+<style>
+@-moz-document url-prefix() {
+	a:hover {
+		color: #33b789;
+	}
+	button img:hover {
+		-ms-transform: scale(1.05, 1.05);
+		-webkit-transform: scale(1.05, 1.05);
+		transform: scale(1.05, 1.05);
+	}
+	.dots:hover {
+		background-color: #33b789;
+	}
+	.dots:hover + .tooltiptext {
+		visibility: visible;
+	}
+	.close:hover {
+		color: #33b789;
+	}
+	#slidernext img:hover, #sliderprev img:hover {
+		-ms-transform: scale(1.05, 1.05);
+		-webkit-transform: scale(1.05, 1.05);
+		transform: scale(1.05, 1.05);
+	}
+}
+</style>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -380,8 +406,8 @@ $(document).ready(function() {
 			<span class="close">Close</span>
 			<br/>
 			<div class="modaloptions">
-			<a href="">Continue Without Saving</a>
-			<a href="">Continue With Saving</a>
+			<a href="">Submit Quiz</a>
+			<a href="">Skip Quiz</a>
 			</div>
 		</div>
 	</div>
@@ -469,6 +495,10 @@ function showDivs(n) {
 		dots[slideIndex-2].className += " activedot"
 	}
 }
+
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 function selectSingle(ele) {
 	var classes = ele.className;
