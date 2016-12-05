@@ -1,3 +1,111 @@
+css.css
+		.section-btn{ width:13px;position:fixed;right: 3%; top: 40%;}
+		.uparrow{top:25%;
+width:6%;
+		max-width:50px;
+	position:fixed;right: 1%;}
+
+		.downarrow{bottom :15%;
+		width:6%;
+		max-width:50px;
+	position:fixed;right: 1%;}
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  /*横屏 css*/
+  
+  
+  		.section-btn{ width:13px;position:fixed;right: 3%; top: 30%;}
+
+**********************************************************
+feel.css
+
+
+
+
+@media screen and (max-width: 600px) {
+	#ss_feel {
+position:fixed;
+top: 10px;
+left:auto;
+  right:25px;
+	z-index: 2;
+width:60px;
+height:60px;
+    
+
+}
+
+
+
+#ss_feel div:nth-child(1) {
+  top: 40px;
+  right: 165px;
+}
+
+#ss_feel div:nth-child(5) {
+  top:40px;
+  right: 85px;
+}
+
+#ss_feel div:nth-child(4) {
+  top:120px;
+  right: 210px;
+}
+
+#ss_feel div:nth-child(2) {
+  top: 120px;
+  right:130px;
+}
+
+#ss_feel div:nth-child(6) {
+  top: 120px;
+  right: 50px;
+}
+
+
+
+
+#ss_feel div:nth-child(3) {
+  top: 200px;
+  right: 85px;
+}
+
+#ss_feel div:nth-child(7) {
+  top: 200px;
+  right: 165px;
+}
+
+
+
+
+	
+	
+#ss_feel > .feel.ss_active {
+background-image:none;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4);
+-webkit-transform: scale(25);
+-moz-transform: scale(25);
+-ms-transform: scale(25);
+-o-transform: scale(25);
+transform: scale(25);
+z-index:-1;
+
+}
+
+#ss_feel > div label{
+
+color:#fff;
+
+	
+}
+
+
+}
+
+
+
+
+**********************************************************
 HTML  Student_expectations
 
 <div class="bigTest2">
