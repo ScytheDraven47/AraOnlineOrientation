@@ -1,4 +1,15 @@
+.bigIcons2 a {
+    color: blue;
+    text-decoration: none;
+}
+.bigIcons a {
+    color: blue;
+    text-decoration: none;
+}
 
+
+
+******************************************************
 var sectionwrap=document.querySelector('.section-wrap');//获取div		
 	
 		
