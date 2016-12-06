@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+	.smailicons label {
+		font-size: 90%;
+	}
+	.icons {
+		padding-top: 10px;
+	}
+	p {
+		font-size: 200%;
+	}
+	.bigimg {
+		margin-top: 10px;
+	}
+	.section-btn li {
+		visibility: hidden;
+	}
+}
+
+/* remove .nav ul {display: inline-block;} */
