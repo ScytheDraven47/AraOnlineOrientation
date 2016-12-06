@@ -16,4 +16,11 @@
 	}
 }
 
-/* remove .nav ul {display: inline-block;} */
+.nav {
+	top: 30%;
+}
+.nav ul li {
+	width: 15%;
+}
+
+/* remove .nav ul {display: inline-block; padding-left: 5%;} */
