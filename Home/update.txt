@@ -1,3 +1,35 @@
+modal.css
+.modalscroll h1,h2{
+
+	  font:bold 23px/28px leading;
+}
+
+
+.modalscroll p{
+
+	 font:bold 11px/14.4px leading;
+}
+
+
+
+css.css
+.section-wrap h2{
+
+	  font:bold 23px/28px leading;
+}
+
+.section-wrap label{
+
+	  font:bold 11px/13.2px leading;
+}
+
+.section-wrap p{
+
+	  font:bold 11px/14.4px leading;
+}
+
+
+********************************************************************************************************
 html
 
 
