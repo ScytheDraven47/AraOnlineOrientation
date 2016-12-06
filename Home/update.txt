@@ -1,3 +1,32 @@
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+
+@media screen and (orientation: landscape) and (max-height: 450px) {
+***********************************************************************
+page.js
+
+
+var timer;
+ var page = document.getElementsByClassName('section-wrap')[0];		
+page.addEventListener("wheel", function (e) {
+if(timer) {
+		window.clearTimeout(timer);
+	}
+	
+	timer = window.setTimeout(function() {
+
+   if (e.deltaY < 0) {
+   down();run();
+   }
+
+   if (e.deltaY > 0) {
+	up();run();
+   }
+	
+	},100);	
+});
+
+
+***************************************************************
 .bigIcons2 a {
     color: blue;
     text-decoration: none;
