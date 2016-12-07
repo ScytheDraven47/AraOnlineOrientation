@@ -1,4 +1,20 @@
-           <div class='circle'><a href="#" title="feel" ><img class="HAF" src="img/feel/new_main_icon.png" /></a></div>
+      <div class="modal-content-bf">
+	       <div class="modal-content-bf-i">
+ <img class="service-icon" src="img/Before_you_start/flatting_icon.png" />
+ </div>
+      <div class="modal-content-bf-h">
+					<h2>Flatting</h2> </div>
+					     <div class="modal-content-bf-p">
+					<p>Many Ara students live in shared rental accommodation while studying. Sharing a flat with other students is one of the cheapest ways to live. 
+					</p> </div>
+				      <div class="modal-content-bf-l">
+					<a href="#" title="contact" >click</a></br>
+					<img  class="test-bar"src="img/Before_you_start/main_title_line_before_you_startai.png" />
+  </div>
+  </div>
+ 
+ *********************************************************************************************
+ <div class='circle'><a href="#" title="feel" ><img class="HAF" src="img/feel/new_main_icon.png" /></a></div>
      
 
  .HAF
