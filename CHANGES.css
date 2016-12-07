@@ -1,9 +1,23 @@
-.section-btn {
-	width: 24px;
-}
-.tooltiptext {
-	right: 40px;
-	margin-top: -28px;
+.topRight {
+	width: 200px;
 }
 
-/* remove .tooltiptext {top, margin-left} */
+@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	.section-btn {
+		right: 0;
+		height: 75%;
+		margin-top: 5%;
+	}
+	.section-btn li {
+		/* remove visibility: hidden; */
+		display: none;
+	}
+	.uparrow {
+		right: 0;
+		top: 0;
+	}
+	.downarrow {
+		right: 0;
+		bottom: 0;
+	}
+}
