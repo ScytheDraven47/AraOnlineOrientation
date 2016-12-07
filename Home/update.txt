@@ -1,7 +1,36 @@
+   <div class="modal-content-bf">
+ <img class="service-icon" src="img/Before_you_start/other_accommodation_icon.png" />
+					 <div class="modal-content-bf-h"><h2>Other Accommodatio</h2></div>
+					 <div class="modal-content-bf-p"><p>Timaru and Christchurch
+Possible accommodation options for students studying at the Timaru Campus, temporary or long term.
+					</p></div>
+<a href="#" title="click" >click</a></br>
+					<img class="test-bar" src="img/Before_you_start/main_title_line_before_you_startai.png" />
+ 
+  </div>
 
 
 
-   <a href="#" title="close" > <span class="close22"><img class="midal-close-img" src="img/feel/exit_icon.png"/></span></a>
+
+
+
+.modal-content-bf-h{
+height:10%;
+}
+.modal-content-bf-p{
+height:30%;
+}
+
+
+.modal-content1 a{
+	text-align:center;
+    color: blue;
+    text-decoration: none;
+}
+
+
+  ********************
+  <a href="#" title="close" > <span class="close22"><img class="midal-close-img" src="img/feel/exit_icon.png"/></span></a>
 **********************************************************************************************************************************
 .uparrow{
 	
