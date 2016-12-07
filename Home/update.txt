@@ -1,4 +1,9 @@
-		.uparrow{
+
+
+
+   <a href="#" title="close" > <span class="close22"><img class="midal-close-img" src="img/feel/exit_icon.png"/></span></a>
+**********************************************************************************************************************************
+.uparrow{
 	
 		position:fixed;
 top: 80px;
