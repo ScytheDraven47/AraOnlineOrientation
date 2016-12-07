@@ -166,9 +166,6 @@
 	.maorisub {
 		display: none;
 	}
-	#welcomefieldset {
-		height: 90%;
-	}
 	.fronttext {
 		width: 80%;
 	}
@@ -179,6 +176,8 @@
 	#staticlogo {
 		width: 30%;
 		margin-left: 35%;
+		padding-top: 7%;
+		padding-bottom: 7%;
 	}
 	.carouselcontainer {
 		height: 150px;
