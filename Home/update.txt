@@ -1,4 +1,20 @@
-   <div class="modal-content-bf">
+           <div class='circle'><a href="#" title="feel" ><img class="HAF" src="img/feel/new_main_icon.png" /></a></div>
+     
+
+ .HAF
+{
+width:100px;
+
+}
+.HAF
+{
+width:80px;
+
+}
+
+ ***********************************************************************************
+ 
+ <div class="modal-content-bf">
  <img class="service-icon" src="img/Before_you_start/other_accommodation_icon.png" />
 					 <div class="modal-content-bf-h"><h2>Other Accommodatio</h2></div>
 					 <div class="modal-content-bf-p"><p>Timaru and Christchurch
