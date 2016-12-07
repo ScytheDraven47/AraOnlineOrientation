@@ -1,50 +1,9 @@
-@media screen and (max-width: 600px) {
-	.smailicons label {
-		font-size: 90%;
-	}
-	.icons {
-		padding-top: 10px;
-	}
-	p {
-		font-size: 200%;
-	}
-	.bigimg {
-		margin-top: 10px;
-	}
-	.section-btn li {
-		visibility: hidden;
-	}
-}
-
-.nav {
-	top: 30%;
-}
-.nav ul li {
-	width: 15%;
-}
-
-.uparrow {
-	right: -12px;
-	top: -100px;
-	width: 50px;
-}
-.downarrow {
-	right: -12px;
-	bottom: -100px;
-	width: 50px;
-}
-.section-btn li.on {
-	background-color: #a03590;
-}
-.section-btn li {
-	width: 24px;
-	height: 24px;
-}
 .section-btn {
-	right: 28px;
-	top: 55%;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
+	width: 24px;
+}
+.tooltiptext {
+	right: 40px;
+	margin-top: -28px;
 }
 
-/* remove .nav ul {display: inline-block; padding-left: 5%;} */
+/* remove .tooltiptext {top, margin-left} */
