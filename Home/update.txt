@@ -1,4 +1,38 @@
-      <div class="modal-content-bf">
+styles.css
+.nav ul li a {
+
+  font-size:20px;
+
+}
+
+.nav {
+
+  top: 15%;
+
+
+}
+
+.nav ul{
+	padding-left:0%;
+		display:block;
+
+
+	
+	
+	
+}
+.nav ul li {
+
+	display:block;
+
+width:auto;
+
+}
+
+
+
+****************************************************************************************************************
+<div class="modal-content-bf">
 	       <div class="modal-content-bf-i">
  <img class="service-icon" src="img/Before_you_start/flatting_icon.png" />
  </div>
