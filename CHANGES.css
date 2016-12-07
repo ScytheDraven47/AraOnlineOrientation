@@ -1,20 +1,19 @@
-.firsttest p {
-	font-size: 250%;
+.section-btn li {
+	width: 18px;
+	height: 18px;
 }
-.topRight {
-	width: 200px;
+.section-btn {
+	width: 18px;
 }
-
-@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	.uparrow2 {
-		right: 10px;
-		top: 15%;
-	}
-	.downarrow2 {
-		right: 10px;
-		bottom: 20px;
-	}
-	.firstimg {
-		margin-top: 50px;
-	}
+.uparrow {
+	top: -60px;
+	right: -10px;
+	/* remove max-width */
+	width: 40px;
+}
+.downarrow {
+	bottom: -50px;
+	right: -10px;
+	/* remove max-width */
+	width: 40px;
 }
