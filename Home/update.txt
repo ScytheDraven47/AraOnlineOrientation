@@ -1,3 +1,35 @@
+		.uparrow{
+	
+		position:fixed;
+top: 80px;
+	right: 1px;
+	max-width:50px;
+	z-index: 2;
+	}
+	
+
+		.downarrow{
+	
+	
+	
+			position:fixed;
+bottom: 30px;
+	right: 1px;
+	max-width:50px;
+	z-index: 2;
+}
+
+	  #main{
+width:90%;
+
+left:5%;
+
+}
+
+
+
+
+********************************************************************************
 modal.css
 .modalscroll h1,h2{
 
