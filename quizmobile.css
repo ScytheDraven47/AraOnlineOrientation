@@ -1,0 +1,240 @@
+@media (max-width: 600px) and (max-height: 370px) {
+	.fronttext {
+		font-size: 90%;
+	}
+}
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) { /* portrait view */
+	#navdots {
+		bottom: 24px;
+		width: 216px;
+		margin-left: calc(50% - 108px);
+		visibility: hidden;
+	}
+	.dots {
+		height: 16px;
+		width: 16px;
+	}
+	.dots:hover + .tooltiptext {
+		visibility: hidden;
+	}
+	#exit {
+		top: 16px;
+		right: 16px;
+	}
+	#exitbutton {
+		height: 32px;
+		width: 32px;
+	}
+	.navbutton {
+		
+		width: 35px;
+		bottom: 47%;
+	}
+	#nextbutton {
+		right: 5px;
+	}
+	#prevbutton {
+		left: 5px;
+	}
+	.wrap2, .wrap2first, .wrap3 {
+		width: 60%;
+		margin-left: 20%;
+	}
+	.wrap4 {
+		width: 40%;
+		margin-left: calc(20% / 3);
+		margin-bottom: 18px;
+	}
+	fieldset button {
+		width: 35%;
+	}
+	.wrap4 button {
+		width: 50%;
+	}
+	.questiontext {
+		width: 95%;
+		margin: auto;
+		font-size: 110%;
+		margin-top: 48px;
+		margin-bottom: 5px;
+	}
+	.maoriquestiontext {
+		width: 95%;
+		margin: auto;
+		font-size: 100%;
+		margin-bottom: 16px;
+	}
+	.engsub {
+		font-size: 100%;
+		margin: 8px 0 16px 0;
+	}
+	.wrap4 .engsub {
+		height: 42px;
+		margin-bottom: 0;
+	}
+	.maorisub {
+		display: none;
+	}
+	.fronttext {
+		width: 80%;
+	}
+	.logo {
+		width: 80%;
+		margin-left: 10%;
+	}
+	#staticlogo {
+		width: 30%;
+		margin-left: 35%;
+		padding-top: 7%;
+		padding-bottom: 7%;
+	}
+	.carouselcontainer {
+		height: 150px;
+		width: 50%;
+		margin-top: 50px;
+	}
+	.carouselnext, .carouselprev {
+		left: calc(50% - 75px);
+	}
+	.carouselnext {
+		bottom: 0;
+		margin-left: 14px;
+	}
+	.carouselprev {
+		bottom: -50px;
+		margin-right: 14px;
+	}
+	.carouselnext:active {
+		bottom: -4px;
+	}
+	.carouselprev:active {
+		bottom: -54px;
+	}
+	#ie-slider {
+		width: 70%;
+		height: 300px;
+	}
+	#slidernext, #sliderprev {
+		bottom: 0;
+	}
+	#logodiv img {
+		width: 150px;
+	}
+}
+@media (max-width: 350px) { /* for really small screens */
+	#welcomebuttons {
+		width: 250px;
+		margin-left: calc(50% - 125px);
+		bottom: 24px;
+	}
+	.fronttext {
+		font-size: 80%;
+		width: 90%;
+	}
+}
+
+@media (max-height: 450px) { /* landscape view */
+	#navdots {
+		visibility: hidden;
+	}
+	.maorisub {
+		display: none;
+	}
+	.questionfield {
+		top: 50%;
+		height: 100%;
+	}
+	.wrap2 {
+		width: 20%;
+		margin-left: 20%;
+	}
+	.wrap3 {
+		width: 20%;
+		margin-left: 10%;
+	}
+	.wrap4 {
+		width: 15%;
+		margin-left: calc(40% / 5);
+	}
+	#exit {
+		top: 18px;
+		right: 18px;
+	}
+	#prevbutton {
+		left: 10px;
+	}
+	#nextbutton {
+		right: 10px;
+	}
+	.navbutton {
+		bottom: 38%;
+		width: 40px;
+	}
+	.questiontext {
+		font-size: 130%;
+	}
+	.maoriquestiontext {
+		font-size: 110%;
+	}
+	.engsub {
+		font-size: 100%;
+	}
+	.fronttext {
+		margin-top: 18px;
+	}
+	#welcomebuttons {
+		bottom: 24px;
+		width: 220px;
+		margin-left: calc(50% - 110px);
+	}
+	.carouselcontainer {
+		height: 100px;
+		width: 25%;
+		margin-top: 10px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
+	}
+	.carouselnext {
+		right: 20%;
+	}
+	.carouselprev {
+		left: 20%;
+	}
+	#ie-slider {
+		height: 150px;
+	}
+	#leftfloat {
+		float: left;
+		width: 40%;
+		margin-left: 5%;
+	}
+	#rightfloat {
+		float: right;
+		width: 55%;
+	}
+	#staticlogo {
+		width: 30%;
+		margin-left: 35%;
+		padding-top: 7%;
+		padding-bottom: 10%;
+	}
+	.logo {
+		width: 100%;
+		margin-left: 0%;
+	}
+	#cloudlogo, #cloudlogo2 {
+		width: 40%;
+		margin-left: 5%;
+	}
+	.fronttext {
+		width: 90%;
+		margin-left: 5%;
+	}
+	#logodiv img {
+		display: none;
+	}
+}
