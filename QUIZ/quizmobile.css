@@ -25,13 +25,14 @@
 		right: 18px;
 	}
 	#prevbutton {
-		left: 18px;
+		left: 10px;
 	}
 	#nextbutton {
-		right: 18px;
+		right: 10px;
 	}
 	.navbutton {
-		bottom: 36px;
+		bottom: 38%;
+		width: 40px;
 	}
 	.questiontext {
 		font-size: 130%;
@@ -64,6 +65,12 @@
 	.carouselnext:active, .carouselprev:active {
 		bottom: -1%;
 	}
+	.carouselnext {
+		right: 20%;
+	}
+	.carouselprev {
+		left: 20%;
+	}
 	#ie-slider {
 		height: 150px;
 	}
@@ -93,6 +100,9 @@
 	.fronttext {
 		width: 90%;
 		margin-left: 5%;
+	}
+	#logodiv img {
+		width: 150px;
 	}
 }
 @media (max-width: 600px) and (max-height: 370px) {
@@ -213,6 +223,9 @@
 	}
 	#slidernext, #sliderprev {
 		bottom: 0;
+	}
+	#logodiv img {
+		width: 150px;
 	}
 }
 @media (max-width: 350px) {

@@ -421,6 +421,13 @@ button img {
 #sliderprev {
 	left: 5em;
 }
+#logodiv img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 300px;
+	z-index: -1;
+}
 @media (hover:hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	a:hover {
 		color: #33b789;

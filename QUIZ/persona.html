@@ -305,7 +305,7 @@ $(document).ready(function() {
 		<h1 class="questiontext">Do you have children under six?</h1>
 		<h1 class="maoriquestiontext">He tamariki &amacr;u i raro iho i te ono tau?</h1>
 		
-		<div class="wrap2">
+		<div class="wrap2 wrap2first">
 		<button type="button" class="optionButtonSingle" id="yes" name="condition" value="childrenyes"><img class="childrenImage" alt="Children" src="img/yes_children.png"></button>
 		<label class="engsub" for="yes">Yes</label>
 		<label class="maorisub" for="interested">&Amacr;e</label>
@@ -376,6 +376,10 @@ $(document).ready(function() {
 	</div>
 	
 </form>
+
+<div id="logodiv">
+	<img src="img/aralogotriangle.png">
+</div>
 
 <div id="navbuttons">
 	<button id="prevbutton" class="navbutton" onclick="plusDivs(-1)"><img src="img/arrow_left.png"></button>
@@ -461,6 +465,7 @@ function showDivs(n) {
 	var navdots = document.getElementById("navdots");
 	var welbuts = document.getElementById("welcomebuttons");
 	var exit = document.getElementById("exit");
+	var trilogo = document.getElementById("logodiv");
 	var body = document.body;
 	if (n <= 1) {body.style.backgroundImage = "url(img/background_welcome.png)"}
 	else if (n >= 8) {body.style.backgroundImage = "url(img/campus_background.png)"}
@@ -473,6 +478,8 @@ function showDivs(n) {
 	else {welbuts.style.display = "none"};
 	if (n <= 1) {exit.style.display = "none"}
 	else {exit.style.display = "inline"};
+	if (n <= 1) {trilogo.style.display = "none"}
+	else {trilogo.style.display = "inline"};
 	if (n == 2) {prevbut.style.visibility = "hidden"}
 	else {prevbut.style.visibility = "visible"};
 	if (n >= 8) {nextbut.style.visibility = "hidden"}
