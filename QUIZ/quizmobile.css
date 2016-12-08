@@ -1,110 +1,4 @@
-@media (max-height: 450px) {
-	#navdots {
-		visibility: hidden;
-	}
-	.maorisub {
-		display: none;
-	}
-	.questionfield {
-		top: 50%;
-	}
-	.wrap2 {
-		width: 20%;
-		margin-left: 20%;
-	}
-	.wrap3 {
-		width: 20%;
-		margin-left: 10%;
-	}
-	.wrap4 {
-		width: 15%;
-		margin-left: calc(40% / 5);
-	}
-	#exit {
-		top: 18px;
-		right: 18px;
-	}
-	#prevbutton {
-		left: 10px;
-	}
-	#nextbutton {
-		right: 10px;
-	}
-	.navbutton {
-		bottom: 38%;
-		width: 40px;
-	}
-	.questiontext {
-		font-size: 130%;
-	}
-	.maoriquestiontext {
-		font-size: 110%;
-	}
-	.engsub {
-		font-size: 100%;
-	}
-	.fronttext {
-		margin-top: 18px;
-	}
-	#welcomebuttons {
-		bottom: 24px;
-		width: 220px;
-		margin-left: calc(50% - 110px);
-	}
-	#welcomefieldset {
-		top: 55%;
-	}
-	.carouselcontainer {
-		height: 100px;
-		width: 25%;
-		margin-top: 10px;
-	}
-	.carouselnext, .carouselprev {
-		bottom: 0;
-	}
-	.carouselnext:active, .carouselprev:active {
-		bottom: -1%;
-	}
-	.carouselnext {
-		right: 20%;
-	}
-	.carouselprev {
-		left: 20%;
-	}
-	#ie-slider {
-		height: 150px;
-	}
-	#leftfloat {
-		float: left;
-		width: 45%;
-		margin-left: 5%;
-	}
-	#rightfloat {
-		float: right;
-		width: 40%;
-		margin-right: 5%;
-	}
-	#staticlogo {
-		width: 30%;
-		margin-left: 35%;
-		padding-top: 7%;
-		padding-bottom: 10%;
-	}
-	.logo {
-		width: 100%;
-		margin-left: 0;
-	}
-	#cloudlogo, #cloudlogo2 {
-		width: 45%;
-	}
-	.fronttext {
-		width: 90%;
-		margin-left: 5%;
-	}
-	#logodiv img {
-		width: 150px;
-	}
-}
+
 @media (max-width: 600px) and (max-height: 370px) {
 	.fronttext {
 		font-size: 90%;
@@ -233,5 +127,117 @@
 		width: 250px;
 		margin-left: calc(50% - 125px);
 		bottom: 24px;
+	}
+	.fronttext {
+		font-size: 80%;
+		width: 90%;
+	}
+}
+
+@media (max-height: 450px) {
+	#navdots {
+		visibility: hidden;
+	}
+	.maorisub {
+		display: none;
+	}
+	.questionfield {
+		top: 50%;
+	}
+	.wrap2 {
+		width: 20%;
+		margin-left: 20%;
+	}
+	.wrap3 {
+		width: 20%;
+		margin-left: 10%;
+	}
+	.wrap4 {
+		width: 15%;
+		margin-left: calc(40% / 5);
+	}
+	#exit {
+		top: 18px;
+		right: 18px;
+	}
+	#prevbutton {
+		left: 10px;
+	}
+	#nextbutton {
+		right: 10px;
+	}
+	.navbutton {
+		bottom: 38%;
+		width: 40px;
+	}
+	.questiontext {
+		font-size: 130%;
+	}
+	.maoriquestiontext {
+		font-size: 110%;
+	}
+	.engsub {
+		font-size: 100%;
+	}
+	.fronttext {
+		margin-top: 18px;
+	}
+	#welcomebuttons {
+		bottom: 24px;
+		width: 220px;
+		margin-left: calc(50% - 110px);
+	}
+	#welcomefieldset {
+		top: 55%;
+	}
+	.carouselcontainer {
+		height: 100px;
+		width: 25%;
+		margin-top: 10px;
+	}
+	.carouselnext, .carouselprev {
+		bottom: 0;
+	}
+	.carouselnext:active, .carouselprev:active {
+		bottom: -1%;
+	}
+	.carouselnext {
+		right: 20%;
+	}
+	.carouselprev {
+		left: 20%;
+	}
+	#ie-slider {
+		height: 150px;
+	}
+	#leftfloat {
+		float: left;
+		width: 45%;
+		margin-left: 5%;
+	}
+	#rightfloat {
+		float: right;
+		width: 40%;
+		margin-right: 5%;
+	}
+	#staticlogo {
+		width: 30%;
+		margin-left: 35%;
+		padding-top: 7%;
+		padding-bottom: 10%;
+	}
+	.logo {
+		width: 100%;
+		margin-left: 0;
+	}
+	#cloudlogo, #cloudlogo2 {
+		width: 45%;
+	}
+	.fronttext {
+		width: 90%;
+		margin-left: 5%;
+	}
+	#logodiv img {
+		width: 150px;
 	}
 }
