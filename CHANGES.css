@@ -1,9 +1,24 @@
+.topleft {
+	top: 15px;
+}
+.logoimg3 {
+	width: 200px;
+}
+.maorisub {
+	color: grey;
+	font-size: 200%;
+}
+.firsttest {
+	/* remove height */
+	top: 80%;
+}
 .firsttest p {
-	line-height: 120%;
+	margin: 0;
+	margin-top: 10px;
 }
 
-@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	.firstimg {
-		width: 100%;
+@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	.bigimg {
+		/* remove margin-top */
 	}
 }
