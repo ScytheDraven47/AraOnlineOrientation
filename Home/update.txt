@@ -1,4 +1,7 @@
-		
+
+<meta name="renderer" content="ie-comp">
+
+***************************************************		
 					<div class="mobiletest">
 					
 							<p >1111111111111111111111</p>
