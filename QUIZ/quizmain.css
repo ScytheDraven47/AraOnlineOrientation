@@ -60,17 +60,10 @@ fieldset {
 	position: absolute;
     top: calc(50% - 32px);
     left: 50%;
+	-webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 	max-height: 85%;
-}
-.questionfield fieldset {
-	width: 60%;
-	margin: 48px auto;
-}
-.studyfield {
-	width: calc(100% - 160px);
-	margin: auto;
 }
 fieldset button {
 	cursor: pointer;
