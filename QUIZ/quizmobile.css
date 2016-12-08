@@ -133,7 +133,7 @@
 	#prevbutton {
 		left: 5px;
 	}
-	.wrap2, .wrap3 {
+	.wrap2, .wrap2first, .wrap3 {
 		width: 50%;
 		margin-left: 25%;
 	}
