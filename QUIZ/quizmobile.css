@@ -142,6 +142,7 @@
 	}
 	.questionfield {
 		top: 50%;
+		height: 100%;
 	}
 	.wrap2 {
 		width: 20%;
@@ -186,9 +187,6 @@
 		width: 220px;
 		margin-left: calc(50% - 110px);
 	}
-	#welcomefieldset {
-		top: 55%;
-	}
 	.carouselcontainer {
 		height: 100px;
 		width: 25%;
@@ -211,13 +209,13 @@
 	}
 	#leftfloat {
 		float: left;
-		width: 45%;
-		margin-left: 5%;
+		width: 47%;
+		margin-left: 3%;
 	}
 	#rightfloat {
 		float: right;
-		width: 40%;
-		margin-right: 5%;
+		width: 47%;
+		margin-right: 3%;
 	}
 	#staticlogo {
 		width: 30%;
@@ -226,11 +224,11 @@
 		padding-bottom: 10%;
 	}
 	.logo {
-		width: 100%;
-		margin-left: 0;
+		width: 80%;
+		margin-left: 10%;
 	}
 	#cloudlogo, #cloudlogo2 {
-		width: 45%;
+		width: calc(0.47 * 80%);
 	}
 	.fronttext {
 		width: 90%;
@@ -238,11 +236,5 @@
 	}
 	#logodiv img {
 		display: none;
-	}
-}
-
-@media (max-height: 350px) { /* really small landscape view */
-	.questionfield {
-		height: 100%;
 	}
 }
