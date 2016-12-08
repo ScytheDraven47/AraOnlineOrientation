@@ -1,19 +1,10 @@
-.section-btn li {
-	width: 18px;
-	height: 18px;
-}
-.section-btn {
-	width: 18px;
-}
-.uparrow {
-	top: -60px;
-	right: -10px;
+.uparrow2 {
+	top: 43%;
 	/* remove max-width */
 	width: 40px;
 }
-.downarrow {
-	bottom: -50px;
-	right: -10px;
+.downarrow2 {
+	bottom: 43%;
 	/* remove max-width */
 	width: 40px;
 }
