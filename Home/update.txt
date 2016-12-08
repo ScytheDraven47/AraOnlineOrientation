@@ -1,6 +1,47 @@
+HTML
+            <img class="logoImg" src="img/title.png">
+ <img class="logoImg2" src="img/mobile_logo.png">
+
+
+<div class="bottomRight">
+              <img class="logoImg3" src="img/logo.png">
+			  </div>
+			  
+			  
+css			  
+.bottomRight {
+	position:fixed;
+bottom: 0px;
+	right: 0px;
+
+	z-index: 2;
+display:block;
+}
+.logoImg3 {
+  width: 120px;
+
+}
 
 
 
+
+
+@
+.bottomRight {
+
+display:none;
+}
+.logoImg2 {
+
+display:block;
+
+}
+.logoImg {
+
+display:none;
+
+}
+********************************************************************************************************************
 .modal-content-bf{
 		    background-color: #fff;
 		margin-left:1%;
