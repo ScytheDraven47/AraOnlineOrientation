@@ -241,7 +241,7 @@
 	}
 }
 
-@media (max-height: 450px) { /* really small landscape view */
+@media (max-height: 350px) { /* really small landscape view */
 	.questionfield {
 		height: 100%;
 	}
