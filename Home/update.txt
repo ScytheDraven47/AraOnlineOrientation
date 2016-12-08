@@ -1,3 +1,32 @@
+		
+					<div class="mobiletest">
+					
+							<p >1111111111111111111111</p>
+				
+					</div>
+.mobiletest
+{
+			 position: absolute; 
+bottom:0;
+display:none;	
+  width: 100%;
+
+	
+}
+
+.mobiletest
+{
+
+display:none;	
+
+	
+}
+
+
+
+
+
+********************************************************************************************************************
 HTML
             <img class="logoImg" src="img/title.png">
  <img class="logoImg2" src="img/mobile_logo.png">
