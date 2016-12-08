@@ -93,7 +93,10 @@ button img {
 .wrap2 {
 	width: 25%;
 	float: left;
-	margin-left: calc(50% / 3);
+	margin-left: calc(25% / 4);
+}
+.wrap2first { /* for the first option */
+	margin-left: 21.875%;
 }
 .wrap3 {
 	width: 25%;
@@ -159,7 +162,7 @@ button img {
 	background-color: #acdee4;
 }
 .activedot {
-	background-color: #a03590;
+	background-color: #5B739A;
 }
 .tooltiptext {
 	visibility: hidden;
