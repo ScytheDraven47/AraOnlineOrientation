@@ -1,10 +1,9 @@
-.uparrow2 {
-	top: 43%;
-	/* remove max-width */
-	width: 40px;
+.firsttest p {
+	line-height: 120%;
 }
-.downarrow2 {
-	bottom: 43%;
-	/* remove max-width */
-	width: 40px;
+
+@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	.firstimg {
+		width: 100%;
+	}
 }
