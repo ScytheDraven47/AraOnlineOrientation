@@ -1,18 +1,11 @@
-.nav ul li img {
-	margin-top: -8%;
+.uparrow {
+	top: -40px;
+	right: -12px;
 }
-.english {
-	line-height: 100%;
+.downarrow {
+	bottom: -30px;
+	right: -12px;
 }
-.maorisub {
-	line-height: 100%;
-}
-
-@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	.icons {
-		padding-top: 45px;
-	}
-	.smailicons label {
-		margin: 0;
-	}
+.section-btn {
+	width: 15px;
 }
