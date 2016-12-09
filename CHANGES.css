@@ -1,35 +1,13 @@
-@media screen and (max-height: 450px) and (orientation: landscape) {
-	#LAST_bg {
-		width: 100%;
-	}
+.nav ul li img {
+	width: 16%;
+	margin-left: -8.5%;
+	margin-top: -6%;
 }
-.section-btn li {
-	width: 13px;
-	height: 13px;
-}
-.uparrow {
-	top: -35px;
-}
-.downarrow {
-	bottom: -25px;
-}
-.tooltiptext {
-	margin-top: -22px;
-}
-.centered_bg {
-	height: 70%;
-}
-.section-btn {
-	width: 14px;
-}
-.section-btn li:hover {
-	background-color: #51a3c9;
+.logoImg3 {
+	width: 140px;
 }
 
 /* QUIZ MAIN CSS */
-
-@media (hover:hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.dots:hover {
-		background-color: #51a3c9;
-	}
+#logodiv img {
+	width: 140px;
 }
