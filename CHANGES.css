@@ -1,35 +1,18 @@
-.bigTest {
-	margin-top: 20px;
-}
-.section-btn {
-	z-index: 3;
-}
-.topRight {
-	/* remove width */
-	right: 15px;
-}
-.section-btn li {
-	width: 15px;
-	height: 15px;
-}
-.tooltiptext {
-	margin-top: -25px;
-}
 .nav ul li img {
-	width: 22%;
-	margin-left: -11.5%;
-	margin-top: -7%;
-	z-index: -1;
+	margin-top: -8%;
 }
-.nav ul li {
-	vertical-align: top;
-	margin: 3% 2%;
-	width: 18%;
+.english {
+	line-height: 100%;
+}
+.maorisub {
+	line-height: 100%;
 }
 
-
-/* QUIZ CSS */
-
-#logodiv img {
-	width: 200px;
+@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	.icons {
+		padding-top: 45px;
+	}
+	.smailicons label {
+		margin: 0;
+	}
 }
