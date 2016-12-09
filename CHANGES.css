@@ -1,13 +1,14 @@
-.nav ul:hover li a {
-	/* remove opacity */
+@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	.firsttest {
+		top: 70%;
+	}
+	.icons {
+		padding-top: 40px;
+	}
+	p.maorisub {
+		font-size: 150%;
+	}
 }
-.nav ul li:hover {
-	/* remove background-image */
-}
-.nav ul li img {
-	visibility: hidden;
-	position: absolute;
-}
-.nav ul li:hover + img {
-	visibility: visible;
+p.maorisub {
+	line-height: 110%;
 }
