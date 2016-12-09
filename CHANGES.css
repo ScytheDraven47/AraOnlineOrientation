@@ -1,16 +1,13 @@
-.topRight {
-	top: 15px;
+.nav ul:hover li a {
+	/* remove opacity */
 }
-.topRight a img {
-	width: 40px;
+.nav ul li:hover {
+	/* remove background-image */
 }
-.topleft {
-	left: 90px;
+.nav ul li img {
+	visibility: hidden;
+	position: absolute;
 }
-.maorisub {
-	font-weight: normal;
-}
-.tooltiptext {
-	right: 35px;
-	margin-top: -26px;
+.nav ul li:hover + img {
+	visibility: visible;
 }
