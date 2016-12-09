@@ -1,70 +1,35 @@
-.section-btn {
-	top: 48%;
-}
-.section-btn li {
-	margin-bottom: 8px;
-}
-
 @media screen and (max-height: 450px) and (orientation: landscape) {
-	.firstImg {
-		width: 70%;
-	}
-	.mobiletest {
-		bottom: -20px;
-	}
-	.bigimg {
-		height: 80%;
-	}
-	.serviceicon {
+	#LAST_bg {
 		width: 100%;
 	}
-	.nav {
-		top: 20%;
-	}
-	.nav-topRight {
-		top: 10px;
-		right: 10px;
-	}
-	.socialIcon {
-		width: 40px;
-	}
-	.nav ul li {
-		margin: 1% 2%;
-	}
-	.nav ul li:hover img {
-		visibility: hidden;
-	}
-	.feel {
-		top: -10px;
-	}
 }
-
-@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	.nav ul li:hover img {
-		visibility: hidden;
-	}
+.section-btn li {
+	width: 13px;
+	height: 13px;
 }
-
-
-
-
+.uparrow {
+	top: -35px;
+}
+.downarrow {
+	bottom: -25px;
+}
+.tooltiptext {
+	margin-top: -22px;
+}
+.centered_bg {
+	height: 70%;
+}
+.section-btn {
+	width: 14px;
+}
+.section-btn li:hover {
+	background-color: #51a3c9;
+}
 
 /* QUIZ MAIN CSS */
 
-.modal-content {
-	width: 40%;
-}
-
-/* QUIZ MOBILE CSS */
-
-@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	.modal-content {
-		width: 80%;
-	}
-}
-
-@media (max-height: 450px) /* add 'and (orientation: landscape)' */ {
-	.modal-content {
-		width: 80%;
+@media (hover:hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.dots:hover {
+		background-color: #51a3c9;
 	}
 }
