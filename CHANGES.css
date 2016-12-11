@@ -1,13 +1,1 @@
-/* QUIZ IE CSS */
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 568px) /* TARGETS IPHONE 5/5S */ {
-	.carouselcontainer, .carouselnext, .carouselprev {
-		display: none;
-	}
-	.ie-alt {
-		display: inline;
-	}
-	.ie-alt p {
-		display: none;
-	}
-} 
+@media only screen and (device-width : 320px) and (device-height: 568px) and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2)
