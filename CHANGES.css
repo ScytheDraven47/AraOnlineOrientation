@@ -1,43 +1,44 @@
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.nav ul li img {
-		margin-left: 0;
-	}
+/* QUIZ MAIN CSS */
+.a {
+	-webkit-transform: rotateY(0deg) translateZ(400px);
+}
+.b {
+	-webkit-transform: rotateY(60deg) translateZ(400px);
+}
+.c {
+	-webkit-transform: rotateY(120deg) translateZ(400px);
+}
+.d {
+	-webkit-transform: rotateY(180deg) translateZ(400px);
+}
+.e {
+	-webkit-transform: rotateY(240deg) translateZ(400px);
+}
+.f {
+	-webkit-transform: rotateY(300deg) translateZ(400px);
 }
 
 /* QUIZ MOBILE CSS */
-@media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+@media (max-width: 350px) {
+	#staticlogo {
+		padding-bottom: 20px;
+	}
+	.fronttext {
+		margin-bottom: 18px;
+	}
+	.logo {
+		margin-bottom: 18px;
+	}
 	#logodiv img {
-		width: 130px;
+		width: 110px;
 	}
 	#welcomebuttons {
-		bottom: 80px;
-	}
-}
-@media (max-width: 350px) {
-	.fronttext {
-		font-size: 80%;
-		width: 90%;
+		bottom: 60px;
 	}
 }
 @media (max-height: 450px) and (orientation: landscape) {
-	#welcomebuttons {
-		/* remove padding-bottom */
-		bottom: 18px;
-	}
-	#rightfloat {
-		width: 55%;
-		/* remove margin-right */
-	}
-	#staticlogo {
-		/* remove width, margin-left, padding-top */
-		padding-bottom: 30px;
-	}
-	#leftfloat {
+	#cloudlogo, #cloudlogo2 {
 		width: 40%;
 		margin-left: 5%;
-	}
-	.logo {
-		width: 100%;
-		margin-left: 0;
 	}
 }
