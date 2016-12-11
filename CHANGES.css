@@ -1,33 +1,43 @@
-#LAST_bg {
-	width: 80%;
-	margin: auto;
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.nav ul li img {
+		margin-left: 0;
+	}
 }
-
-/* QUIZ MAIN CSS */
-#staticlogo {
-	/* remove width, max-height, padding-top, margin-left */
-	padding-bottom: 50px;
-}
-
 
 /* QUIZ MOBILE CSS */
 @media (max-width: 700px) and (min-height: 1000px),  (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
-	#staticlogo {
-		/* remove width, margin-left, padding-top */
-		padding-bottom: 30px;
+	#logodiv img {
+		width: 130px;
 	}
 	#welcomebuttons {
-		bottom: 100px;
+		bottom: 80px;
 	}
 }
 @media (max-width: 350px) {
-	#welcomebuttons {
-		/* remove bottom */
+	.fronttext {
+		font-size: 80%;
+		width: 90%;
 	}
 }
 @media (max-height: 450px) and (orientation: landscape) {
+	#welcomebuttons {
+		/* remove padding-bottom */
+		bottom: 18px;
+	}
+	#rightfloat {
+		width: 55%;
+		/* remove margin-right */
+	}
 	#staticlogo {
 		/* remove width, margin-left, padding-top */
 		padding-bottom: 30px;
+	}
+	#leftfloat {
+		width: 40%;
+		margin-left: 5%;
+	}
+	.logo {
+		width: 100%;
+		margin-left: 0;
 	}
 }
