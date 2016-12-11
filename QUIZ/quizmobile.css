@@ -82,12 +82,6 @@
 		width: 80%;
 		margin-left: 10%;
 	}
-	#staticlogo {
-		width: 30%;
-		margin-left: 35%;
-		padding-top: 7%;
-		padding-bottom: 7%;
-	}
 	.carouselcontainer {
 		height: 150px;
 		width: 50%;
@@ -119,6 +113,9 @@
 	}
 	#logodiv img {
 		width: 150px;
+	}
+	.modal-content {
+		width: 80%;
 	}
 }
 @media (max-width: 350px) { /* for really small screens */
@@ -216,15 +213,9 @@
 		float: right;
 		width: 55%;
 	}
-	#staticlogo {
-		width: 30%;
-		margin-left: 35%;
-		padding-top: 7%;
-		padding-bottom: 10%;
-	}
 	.logo {
 		width: 100%;
-		margin-left: 0%;
+		margin-left: 0;
 	}
 	#cloudlogo, #cloudlogo2 {
 		width: 40%;
@@ -236,5 +227,8 @@
 	}
 	#logodiv img {
 		display: none;
+	}
+	.modal-content {
+		width: 80%;
 	}
 }
