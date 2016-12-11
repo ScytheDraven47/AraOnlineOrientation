@@ -1,1 +1,12 @@
-@media only screen and (max-device-width : 320px) and (max-device-width: 568px) and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2)
+/* QUIZ MOBILE CSS */
+@media (max-width: 700px) and (min-height: 1000px), (max-width: 600px) and (min-height: 900px), (max-width: 550px) {
+	#slidernext, #sliderprev {
+		/* remove bottom */
+	}
+	#slidernext {
+		bottom: 40px;
+	}
+	#sliderprev {
+		bottom: -10px;
+	}
+}
