@@ -1,44 +1,7 @@
 /* QUIZ MAIN CSS */
-.a {
-	-webkit-transform: rotateY(0deg) translateZ(400px);
+.carousel {
+	-webkit-transition: -webkit-transform 0.7s;
 }
-.b {
-	-webkit-transform: rotateY(60deg) translateZ(400px);
-}
-.c {
-	-webkit-transform: rotateY(120deg) translateZ(400px);
-}
-.d {
-	-webkit-transform: rotateY(180deg) translateZ(400px);
-}
-.e {
-	-webkit-transform: rotateY(240deg) translateZ(400px);
-}
-.f {
-	-webkit-transform: rotateY(300deg) translateZ(400px);
-}
-
-/* QUIZ MOBILE CSS */
-@media (max-width: 350px) {
-	#staticlogo {
-		padding-bottom: 20px;
-	}
-	.fronttext {
-		margin-bottom: 18px;
-	}
-	.logo {
-		margin-bottom: 18px;
-	}
-	#logodiv img {
-		width: 110px;
-	}
-	#welcomebuttons {
-		bottom: 60px;
-	}
-}
-@media (max-height: 450px) and (orientation: landscape) {
-	#cloudlogo, #cloudlogo2 {
-		width: 40%;
-		margin-left: 5%;
-	}
+.item img {
+	-webkit-transition: -webkit-transform 0.7s;
 }
