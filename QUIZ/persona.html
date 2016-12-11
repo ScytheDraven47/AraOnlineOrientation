@@ -132,7 +132,7 @@ $(document).ready(function() {
 	<div class="question" id="q0">
 		<fieldset class="questionfield" id="welcomefieldset">
 		<div id="leftfloat">
-		<img id="staticlogo" alt="Ara Institute Logo" src="img/ara_logo.png">
+		<div id="staticlogo" ></div>
 		<img class="logo" id="cloudlogo" src="img/orientation_logo_cloud1.png">
 		<img class="logo" id="cloudlogo2" src="img/orientation_logo_cloud2.png">
 		<img class="logo" id="buildinglogo" alt="Student Orientation Logo" src="img/orientation_logo.png">
@@ -465,7 +465,6 @@ function showDivs(n) {
 	var navdots = document.getElementById("navdots");
 	var welbuts = document.getElementById("welcomebuttons");
 	var exit = document.getElementById("exit");
-	var trilogo = document.getElementById("logodiv");
 	var body = document.body;
 	if (n <= 1) {body.style.backgroundImage = "url(img/background_welcome.png)"}
 	else if (n >= 8) {body.style.backgroundImage = "url(img/campus_background.png)"}
@@ -478,8 +477,6 @@ function showDivs(n) {
 	else {welbuts.style.display = "none"};
 	if (n <= 1) {exit.style.display = "none"}
 	else {exit.style.display = "inline"};
-	if (n <= 1) {trilogo.style.display = "none"}
-	else {trilogo.style.display = "inline"};
 	if (n == 2) {prevbut.style.visibility = "hidden"}
 	else {prevbut.style.visibility = "visible"};
 	if (n >= 8) {nextbut.style.visibility = "hidden"}
