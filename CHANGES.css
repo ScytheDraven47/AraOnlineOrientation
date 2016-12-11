@@ -1,7 +1,13 @@
-/* QUIZ MAIN CSS */
-.carousel {
-	-webkit-transition: -webkit-transform 0.7s;
-}
-.item img {
-	-webkit-transition: -webkit-transform 0.7s;
-}
+/* QUIZ IE CSS */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) /* TARGETS IPHONE 5/5S */ {
+	.carouselcontainer, .carouselnext, .carouselprev {
+		display: none;
+	}
+	.ie-alt {
+		display: inline;
+	}
+	.ie-alt p {
+		display: none;
+	}
+} 
