@@ -230,11 +230,7 @@ button img {
 }
 #staticlogo {
 	display: block;
-	width: 15%;
-	max-height: 10%;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	margin-left: 42.5%;
+	padding-bottom: 50px;
 }
 .logo {
 	display: block;
@@ -303,7 +299,7 @@ button img {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
 }
 .close {
 	cursor: pointer;
