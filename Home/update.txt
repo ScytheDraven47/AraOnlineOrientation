@@ -1,3 +1,41 @@
+					<div id="main">
+			
+      <div class="wrap">
+<h1>Feedback Form</h1>
+<p>How do you feel about this website? Was it helpful?</p>
+	<div class="login-01">
+		<form  method="post">
+			<ul>
+				<li class="second">
+					<label for="test1" >
+						<img class="face" src="img/happy.png" />
+							<input id="test1" name="test" type="radio" value="value1" />
+					</label>
+					<label for="test2">
+						<img class="face" src="img/unhappy.png"/>
+							<input id="test2" name="test" type="radio" value="value2" />
+					</label>
+				</li>
+				<li class="first">
+					<a href="#" class=" icon topic"></a>
+					<input type="text" class="text" value="Topic" onclick="this.value = '';" onBlur="if (this.value == '') {this.value = 'Topic';}" >
+
+					<div class="clear"></div>
+				</li>
+				<li class="second">
+					<a href="#" class=" icon msg"></a><textarea value="Message" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Comments';}">Comments</textarea>
+					<div class="clear"></div>
+				</li>
+			</ul>
+			<input type="submit" onClick="myFunction()" value="Submit" >
+			<div class="clear"></div>
+		</form>
+		</div>
+
+</div>
+					</div>
+
+************************************************************************************
 modal box 
 p
 18/24
