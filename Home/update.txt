@@ -1,4 +1,16 @@
-					<div id="main">
+
+.face{
+	width:35%;
+}
+
+
+
+form textarea {
+  resize: none;
+  height: 140px;
+}
+********************************************************************************
+<div id="main">
 			
       <div class="wrap">
 <h1>Feedback Form</h1>
